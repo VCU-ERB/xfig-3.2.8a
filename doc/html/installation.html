@@ -1,0 +1,520 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+<head>
+<title>Getting and Installing Xfig</title>
+</head>
+
+<body>
+<a href="contents.html"><img src="images/xfig-title.png"
+  alt="XFIG Users Manual" border=0></a>
+
+<hr>
+
+<h1>Getting and Installing Xfig and Fig2dev</h1>
+
+<p>
+You need the <b>fig2dev</b> program in addition to <b>xfig</b> to be complete.
+<b>Xfig</b> saves figures in its own, proprietary .fig format.
+The <b>fig2dev</b> program allows you to print and export figures.
+<b>Fig2dev</b> translates the .fig files to various languages and formats such
+as PostScript, png, jpeg, pstricks, tikz, etc.
+<p>
+<img src="images/blueballdot.png" align=bottom alt="-">
+<a href="#install-xfig">Xfig and Fig2dev</a>
+<ul>
+<li><a href="#getting_xfig">Getting Xfig and Fig2dev</a>
+<li><a href="#install-xfig">Installing Xfig</a>
+<li><a href="#install-transfig">Installing Fig2dev</a>
+<li><a href="#install-xfigwin">Xfig On Microsoft Windows</a>
+<li><a href="#install-xfigmac">Xfig On the MacIntosh</a>
+<li><a href="#install-misc">Installing Other Software</a>
+<li><a href="#install-ghostfonts">Installing Ghostscript's Type 1 fonts under X</a>
+</ul>
+<img src="images/blueballdot.png" align=bottom alt="-">
+<a href="#related-software">Related Software</a>
+<ul>
+<li><a href="#related-library">Libraries</a>
+<li><a href="#related-apps">Applications</a>
+</ul>
+
+<hr>
+
+<h2><a name="getting_xfig">Getting Xfig and Fig2dev</a></h2>
+
+You can get the sources for <b>xfig</b> and <b>fig2dev</b> from
+<a href="https://sourceforge.net/projects/mcj/"
+	>https://sourceforge.net/projects/mcj</a>.
+The file
+<a href="https://sourceforge.net/projects/mcj/files/xfig-full-3.2.6a.tar.xz"
+	>xfig-full-3.2.6a.tar.xz</a>
+contains the sources for both programs, <b>xfig</b> and <b>fig2dev</b>.
+The files
+<a href="https://sourceforge.net/projects/mcj/files/xfig-3.2.6a.tar.xz"
+	>xfig-3.2.6a.tar.xz</a> and
+<a href="https://sourceforge.net/projects/mcj/files/fig2dev-3.2.6a.tar.xz"
+	>fig2dev-3.2.6a.tar.xz</a> contain the sources for either one of
+<b>xfig</b> or <b>fig2dev</b>, respectively.
+<p>
+
+To <i>unxz</i> and <i>untar</i> the files, do
+<ul>
+<li><tt>tar xJf xfig-full-3.2.6a.tar.xz</tt>
+<br><b>or</b>
+<li><tt>unxz -c xfig-full-3.2.6a.tar.xz | tar -xf -</tt>
+</ul>
+
+<hr>
+
+<h2><a name="install-xfig">Installing Xfig</a></h2>
+
+This is the installation procedure of <b>xfig</b>.
+See the <tt>README</tt> file for more details.
+For information about how to use internationalization facility
+of <b>xfig</b>,
+see also <a href="i18n.html">Internationalization</a>.
+
+<p>
+After getting the source of <b>xfig</b>, navigate to the directory
+xfig-3.2.6a.
+
+<p>
+Type <tt>./configure; make -j; make install-strip</tt>
+
+<p>
+The above command builds the program
+(-j &hellip; parallel build, compile with as many threads as possible)
+and installs it
+(install-strip &hellip; strip the debugging symbols)
+below <tt>/usr/local</tt>.
+
+<hr>
+
+<h2><a name="install-transfig">Installing Fig2dev</a></h2>
+
+Here is the installation procedure for <b>Fig2dev</b>.
+See the <tt>README</tt> file for details.
+For information about how to use internationalization facility
+of <b>fig2dev</b>,
+see also <a href="i18n.html">Internationalization</a>.
+
+<p>
+After getting the source of <b>fig2dev</b>, navigate to the directory
+fig2dev-3.2.6a.
+
+<p>
+Type <tt>./configure; make -j; make install-strip</tt>
+
+<p>
+The above command builds the program
+(-j &hellip; parallel build, compile with as many threads as possible)
+and installs it
+(install-strip &hellip; strip the debugging symbols)
+below <tt>/usr/local</tt>.
+
+<hr>
+<h2>
+<a name="install-xfigwin"></a>
+Xfig On Microsoft Windows</h2>
+There is a version of <b>xfig</b> ported to run under Microsoft Windows using the Cygnus X server.
+See <a href="http://www.gohappycup.com/personal/" target=_top>Wayne Wang's xfig for Windows</a>,
+then click on "Software Tools" then "Install xfig on Windows".
+
+<p>
+<b>Both need an X server</b> (e.g. Hummingbird Exceed, or Cygwin/X to run.  See:
+<a href="http://www.cygwin.com/xfree/">http://www.cygwin.com/xfree/)</a>
+
+<a name="install-xfigmac"></a>
+<hr>
+<h2>Xfig On the MacIntosh</h2>
+There is a version of <b>xfig</b> ported to run on the MacIntosh under MacPorts.
+See:
+<a href="http://macports.org">http:macports.org</a>
+
+<a name="install-misc"></a>
+<hr>
+<h2>Installing Other Software</h2>
+
+In addition to <b>xfig</b> and <b>transfig</b> (<b>fig2dev</b>).
+you will also need to install
+<a href="#ghostscript"><b>GhostScript</b></a> and
+<a href="#netpbm"><b>netpbm</b></a>,
+<p>
+<ul>
+<li><b>xfig</b> invokes <b>GhostScript</b> (the <tt>gs</tt> command)
+when displaying <a href="drawing.html#picture">PostScript images</a>,
+and <a href="printing.html#export">exporting</a> in bitmap formats (e.g. JPEG, XPM, etc).
+<p>
+GhostScript must be compiled with pbmraw, ppmraw, pcx256, jpeg,
+and tiff24nc driver.
+<p>
+GhostScript can be found at
+<a href="ftp://prep.ai.mit.edu/pub/gnu/">ftp://prep.ai.mit.edu/pub/gnu</a>
+and its
+<a href="http://www.fsf.org/order/ftp.html">mirror sites</a>,
+or at
+<a href="ftp://ftp.cs.wisc.edu/ghost/aladdin">ftp.cs.wisc.edu/ghost/aladdin</a>.
+
+<p>
+<li><b>fig2dev</b> invokes commands in the <b>netpbm</b> package
+when <a href="printing.html#export">exporting</a> in some formats.
+<p>
+Commands that may actually be used are:
+pbmtoxbm,  pgmtopbm, pnmdepth, pnmscale, pnmtopng, pnmtotiff,
+ppmquant, ppmtoacad, ppmtogif, ppmtopcx, ppmtopgm, ppmtojpeg and ppmtoxpm.
+<p>
+<b>netpbm</b> can be found at
+<a href="http://download.sourceforge.net/netpbm/">http://download.sourceforge.net/netpbm/</a>
+or
+<a href="ftp://ftp.x.org/contrib/graphics/">
+ftp://ftp.x.org/contrib/graphics</a>
+or its
+<a href="http://www.x.org/download.htm#mirror">mirror sites</a>
+in <tt>/contrib/graphics</tt>.
+<br>
+Be sure that it includes <b>ppmtojpeg</b>.  This may be found only in the newer
+releases, such as 9.0 and 9.1
+</ul>
+
+<a name="install-ghostfonts"></a>
+<img src="images/blueramp.png" alt="-">
+<h2>Installing Ghostscript's Type 1 fonts under X</h2>
+
+You can use Ghostscript's high quality Type 1 fonts on your X server (and therefore in xfig).
+
+Copy the necessary files from Ghostscript's fonts directory to /usr/X11R6/lib/X11/fonts/Type1/ (or wherever your X server Type 1 fonts are).
+
+<pre>
+$ cp /usr/share/ghostscript/fonts/*l.pfb /usr/X11R6/lib/X11/fonts/Type1
+</pre>
+
+Append the file
+<tt>/usr/share/ghostscript/fonts/fonts.scale</tt> to <tt>Type1/fonts.scale</tt>.
+The first line in the latter file contains is the number of fonts listed in that file.
+Change that number to include the additional fonts.
+
+<p>
+Now run <tt>mkfontdir(1)</tt> to update the font database:
+
+<pre>
+$ mkfontdir
+</pre>
+
+<p>
+If your operating system has the <tt>chkfontpath</tt> command, alternative is to add
+the Ghostscript font directory to the X server font path:
+
+<pre>
+chkfontpath -a /usr/share/ghostscript/fonts/fonts/
+</pre>
+
+In either case, if your X-server is running already you have to tell it to reread the font databases with
+ <tt>xset(1)</tt>:
+
+<pre>
+$ xset fp rehash
+</pre>
+
+
+
+<a name="related-software"></a>
+<img src="images/blueramp.png" alt="-">
+<h2>Related Software</h2>
+
+<a name="related-library"></a>
+<h3>Libraries</h3>
+
+<dl>
+<dt>
+<img src="images/greenball.png" alt="-">
+<b><a name="xaw3d">Xaw3d (Three-D Athena Widget) library</a></b><br>
+<dd>If <b>Xaw3d</b> is used instead of normal <b>Xaw</b>,
+widgets such as buttons will have 3-D appearance.
+It is available from
+<a href="ftp://ftp.x.org/contrib/widgets/">
+ftp://ftp.x.org/contrib/widgets</a>
+and its
+<a href="http://www.x.org/Downloads.html">mirror sites</a>
+in <tt>/contrib/widgets</tt>.
+
+<dt>
+<img src="images/greenball.png" alt="-">
+<b><a name="xpm">XPM3 package</a></b><br>
+<dd>
+This package provides facilities to handle images in XPM format.
+It is available from
+<a href="ftp://ftp.x.org/contrib/libraries/">ftp://ftp.x.org/contrib/libraries</a>
+and its
+<a href="http://www.x.org/Downloads.html">mirror sites</a>
+in <tt>/contrib/libraries</tt>.
+
+<dt>
+<img src="images/greenball.png" alt="-">
+<b><a name="jpeg">JPEG library</a></b><br>
+<dd>
+This package provides facilities to handle images in JPEG format.
+The official distribution site is
+<a href="ftp://ftp.uu.net/graphics/jpeg/">ftp://ftp.uu.net/graphics/jpeg</a>.
+It is also available from
+<a href="ftp://ftp.x.org/contrib/libraries/">ftp://ftp.x.org/contrib/libraries</a>
+and its <a href="http://www.x.org/Downloads.html">mirror sites</a>
+in <tt>/contrib/libraries</tt>.
+</dl>
+
+<a name="related-apps"></a>
+<h3>Related Applications</h3>
+
+Here is a list of related applications.
+See also <a href="http://SAL.KachinaTech.COM">
+<i>Scientific Applications on Linux (SAL)</i></a>
+for more applications for <a href="http://www.linux.org">Linux</a>
+(many of them may also work on other UNIX-compatible platforms) and
+<a href="http://homepage.usask.ca/~ijm451/fig/">http://homepage.usask.ca/~ijm451/fig/</a>
+which a site maintained by Ian MacPhedran that has some other links for
+FIG-related applications. Also, <a href="http://www.hologuard.com/useful-resources/learning-centre/21">
+http://www.hologuard.com/useful-resources/learning-centre/21</a> lists some FIG-related applications.
+
+<dl>
+<dt><img src="images/redball.png" align=bottom alt="-">
+<b>fig2dev (TransFig)</b><br>
+<dd>
+<a href="#install-fig2dev">fig2dev</a> provides the facility to
+convert figures created with <b>xfig</b> into various formats.
+You must have <b>fig2dev</b> because
+<b>xfig</b> invokes it when
+<a href="printing.html#export">Exporting</a>
+or <a href="printing.html#print">Printing</a>.
+<b>fig2dev</b> is part of the <b>TransFig</b> package.
+
+<dt><img src="images/redball.png" align=bottom alt="-">
+<a name="ghostscript"><b>GhostScript</b></a><br>
+<dd>
+<b>xfig</b> will invoke <b>GhostScript</b> (the <tt>gs</tt> command)
+when displaying an imported <a href="drawing.html#picture">PostScript image</a>.
+<b>GhostScript</b> is copyrighted by Aladdin Enterprises,
+but it is (at least older versions are) distributed under GPL,
+and it is available from
+<a href="ftp://prep.ai.mit.edu/pub/gnu">ftp://prep.ai.mit.edu/pub/gnu</a>
+and its <a href="http://www.fsf.org/order/ftp.html">mirror sites</a>,
+or <a href="ftp://ftp.cs.wisc.edu/ghost/aladdin">ftp.cs.wisc.edu/ghost/aladdin</a>.
+
+<dt><img src="images/redball.png" align=bottom alt="-">
+<b>AutoTrace</b><br>
+<dd>
+Converts bitmap to vector graphics - has a Fig file output driver.
+Available from <a href="http://autotrace.sourceforge.net">http://autotrace.sourceforge.net</a>.
+Written by Martin Weber.
+
+<dt><img src="images/redball.png" align=bottom alt="-">
+<b>cdraw2fig</b><br>
+<dd>
+Converts `Cheap Draw' format to <b>Fig</b> format.
+Cheap Draw 2.0 was written by Bob Pratt and is available from the UNIXPC
+archives at osu-cis.
+
+<dt><img src="images/redball.png" align=bottom alt="-">
+<b>chemtool</b><br>
+<dd>A chemical structure editor for X11 available from
+<a href="http://ruby.chemie.uni-freiburg.de/~martin/chemtool/chemtool.html">http://ruby.chemie.uni-freiburg.de/~martin/chemtool/chemtool.html</a>
+that writes Fig output (and relies on transfig for anything more fancy than xbm)
+
+<dt><img src="images/redball.png" align=bottom alt="-">
+<b>figbuild</b><br>
+<dd>
+figbuild reads xfig files (Version 3.x, tested with 3.1, 3.2) plus
+its own config file for heights, and generates a Radiance input
+file. Written by Peter Apian-Bennewitz at Fraunhofer ISE, Germany.
+See:
+<a href="http://www.ise.fhg.de/radiance/pabs-toolbox/figbuild/figbuild.html">
+http://www.ise.fhg.de/radiance/pabs-toolbox/figbuild/figbuild.html</a>
+
+<dt><img src="images/redball.png" align=bottom alt="-">
+<a name="gimp"><b>GIMP</b></a><br>
+<dd>
+A comprehensive image manipulation program, GIMP (Gnu Image Manipulation Program)
+is freely available from <a href="http://www.gimp.org/">http://www.gimp.org/</a>.
+
+<dt><img src="images/redball.png" align=bottom alt="-">
+<a name="gnuplot"><b>gnuplot</b></a><br>
+<dd>
+<b>gnuplot</b> is a plotting package which can output in <b>Fig</b> and other formats.
+The official distribution site is
+<a href="http://www.gnuplot.info/">http://www.gnuplot.info/</a>.
+
+<dt><img src="images/redball.png" align=bottom alt="-">
+<a name="grass2fig"><b>grass2fig</b></a><br>
+<dd>
+The GRASS GIS (Geographic Resources Analysis Support System)
+is an open source Geographical Information System (GIS) with raster,
+topological vector, image processing, and graphics production
+functionality that operates on various platforms through a graphical
+user interface and shell in the X Window System. It is released under GNU General
+Public License (GPL).  See <a href="http://grass.itc.it/">http://grass.itc.it/</a>.
+The grass2fig program will convert a GRASS binary vector map to a
+Fig file.
+
+<dt><img src="images/redball.png" align=bottom alt="-">
+<a name="gzip"><b>gzip (gunzip)</b></a><br>
+<dd>
+<b>xfig</b> will invoke <b>gunzip</b> when reading <b>gzip</b>ped files.
+<b>gzip</b> (<b>gunzip</b>) is a product of the
+<a href="http://www.fsf.org/">Free Software Foundation</a>,
+and is available from
+<a href="ftp://prep.ai.mit.edu/">ftp://prep.ai.mit.edu</a>
+and its <a href="http://www.fsf.org/order/ftp.html">mirror sites</a>.
+
+<dt><img src="images/redball.png" align=bottom alt="-">
+<a name="hp2xx"><b>hp2xx</b></a><br>
+<dd>
+<b>hp2xx</b> can convert HP-GL files into other formats
+such as PostScript, LaTeX or <b>Fig</b>.
+It is available from
+<a href="ftp://ftp.gnu.org/gnu/hp2xx">ftp://ftp.gnu.org/gnu/hp2xx</a>.
+
+<dt><img src="images/redball.png" align=bottom alt="-">
+<b>jfig</b><br>
+<dd>
+<b>jfig</b> is a Java-based drawing program that is based on <b>xfig</b>.
+See <a href="http://tech-www.informatik.uni-hamburg.de/applets/javafig/applet.html" target=_new>
+http://tech-www.informatik.uni-hamburg.de/applets/javafig/applet.html</a>
+
+<dt><img src="images/redball.png" align=bottom alt="-">
+<b>mifXfig</b><br>
+<dd>
+<b>mifXfig</b> will convert files
+between MIF format (of Framemaker(TM)) and <b>Fig</b> format.
+See
+<a href="http://www.ida.liu.se/~vaden/teaching/m2f/">http://www.ida.liu.se/~vaden/teaching/m2f/</a>
+ for details.
+
+<dt><img src="images/redball.png" align=bottom alt="-">
+<b>Msphinx</b><br>
+<dd>
+A friendly package to handle satellite images.
+<br>
+<dl>
+<dt>Main features:
+<dd><b>Msphinx</b> includes two types of analysis and processing functions:
+<ul>
+<li>Functions to process the basic data geometry and projection planes.
+<li>Functions to manipulate and modify the graphic display and print.
+</ul>
+<dt>Communication capabilities:
+<dd>
+<ul>
+<li>Data writes from external user programs (C or Fortran) into the memory planes.
+<li>User-to-user data exchange (text or images).
+<li>User image data base visualisation.
+<li>Direct links to other packages:
+<ul>
+<li>Mgraph (2d and contouring plotting)
+<li>HDFLook (HDF read write files)
+<li><b>Xfig (Facility for Interactive Generation of figures)</b>
+<li>mpeg_encode (mpeg format nimations)
+</ul>
+</ul>
+</dl>
+Find it at: <a href="http://loasys.univ-lille1.fr/Msphinx/Msphinx_gb.html">http://loasys.univ-lille1.fr/Msphinx/Msphinx_gb.html</a>
+
+<dt><img src="images/redball.png" align=bottom alt="-">
+<a name="netpbm"><b>netpbm</b></a><br>
+<dd>
+<b>fig2dev</b> will invoke the appropriate command from the <b>netpbm</b> package
+when <a href="printing.html#export">exporting</a> figures
+to bitmap formats.
+<b>netpbm</b> is available from
+<a href="ftp://ftp.x.org/contrib/applications/drawing_tools/xfig/">
+ftp://ftp.x.org/contrib/applications/drawing_tools/xfig</a>
+and its
+<a href="http://www.x.org/Downloads.html">mirror sites</a>
+or from
+<a href="ftp://ftp.cdrom.com/pub/X11/contrib/utilities/">
+ftp://ftp.cdrom.com/pub/X11/contrib/utilities</a>.
+
+<dt><img src="images/redball.png" align=bottom alt="-">
+<b>pic2fig</b><br>
+<dd>
+Convertes PIC format (used with troff, ditroff, etc) to <b>Fig</b> format.
+It is available from
+<a href="ftp://ftp.cs.orst.edu/localsrc/graphics/">
+ftp://ftp.cs.orst.edu/localsrc/graphics</a>
+or <a href="ftp://ftp.x.org/contrib/utilities/">ftp://ftp.x.org/contrib/utilities</a>
+and its
+<a href="http://www.x.org/Downloads.html">mirror sites</a>
+in <tt>/contrib/utilities</tt>.
+
+<dt><img src="images/redball.png" align=bottom alt="-">
+<b>plot2fig</b><br>
+<dd>
+Converts UNIX plot format to <b>Fig</b> format.
+Available from any GNU site.
+
+<dt><img src="images/redball.png" align=bottom alt="-">
+<b>plotutils (GNU)</b><br>
+<dd>
+includes an application for XY plotting (graph),
+a plot filter (plot), a Tektronix translator (tek2plot),
+a program for displaying font character maps (plotfont),
+and a library for drawing 2-D vector graphics (libplot),
+all of which produce output in xfig format.
+by Robert S. Maier &lt;rsm@math.arizona.edu&gt;.
+See:
+<a href="http://www.gnu.org/software/plotutils/plotutils.html">
+http://www.gnu.org/software/plotutils/plotutils.html</a>
+
+<dt><img src="images/redball.png" align=bottom alt="-">
+<a name="pstoedit"><b>pstoedit</b></a><br>
+<dd>
+<b>pstoedit</b> can convert PostScript files into <b>Fig</b> format.
+It is available from
+<a href="http://www.pstoedit.net/pstoedit">http://www.pstoedit.net/pstoedit</a>.
+
+<dt><img src="images/redball.png" align=bottom alt="-">
+<b>xfigbar</b> and <b>xfigpie</b><br>
+<dd>
+Two C programs to produce bar and pie charts as Fig
+files.  Written by John Conover &lt;john@johncon.johncon.com&gt;,
+these programs are available at:
+<a href="http://www.johncon.com/john/archive/xfigutilities.shar.gz">
+http://www.johncon.com/john/archive/xfigutilities.shar.gz</a>
+
+<dt><img src="images/redball.png" align=bottom alt="-">
+<a name="xgraph"><b>xgraph</b></a><br>
+<dd>
+<b>xgraph</b> is a plotting package which runs in X11.
+The version on
+<a href="ftp://iworks.ecn.uiowa.edu/">ftp://iworks.ecn.uiowa.edu</a>
+in <tt>comp.hp</tt> can output <b>Fig</b> files.
+
+<dt><img src="images/redball.png" align=bottom alt="-">
+<a name="xpaint"><b>xpaint</b></a><br>
+<dd>
+<b>xpaint</b> is a painting program which runs under X11.
+It is available from
+<a href="http://www.danbbs.dk/~torsten/xpaint">
+http://www.danbbs.dk/~torsten/xpaint</a>
+and any SunSite machines such as
+<a href="ftp://sunsite.unc.edu/pub/Linux/apps/graphics/draw/">
+ftp://sunsite.unc.edu/pub/Linux/apps/graphics/draw/</a>.
+
+<dt><img src="images/redball.png" align=bottom alt="-">
+<b>xv</b><br>
+<dd>
+<b>xv</b> can be used to display images in various formats
+and allows some editing of those images (cropping, color editing scaling/rotating etc).
+By default, <b>xfig</b> will invoke <b>xv</b>
+when the Edit Image button is pressed
+in the <a href="editing.html#edit-pict-panel">edit PICTURE object</a> panel.
+<b>xv</b> is shareware and is available via anonymous ftp from
+<a href="ftp://ftp.cis.upenn.edu/pub/xv">ftp://ftp.cis.upenn.edu/pub/xv</a>.
+
+
+</dl>
+
+<hr>
+
+[ <a href="contents.html">Contents</a> |
+ <a href="introduction.html">Introduction</a> |
+ <a href="authors.html">Credits</a> ]
+
+</body>
+</html>
