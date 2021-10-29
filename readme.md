@@ -86,7 +86,7 @@ Internet Connection, macOS 11/Big Sur or higher, Internet Browser, Free time of 
     7. Right click on an empty space then select Open in Terminal repeat it twice
     8. Paste the code you copied on step VI and hit enter
     9. On the second terminal write “sudo apt-get install xaw3dg-dev” and hit enter then enter your password
-    10. If apt-get doesn't work on mac download Homebrew to install copy asnd paste |/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"| this into your terminal 
+    10. If apt-get doesn't work on mac download Homebrew to install copy and paste /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"  to your terminal 
     11. call brew instead of apt-get (as a prerequisite download Xcode)
     12. Write “make-j” and hit enter
     13. Write “cd src” and click enter then write “ls” and click enter
