@@ -3,7 +3,7 @@
 
 **Requirements (Windows)**
  
-Internet Connection, Windows 7 or later, 10 gb of free space, Internet Browser, Free time of one and a half hours, 7zip or Winrar, Visual Studio Code, 4gb of RAM(8 is recommended)
+Internet Connection, Windows 7 or later, 10 gb of free space, Internet Browser, Free time of one and a half hours, 7zip or Winrar, Visual Studio Code, Visual C++ 2008 and 2010, 4gb of RAM(8 is recommended)
 
 **Steps**
 1. Download and Install Cygwin
