@@ -86,12 +86,13 @@ Internet Connection, macOS 11/Big Sur or higher, Internet Browser, Free time of 
     7. Right click on an empty space then select Open in Terminal repeat it twice
     8. Paste the code you copied on step VI and hit enter
     9. On the second terminal write “sudo apt-get install xaw3dg-dev” and hit enter then enter your password
-    10. If apt-get doesn't work on mac download Homebrew and call brew instead of apt-get (as a prerequisite download Xcode)
-    11. Write “make-j” and hit enter
-    12. Write “cd src” and click enter then write “ls” and click enter
-    13. Write “./xfig” if a new windows opens up that means you have compiled xfig
-    14. Write “cd ..” and click enter then write “sudo make install” then hit enter and enter your password
-    15. Open finder and search for xfig if it shows up and opens your installation has worked successfully 
+    10. If apt-get doesn't work on mac download Homebrew to install copy asnd paste |/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"| this into your terminal 
+    11. call brew instead of apt-get (as a prerequisite download Xcode)
+    12. Write “make-j” and hit enter
+    13. Write “cd src” and click enter then write “ls” and click enter
+    14. Write “./xfig” if a new windows opens up that means you have compiled xfig
+    15. Write “cd ..” and click enter then write “sudo make install” then hit enter and enter your password
+    16. Open finder and search for xfig if it shows up and opens your installation has worked successfully 
 
 **How to Sync your edit from your Source Code on Mac**
  
