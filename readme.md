@@ -68,6 +68,7 @@ Stable Internet Connection, Windows 7 or later, 10 gb of free space, Internet Br
     10. Now launch xfig from the system tray and clicking on graphics then xfig check if the undo menu has updated for it too !
        <img src="https://user-images.githubusercontent.com/82111747/134729997-2bc3f91a-805b-4310-9283-d10f19dca633.png">
     11. If successful close the right click on xfig from the system tray xdg menu and exit
+[**For more information on how xfig works look at this document**](https://docs.google.com/document/d/1nbLua46OLKE8P870hdPXN8c947X-ieq2fxuzaxBMyBA/edit?usp=sharing)
 
 **How to Install On MacOS**
        
@@ -97,6 +98,8 @@ Internet Connection, macOS 11/Big Sur or higher, Internet Browser, Visual Studio
 **How to Sync your edit from your Source Code on Mac**
  
 After you have edited the source code you need to run the ./configure code and “make -j”
+
+[**For more information on how xfig works look at this document**](https://docs.google.com/document/d/1nbLua46OLKE8P870hdPXN8c947X-ieq2fxuzaxBMyBA/edit?usp=sharing)
 
 **How to Install on Linux** 
 
