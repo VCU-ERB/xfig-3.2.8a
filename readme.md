@@ -3,7 +3,7 @@
 
 **Requirements (Windows)**
  
-Stable Internet Connection, Windows 7 or later, 10 gb of free space, Internet Browser, Free time of one and a half hours, [7zip](https://www.7-zip.org/) or [Winrar](https://www.win-rar.com/predownload.html?&L=0), [Visual Studio Code](https://code.visualstudio.com/download) or C code edtior, [Visual C++ 2008-2015](https://drive.google.com/file/d/18hhnSeSKFsBFqRXRm_9fBhf_IiR2Jw7a/view?usp=sharing)
+Stable Internet Connection, Windows 7 or later, 10 gb of free space, Internet Browser, Free time of one and a half hours, [7zip](https://www.7-zip.org/) or [Winrar](https://www.win-rar.com/predownload.html?&L=0), [Visual Studio Code](https://code.visualstudio.com/download) or C code edtior, [Visual C++ 2008-2015](https://drive.google.com/file/d/18hhnSeSKFsBFqRXRm_9fBhf_IiR2Jw7a/view?usp=sharing) <a href="http://example.com/" target="_blank">Hello, world!</a>
 
 **Steps**
 1. Download and Install Cygwin
