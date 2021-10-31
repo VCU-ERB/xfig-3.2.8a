@@ -96,7 +96,7 @@ Internet Connection, macOS 11/Big Sur or higher, Internet Browser, Visual Studio
 
 **How to Sync your edit from your Source Code on Mac**
  
-After you have edited the source code you need to run the code “make -j”
+After you have edited the source code you need to run the ./configure code and “make -j”
 
 **How to Install on Linux** 
 
@@ -138,4 +138,4 @@ After you have edited the source code you need to run the ./configure code and t
 
 
 
-
+[**For more information on how xfig works look at this document**](https://docs.google.com/document/d/1nbLua46OLKE8P870hdPXN8c947X-ieq2fxuzaxBMyBA/edit?usp=sharing)
