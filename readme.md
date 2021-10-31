@@ -3,7 +3,7 @@
 
 **Requirements (Windows)**
  
-Internet Connection, Windows 7 or later, 10 gb of free space, Internet Browser, Free time of one and a half hours, 7zip or Winrar, Visual Studio Code, Visual C++ 2008 and 2010, 4gb of RAM(8 is recommended)
+Stable Internet Connection, Windows 7 or later, 10 gb of free space, Internet Browser, Free time of one and a half hours, [7zip](https://www.7-zip.org/) or [Winrar](https://www.win-rar.com/predownload.html?&L=0), [Visual Studio Code](https://code.visualstudio.com/download) or C code edtior, [Visual C++ 2008-2015](https://drive.google.com/file/d/18hhnSeSKFsBFqRXRm_9fBhf_IiR2Jw7a/view?usp=sharing)
 
 **Steps**
 1. Download and Install Cygwin
@@ -56,7 +56,7 @@ Internet Connection, Windows 7 or later, 10 gb of free space, Internet Browser, 
 
 
 3. Editing Xfig Source code
-    1. Download and Install [Visual Studio Code](https://code.visualstudio.com/sha/download?build=stable&os=win32-x64 "VSCodeSetup-x64-1.60.1.exe")
+    1. Download and Install [Visual Studio Code](https://code.visualstudio.com/sha/download?build=stable&os=win32-x64 "VSCodeSetup-x64-1.60.1.exe") or Any C source code editor
     2. Find and locate w_cmdpanel.c in the “src” folder
     3. Open that file in VS Code
     4. In the gap between “Undo” and “(Meta-U)”, write “TEST”, then save the file and exit Visual Studio Code
@@ -73,7 +73,7 @@ Internet Connection, Windows 7 or later, 10 gb of free space, Internet Browser, 
        
 **Requirements (MacOS)**
 
-Internet Connection, macOS 11/Big Sur or higher, Internet Browser, Free time of 30 minutes  
+Internet Connection, macOS 11/Big Sur or higher, Internet Browser, Visual Studio Code or any C code editor, Free time of 30 minutes  
 
 **Steps**
 1. Download the Xfig Code 
