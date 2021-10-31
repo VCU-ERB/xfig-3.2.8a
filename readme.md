@@ -133,7 +133,7 @@ Linux is very case sensitive to the codes you write on the terminal
 
 **How to Sync your edit from your Source Code on Linux**
  
-After you have edited the source code you need to run the code “make -j” in the xfig folder
+After you have edited the source code you need to run the ./configure code and the “make -j” in the xfig folder
 
 
 
