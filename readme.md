@@ -24,7 +24,8 @@ Remote Desktop Connection app, Credit/Debit Card, Phone number(for Verification)
 2. Configuring your machine network
     1. Go to your AWS Instace page then click on connect on the top right corner
     2. Once launched cope and pate "sudo passwd -d ubuntu" to the terminal                                                                                                       ![image](https://user-images.githubusercontent.com/82111747/148692858-680af869-f5a7-43a5-87fd-f67791a1a9e5.png)  
-    3. Go back to the instance page then under security tab click on the blue security group ![image](https://user-images.githubusercontent.com/82111747/148692981-b2f132ec-788f-447e-ab23-4f6d2585b4a6.png)
+    3. Go back to the instance page then under security tab click on the blue security group ![148692981-b2f132ec-788f-447e-ab23-4f6d2585b4a6_LI](https://user-images.githubusercontent.com/82111747/148693287-6b33115c-76ea-44fb-80eb-51ae675f379c.jpg)
+
     4. Click on actions on the top right page then click on edit inbound rules 
     5. Click on type and change it from SSH to RDP then click on save rules ![image](https://user-images.githubusercontent.com/82111747/148693103-6ba0b673-3542-4a25-a91a-d647ee64dd7f.png)
 
