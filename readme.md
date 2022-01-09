@@ -37,4 +37,5 @@ For mac install Microsoft Remote Desktop Connection from the appstore
 
 **Notes**
 Every time you start and stop and instance the ip addrress changes you need to copy the new IP address to connect to you VM
+Always stop your session after your done or else you would be charged a money as if you were using the machine or else set a rule for time limit For more [Check here](https://aws.amazon.com/about-aws/whats-new/2013/01/08/use-amazon-cloudwatch-to-detect-and-shut-down-unused-amazon-ec2-instances/)
 
