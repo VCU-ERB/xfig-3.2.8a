@@ -23,11 +23,11 @@ Remote Desktop Connection app, Credit/Debit Card, Phone number(for Verification)
 2. Configuring your machine network
     1. Go to your AWS Instance page then click on connect on the top right corner
     2. On the connect to instance page click on connect
-    3. Once launched copy and paste "sudo passwd -d ubuntu" to the terminal or if you want to set your own password paste "sudo passwd ubuntu"                                       ![image](https://user-images.githubusercontent.com/82111747/148692858-680af869-f5a7-43a5-87fd-f67791a1a9e5.png)  
+    3. Once launched copy and paste "sudo passwd -d ubuntu" to the terminal or if you want to set your own password paste "sudo passwd ubuntu"
+      ![image](https://user-images.githubusercontent.com/82111747/148692858-680af869-f5a7-43a5-87fd-f67791a1a9e5.png) 
     4. Go back to your instance page then under security tab click on the blue security group ![148692981-b2f132ec-788f-447e-ab23-4f6d2585b4a6_LI](https://user-images.githubusercontent.com/82111747/148693287-6b33115c-76ea-44fb-80eb-51ae675f379c.jpg)
-
-    4. Click on actions on the top right page then click on edit inbound rules 
-    5. Click on the type and change it from SSH to RDP then click on save rules ![image](https://user-images.githubusercontent.com/82111747/148693103-6ba0b673-3542-4a25-a91a-d647ee64dd7f.png)
+    5. Click on actions on the top right page then click on edit inbound rules 
+    6. Click on the type and change it from SSH to RDP then click on save rules ![image](https://user-images.githubusercontent.com/82111747/148693103-6ba0b673-3542-4a25-a91a-d647ee64dd7f.png)
 
 3. Connecting the machine to your computer
     1. Open remote desktop connection then copy and paste your public IP to Computer box then click yes on the pop-up
