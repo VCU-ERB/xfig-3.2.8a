@@ -19,12 +19,12 @@ Remote Desktop Connection app, Credit/Debit Card, Phone number(for Verification)
     5. For the Instance type select t2.medium the one that 2 vCPUs and 4 GiB of Memory or higher
     6. Click on Review on Launch then click on launch
     7. A pop-up should appear about a key pair clcik on create a new key pair name it on the box below then click on download then click on launch
-    8. Go back to instance and click on the new instance id you just created and copy your Public IPv4 Address
-
+    
 2. Configuring your machine network
     1. Go to your AWS Instace page then click on connect on the top right corner
-    2. Once launched cope and pate "sudo passwd -d ubuntu" to the terminal                                                                                                       ![image](https://user-images.githubusercontent.com/82111747/148692858-680af869-f5a7-43a5-87fd-f67791a1a9e5.png)  
-    3. Go back to the instance page then under security tab click on the blue security group ![148692981-b2f132ec-788f-447e-ab23-4f6d2585b4a6_LI](https://user-images.githubusercontent.com/82111747/148693287-6b33115c-76ea-44fb-80eb-51ae675f379c.jpg)
+    2. On the connect to instance page click on connect
+    3. Once launched copy and paste "sudo passwd -d ubuntu" to the terminal or if you want to set your own password paste "sudo passwd ubuntu"                                       ![image](https://user-images.githubusercontent.com/82111747/148692858-680af869-f5a7-43a5-87fd-f67791a1a9e5.png)  
+    4. Go back to your instance page then under security tab click on the blue security group ![148692981-b2f132ec-788f-447e-ab23-4f6d2585b4a6_LI](https://user-images.githubusercontent.com/82111747/148693287-6b33115c-76ea-44fb-80eb-51ae675f379c.jpg)
 
     4. Click on actions on the top right page then click on edit inbound rules 
     5. Click on type and change it from SSH to RDP then click on save rules ![image](https://user-images.githubusercontent.com/82111747/148693103-6ba0b673-3542-4a25-a91a-d647ee64dd7f.png)
