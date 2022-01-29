@@ -36,7 +36,6 @@
 #include "d_spline.h"
 #include "d_text.h"
 #include "e_chop.h"
-//Include e_ffst.h in this line
 #include "e_flip.h"
 #include "e_rotate.h"
 #include "e_placelib.h"
