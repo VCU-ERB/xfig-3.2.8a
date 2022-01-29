@@ -481,7 +481,6 @@ void rotate_arc(F_arc *a, int x, int y)
 int
 valid_rot_angle(F_compound *c)
 {
-/* You need to delete upto the the return 0 line */
     F_line         *l;
     F_compound     *c1;
     if (fabs(act_rotnangle) == 90.0 || fabs(act_rotnangle) == 180.0)
