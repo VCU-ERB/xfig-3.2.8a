@@ -4255,7 +4255,7 @@ show_rotnangle_0(ind_sw_info *sw, int panel)
       indbuf[i] = '\0';
     sprintf(indbuf, "%6.2f", cur_rotnangle);
     update_string_pixmap(sw, indbuf, sw->sw_width - 40, 22);
-/* Delete the whole if statments upto line 4267 */
+    
     if (panel) {
     /* change markers if we changed to or from 90/180 degrees (except at start)  */
         if (old_rotnangle != -1.0) {
