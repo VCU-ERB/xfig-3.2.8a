@@ -3269,3 +3269,4 @@ void setup_icons_big()
 	mode_sw_wd = MODE_SW_WD_BIG;
 	populate_icons_big();
 }
+}
