@@ -3241,7 +3241,7 @@ char * fig_reduced_c_icon_X[] = {
 
 #include "splash.xbm"
 
-icon_struct	letters_ic = { int letters_width, letters_height,
+icon_struct	letters_ic = { (int) letters_width, (int) letters_height,
 			      (char*)letters_bits };
 icon_struct	spl_bckgnd_ic = { spl_bckgnd_width, spl_bckgnd_height,
 			      (char*)spl_bckgnd_bits };
