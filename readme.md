@@ -44,5 +44,5 @@ Remote Desktop Connection app, Credit/Debit Card, Phone number(for Verification)
 Every time you start and stop and instance the IP address changes you need to copy the new IP address to connect to your VM
 Always stop your session after you are done or else you would be charged money as if you were using the machine or else set a rule for time limit For more [Check here](https://aws.amazon.com/about-aws/whats-new/2013/01/08/use-amazon-cloudwatch-to-detect-and-shut-down-unused-amazon-ec2-instances/). If you leave you maching running 24/7 you will be billed anywhere between **30-50 dollars per month**.
 
-For More info about xfig check out the youtube video https://youtu.be/Csxk165L358
+For More info about xfig check out the [Youtube video](https://www.youtube.com/watch?v=9wOMELa_Nx4 "Youtube Video")
 
