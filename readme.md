@@ -14,9 +14,9 @@ Remote Desktop Connection app, Credit/Debit Card, Phone number(for Verification)
     1. This file contains some notes about how to install AWS on a computer.  The first thing to do is to create an account on AWS. This can be done by simply navigating to 
 [AWS Console](https://aws.amazon.com/console/ "AWS Console") (Note this might take more time to set-up)
     2. After Sign in Go to Services and click on Compute then click EC2
-    3. Check that your server location is **Ohio** and not **N.Virginia** you can change it at the top right corner on most webpages inside AWS![image](https://user-images.githubusercontent.com/82111747/163630691-4cd7cc0d-3227-4eb1-8fab-aa46b89794a3.png)
+    3. Check that your server location is **N.Virginia** and not **Ohio** you can change it at the top right corner on most webpages inside AWS![image](https://user-images.githubusercontent.com/82111747/163630691-4cd7cc0d-3227-4eb1-8fab-aa46b89794a3.png)
     4. Once you select the server go to instances then click on Launch Instances
-    5. For AMI selection go to **Applications and OS Images** and click on **Browse more AMIs** and then paste **ami-0d426ee9116efd859** to the search bar and "Ubuntu Linux with Xfig" should appear then press on select![image](https://user-images.githubusercontent.com/82111747/163631249-dfe3e6cc-450a-4ffb-b888-0840d1b7479a.png)
+    5. For AMI selection go to **Applications and OS Images** and click on **Browse more AMIs** and then paste **ami-0c577f1417b7969a2** to the search bar and "Ubuntu Linux with Xfig" should appear then press on select![image](https://user-images.githubusercontent.com/82111747/163631249-dfe3e6cc-450a-4ffb-b888-0840d1b7479a.png)
     6. For the Instance type select t2.medium the one that 2 vCPUs and 4 GiB of memory or higher(Check if you are eligible for free storage of 30Gb or 27.9GiB of gp2 or gp3 storage)
     7. Click on Review and Launch then click on launch
     8. A pop-up should appear about a key pair click on create a new key pair name it on the box below then click on download then click on launch
