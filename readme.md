@@ -10,7 +10,7 @@ allow inclusion in LaTeX documents).
 **Requirments**
 Remote Desktop Connection app, Credit/Debit Card, Phone number(for Verification), Internet Browser
 
-1. Setting Up AWS
+1. Setting Up AWS ([Video Tutorial](https://youtu.be/xkicUjw4wvs))
     1. This file contains some notes about how to install AWS on a computer.  The first thing to do is to create an account on AWS. This can be done by simply navigating to 
 [AWS Console](https://aws.amazon.com/console/ "AWS Console") (Note this might take more time to set-up)
     2. After Sign in Go to Services and click on Compute then click EC2
@@ -34,7 +34,7 @@ Remote Desktop Connection app, Credit/Debit Card, Phone number(for Verification)
     1. Open remote desktop connection then copy and paste your public IP to Computer box then click yes on the security pop-up
     2. On the login page write the username "ubuntu" then log in then you are all done 
 
-4. Connecting the machine to your computer (For Mac)
+4. Connecting the machine to your computer (For Mac | [Video Tutorial](https://youtu.be/Dl_7oaLulag)) 
     1. Open the App Store and install Microsoft Remote Desktop
     2. Open Microsoft Remote Desktop then copy and paste your public IP to the computer box then click yes on the security pop-up
     3. On the login page write the username "ubuntu" then log in then you are all done 
@@ -44,5 +44,6 @@ Remote Desktop Connection app, Credit/Debit Card, Phone number(for Verification)
 Every time you start and stop and instance the IP address changes you need to copy the new IP address to connect to your VM
 Always stop your session after you are done or else you would be charged money as if you were using the machine or else set a rule for time limit For more [Check here](https://aws.amazon.com/about-aws/whats-new/2013/01/08/use-amazon-cloudwatch-to-detect-and-shut-down-unused-amazon-ec2-instances/). If you leave you maching running 24/7 you will be billed anywhere between **30-50 dollars per month**.
 
-For More info about xfig check out the [Youtube video](https://www.youtube.com/watch?v=9wOMELa_Nx4 "Youtube Video")
+For More info about Xfig check out the [YouTube video](https://www.youtube.com/watch?v=9wOMELa_Nx4 "YouTube Video")
 
+For more info about managing, accessing, or compiling your projects on GitHub: [Video Tutorial](https://youtu.be/_jMa9k74U7s)
