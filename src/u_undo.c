@@ -485,6 +485,13 @@ void undo_change(void)
  * remove-all operation will zero pointers in objects.
  */
 
+#Task8
+/*
+* You should begin task 8 by re-writing and re-formulating the undo/redo functions below.
+* You will need to implement your algorithm such that it handles all objects unless explicitly 
+* noted. This will include changing variable names for some methods and completely re-writing others.
+*/
+
 void undo_add(void)
 {
     int		    xmin, ymin, xmax, ymax;
