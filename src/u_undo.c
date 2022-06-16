@@ -527,6 +527,7 @@ void undo_add(void)
 	redisplay_zoomed_region(xmin, ymin, xmax, ymax);
 	break;
     }
+	/* #Task8 */
     last_action = F_DELETE;
 }
 
@@ -581,6 +582,7 @@ void undo_delete(void)
 	append_objects(&objects, &saved_objects, &object_tails);
 	redisplay_zoomed_region(xmin, ymin, xmax, ymax);
     }
+	/* #Task8 */
     last_action = F_ADD;
 }
 
