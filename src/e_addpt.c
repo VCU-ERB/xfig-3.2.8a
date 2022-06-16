@@ -248,7 +248,9 @@ splinepoint_adding(F_spline *spline, F_point *left_point, F_point *added_point, 
     set_last_selectedpoint(added_point);
     set_action_object(F_ADD_POINT, O_SPLINE);
     set_latestspline(spline);
-    #task8
+    /*
+    * #task8
+    */
     reset_cursor();
 }
 
