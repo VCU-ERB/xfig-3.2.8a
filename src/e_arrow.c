@@ -111,6 +111,7 @@ delete_arrow_head(F_line *obj, int type, int x, int y, F_point *p, F_point *q,
 static void
 add_linearrow(F_line *line, F_point *prev_point, F_point *selected_point)
 {
+	/* #Task8 */
     if (line->points->next == NULL)
 	return;			/* A single point line */
 
@@ -137,6 +138,7 @@ add_linearrow(F_line *line, F_point *prev_point, F_point *selected_point)
 static void
 add_arcarrow(F_arc *arc, int point_num)
 {
+	/* #Task8 */
 
     /* only allow arrowheads on open arc */
     if (arc->type == T_PIE_WEDGE_ARC)
@@ -163,6 +165,7 @@ add_arcarrow(F_arc *arc, int point_num)
 static void
 add_splinearrow(F_spline *spline, F_point *prev_point, F_point *selected_point)
 {
+	/* #Task8 */
     if (prev_point == NULL) {	/* add backward arrow */
 	if (spline->back_arrow)
 	    return;
@@ -185,6 +188,7 @@ add_splinearrow(F_spline *spline, F_point *prev_point, F_point *selected_point)
 void
 delete_linearrow(F_line *line, F_point *prev_point, F_point *selected_point)
 {
+	/* #Task8 */
     if (line->points->next == NULL)
 	return;			/* A single point line */
 
@@ -221,6 +225,7 @@ delete_linearrow(F_line *line, F_point *prev_point, F_point *selected_point)
 void
 delete_arcarrow(F_arc *arc, int point_num)
 {
+	/* #Task8 */
     if (arc->type == T_PIE_WEDGE_ARC)
 	return;;
     if (point_num == 0) {	/* backward arrow  */
@@ -255,6 +260,7 @@ delete_arcarrow(F_arc *arc, int point_num)
 void
 delete_splinearrow(F_spline *spline, F_point *prev_point, F_point *selected_point)
 {
+	/* #Task8 */
     if (closed_spline(spline))
 	return;
     if (prev_point == NULL) {	/* selected_point is the first point */
