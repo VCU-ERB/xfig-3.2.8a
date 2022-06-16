@@ -494,6 +494,7 @@ void undo_change(void)
 
 void undo_add(void)
 {
+	/* #Task8 */
     int		    xmin, ymin, xmax, ymax;
 
     switch (last_object) {
@@ -527,12 +528,12 @@ void undo_add(void)
 	redisplay_zoomed_region(xmin, ymin, xmax, ymax);
 	break;
     }
-	/* #Task8 */
     last_action = F_DELETE;
 }
 
 void undo_delete(void)
 {
+	/* #Task8 */
     char	   *swp_comm;
     int		    xmin, ymin, xmax, ymax;
 
@@ -582,12 +583,14 @@ void undo_delete(void)
 	append_objects(&objects, &saved_objects, &object_tails);
 	redisplay_zoomed_region(xmin, ymin, xmax, ymax);
     }
-	/* #Task8 */
+	
     last_action = F_ADD;
 }
 
 void undo_move(void)
 {
+	/* #Task8 */
+ /* all cases require changes */
     int		    dx, dy;
     int		    xmin1, ymin1, xmax1, ymax1;
     int		    xmin2, ymin2, xmax2, ymax2;
@@ -648,6 +651,7 @@ void undo_move(void)
 
 void undo_load(void)
 {
+	/* #Task8 */
     F_compound	    temp;
     char	    ctemp[PATH_MAX];
 
@@ -675,6 +679,10 @@ void undo_load(void)
 
 void undo_scale(void)
 {
+	/* #Task8 
+	* remember to 
+	* account for depth */
+	
     float	    scalex, scaley;
     int		    xmin1, ymin1, xmax1, ymax1;
     int		    xmin2, ymin2, xmax2, ymax2;
@@ -691,6 +699,7 @@ void undo_scale(void)
 
 void undo_open_close(void)
 {
+	/* #Task8 */
   switch (last_object) {
   case O_POLYLINE:
     if (saved_objects.lines->type == T_POLYGON) {
@@ -728,6 +737,7 @@ void undo_open_close(void)
 
 void swap_newp_lastp(void)
 {
+	/* #Task8 */
     int		    t;		/* swap new_position and last_position	*/
 
     t = new_position.x;
@@ -748,6 +758,8 @@ void swap_newp_lastp(void)
 
 void clean_up(void)
 {
+/* #Task8 --> clean_up should not be needed if undo is implemented correctly 
+* an alternative function should be created for freeing memory */
     if (last_action == F_EDIT) {
 	switch (last_object) {
 	  case O_ARC:
