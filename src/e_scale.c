@@ -215,6 +215,7 @@ wrapup_scale(void)
 static Boolean
 init_boxscale_ellipse(int x, int y)
 {
+	/* #Task8 */
     double	    dx, dy, l;
 
     if (cur_e->type == T_ELLIPSE_BY_RAD ||
@@ -575,6 +576,7 @@ cancel_scale_spline(void)
 static void
 fix_scale_spline(int x, int y)
 {
+	/* #Task8 */
     elastic_scalepts(cur_s->points);
     canvas_ref_proc = null_proc;
     adjust_box_pos(x, y, from_x, from_y, &x, &y);
@@ -717,6 +719,7 @@ fix_boxscale_compound(int x, int y)
 static void
 init_scale_compound(void)
 {
+	/* #Task8 */
     fix_x = (cur_c->nwcorner.x + cur_c->secorner.x) / 2;
     fix_y = (cur_c->nwcorner.y + cur_c->secorner.y) / 2;
     set_action_on();
@@ -1369,6 +1372,7 @@ cancel_scale_line(void)
 static void
 fix_scale_line(int x, int y)
 {
+	/* #Task8 */
     int		owd,oht, nwd, nht;
 
     elastic_scalepts(cur_l->points);
