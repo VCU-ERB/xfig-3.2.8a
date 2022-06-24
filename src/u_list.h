@@ -24,6 +24,7 @@ void		list_delete_line(F_line **line_list, F_line *line);
 void		list_delete_spline(F_spline **spline_list, F_spline *spline);
 void		list_delete_text(F_text **text_list, F_text *text);
 void		list_delete_compound(F_compound **list, F_compound *compound);
+void 		list_delete_objects(F_compound *list, F_compound *objects_to_delete);
 void		remove_depth(int type, int depth);
 void		remove_compound_depth(F_compound *comp);
 
