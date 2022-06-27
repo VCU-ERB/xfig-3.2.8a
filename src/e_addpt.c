@@ -31,11 +31,6 @@
 #include "u_redraw.h"
 #include "u_search.h"
 
-/*------------------------------------Code Starts Here------------------------*/
-// #task8
-// Include the header file for the undo function.
-
-/*------------------------------------Code Ends Here--------------------------*/
 
 #include "u_undo.h"
 #include "w_canvas.h"
@@ -255,12 +250,7 @@ splinepoint_adding(F_spline *spline, F_point *left_point, F_point *added_point, 
     set_last_selectedpoint(added_point);
     set_action_object(F_ADD_POINT, O_SPLINE);
     set_latestspline(spline);
-	
-/*------------------------------------Code Starts Here------------------------*/
-// #task8
-// Call the function to update the undo history.
 
-/*------------------------------------Code Ends Here--------------------------*/
     reset_cursor();
 }
 
@@ -343,11 +333,6 @@ linepoint_adding(F_line *line, F_point *left_point, F_point *added_point)
     set_last_prevpoint(left_point);
     set_last_selectedpoint(added_point);
 	
-/*------------------------------------Code Starts Here------------------------*/
-// #task8
-// Call the function to update the undo history.
-
-/*------------------------------------Code Ends Here--------------------------*/
     set_modifiedflag();
 }
 
