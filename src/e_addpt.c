@@ -369,4 +369,4 @@ find_endpoints(F_point *p, int x, int y, F_point **fp, F_point **sp)
     }
     *fp = a;
     *sp = b;
-}
+} 
