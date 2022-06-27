@@ -360,7 +360,7 @@ find_endpoints(F_point *p, int x, int y, F_point **fp, F_point **sp)
 	    *fp = b;
 	    *sp = b->next;
 	    return;
-	}
+	} 
 	if (close_to_vector(a->x, a->y, b->x, b->y, x, y, 1, 1.0, &d, &d)) {
 	    *fp = a;
 	    *sp = b;
