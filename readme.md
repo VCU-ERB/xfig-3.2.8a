@@ -69,37 +69,37 @@ Always stop your session after you are done, or else you would be charged money 
 # Let's go to work!
 
 1. Accessing Tasks
-    1. Open the 'GitHeb Desktop'. Go to 'Current branch' and click on the task's name. (The first one is 'Project-1-Enhanced-Rotation').
+    1. Open the 'GitHub Desktop'. Go to 'Current branch' and click on the task's name. (The first one is 'Project-1-Enhanced-Rotation').
     
-    ![image] 
+    <img width="1438" alt="branchManager" src="https://user-images.githubusercontent.com/85720584/176274825-5a31ab7e-842a-4af8-b0a0-146452931a65.png"> 
+    
     
     2. In the section **Open the repository in your external editor**, click on 'Open in Visual Studio Code'.
     3. Open the file **Assignment Information.txt** and follow the instructions.
 
 2. Switching Branches
 
-Switch to a different project using the branch manager
-A pop-up will appear; select… 
-Leave my changes
-Switch branch
-Overwrite
+    1. Switch to a different project using the branch manager. A pop-up will appear; select…
+        1. _Leave my changes_
+        2. _Switch branch_
+        3. _Overwrite_
 
- ![image]
- 
- ![image]
+ <img width="448" alt="switchBranch" src="https://user-images.githubusercontent.com/85720584/176275201-220e9568-4564-4547-a00a-8c7bf76cb26d.png">
+
+
+ <img width="596" alt="overwriteStash" src="https://user-images.githubusercontent.com/85720584/176275338-b055a8e3-6892-494a-a036-f082bc573cf6.png">
+
   
 3. Re-accessing Edited Branches
 
-Re-access edited projects through the branch manager
-Select… 
-View stash
-Restore
+    1. Re-access edited projects through the branch manager. Select… 
+        1. _View stash_
+        2. _Restore_
 
-![image]
- 
-![image]
+<img width="963" alt="viewStash" src="https://user-images.githubusercontent.com/85720584/176276087-8eef38b9-d6c0-4962-b5bd-7a07d18e4a3d.png">
 
-Continue to Visual Studio Code and the project should be re-opened
+<img width="968" alt="restore" src="https://user-images.githubusercontent.com/85720584/176276125-cec114b5-f9cf-422d-812b-3ac7bc550617.png">
 
+    ii. Continue to Visual Studio Code and the project should be re-opened
 
 For more info about managing, accessing, or compiling your projects on GitHub: [Video Tutorial](https://youtu.be/_jMa9k74U7s).
