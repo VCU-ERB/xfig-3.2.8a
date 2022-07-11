@@ -9,9 +9,9 @@ For More info about Xfig check out the [YouTube video](https://www.youtube.com/w
 
 # XFIG Tasks Project
 
-Welcome to our Scafolding Project with xFig! Here you will be abble to develop small functions inside a big project. You will see the results of you work and how it can influence the main program.
+Welcome to our Scafolding Project with xFig! Here you will be able to develop small functions inside a big project. You will see the results of you work and how it can influence the main program.
 
-Before starting, you need to follow the steps bellow to access a virtual machine previoly prepare to help you.
+Before starting, you need to follow the steps bellow to access a virtual machine previously prepared to help you.
 
 **Using AWS (Amazon Web Services) to set up Xfig**
 
@@ -65,6 +65,8 @@ Remote Desktop Connection app, Credit/Debit Card, Phone number (for Verification
 Every time you start and stop and instance, the IP address changes. you need to copy the new IP address to connect to your VM.
 
 Always stop your session after you are done, or else you would be charged money as if you were using the machine. You can set a rule for time limit. For more [Check here](https://aws.amazon.com/about-aws/whats-new/2013/01/08/use-amazon-cloudwatch-to-detect-and-shut-down-unused-amazon-ec2-instances/). If you leave you maching running 24/7, you will be billed anywhere between **30-50 dollars per month**.
+
+You should be *Stopping* your instance and not *Terminating* it, as this will delete your instance and you will need to complete these steps again.
 
 # Let's go to work!
 
