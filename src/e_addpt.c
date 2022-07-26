@@ -30,8 +30,6 @@
 #include "u_markers.h"
 #include "u_redraw.h"
 #include "u_search.h"
-
-
 #include "u_undo.h"
 #include "w_canvas.h"
 #include "w_cursor.h"
@@ -250,6 +248,8 @@ splinepoint_adding(F_spline *spline, F_point *left_point, F_point *added_point, 
     set_last_selectedpoint(added_point);
     set_action_object(F_ADD_POINT, O_SPLINE);
     set_latestspline(spline);
+	
+    undo_update_history();
 
     reset_cursor();
 }
@@ -332,7 +332,8 @@ linepoint_adding(F_line *line, F_point *left_point, F_point *added_point)
     set_latestline(line);
     set_last_prevpoint(left_point);
     set_last_selectedpoint(added_point);
-	
+    undo_update_history();
+
     set_modifiedflag();
 }
 
@@ -360,7 +361,7 @@ find_endpoints(F_point *p, int x, int y, F_point **fp, F_point **sp)
 	    *fp = b;
 	    *sp = b->next;
 	    return;
-	} 
+	}
 	if (close_to_vector(a->x, a->y, b->x, b->y, x, y, 1, 1.0, &d, &d)) {
 	    *fp = a;
 	    *sp = b;
@@ -369,4 +370,4 @@ find_endpoints(F_point *p, int x, int y, F_point **fp, F_point **sp)
     }
     *fp = a;
     *sp = b;
-} 
+}
