@@ -66,6 +66,11 @@
 #include "w_msgpanel.h"
 #include "w_setup.h"
 #include "w_util.h"
+// #taskQuickColoring_Icon
+//----------------------------------- Code Starts Here ----------------------------------
+// GOAL: Include the objcolor header file.
+
+//----------------------------------- Code ends Here ------------------------------------
 
 /* EXPORTS */
 
@@ -73,51 +78,56 @@
 
 /* drawing */
 
-static void	stub_circle_ellipse_byradius_drawing_selected(void);
-static void	stub_circle_ellipse_bydiameter_drawing_selected(void);
-static void	stub_box_drawing_selected(void);
-static void	stub_arcbox_drawing_selected(void);
-static void	stub_line_drawing_selected(void);
-static void	stub_poly_drawing_selected(void);
-static void	stub_regpoly_drawing_selected(void);
-static void	stub_picobj_drawing_selected(void);
-static void	stub_text_drawing_selected(void);
-static void	stub_arc_drawing_selected(void);
-static void	stub_spline_drawing_selected(void);
-static void	stub_cl_spline_drawing_selected(void);
-static void	stub_intspline_drawing_selected(void);
-static void	stub_cl_intspline_drawing_selected(void);
+static void stub_circle_ellipse_byradius_drawing_selected(void);
+static void stub_circle_ellipse_bydiameter_drawing_selected(void);
+static void stub_box_drawing_selected(void);
+static void stub_arcbox_drawing_selected(void);
+static void stub_line_drawing_selected(void);
+static void stub_poly_drawing_selected(void);
+static void stub_regpoly_drawing_selected(void);
+static void stub_picobj_drawing_selected(void);
+static void stub_text_drawing_selected(void);
+static void stub_arc_drawing_selected(void);
+static void stub_spline_drawing_selected(void);
+static void stub_cl_spline_drawing_selected(void);
+static void stub_intspline_drawing_selected(void);
+static void stub_cl_intspline_drawing_selected(void);
 
 /* editing */
 
-static void	stub_align_selected(void);
-static void	stub_compound_selected(void);
-static void	stub_break_selected(void);
-static void	stub_open_compound_selected(void);
-static void	stub_join_split_selected(void);
-static void	stub_chop_selected(void);
-static void	stub_scale_selected(void);
-static void	stub_point_adding_selected(void);
-static void	stub_delete_point_selected(void);
-static void	stub_move_selected(void);
-static void	stub_popup_library(void);
-static void	stub_move_point_selected(void);
-static void	stub_delete_selected(void);
-static void	stub_copy_selected(void);
-static void	stub_rotate_cw_selected(void);
-static void	stub_rotate_ccw_selected(void);
-static void	stub_flip_ud_selected(void);
-static void	stub_flip_lr_selected(void);
-static void	stub_convert_selected(void);
-static void	stub_chop_selected(void);
-static void	stub_arrow_head_selected(void);
-static void	stub_edit_item_selected(void);
-static void	stub_update_selected(void);
-static void	stub_enter_mode_btn(Widget widget, XEvent *event, String *params, Cardinal *num_params);
-static void	stub_anglemeas_selected(void);
-static void	stub_lenmeas_selected(void);
-static void	stub_areameas_selected(void);
-static void	stub_tangent_selected(void);
+static void stub_align_selected(void);
+static void stub_compound_selected(void);
+static void stub_break_selected(void);
+static void stub_open_compound_selected(void);
+static void stub_join_split_selected(void);
+static void stub_chop_selected(void);
+static void stub_scale_selected(void);
+static void stub_point_adding_selected(void);
+static void stub_delete_point_selected(void);
+static void stub_move_selected(void);
+static void stub_popup_library(void);
+static void stub_move_point_selected(void);
+static void stub_delete_selected(void);
+static void stub_copy_selected(void);
+static void stub_rotate_cw_selected(void);
+static void stub_rotate_ccw_selected(void);
+static void stub_flip_ud_selected(void);
+static void stub_flip_lr_selected(void);
+static void stub_convert_selected(void);
+static void stub_chop_selected(void);
+static void stub_arrow_head_selected(void);
+static void stub_edit_item_selected(void);
+static void stub_update_selected(void);
+static void stub_enter_mode_btn(Widget widget, XEvent *event, String *params, Cardinal *num_params);
+static void stub_anglemeas_selected(void);
+static void stub_lenmeas_selected(void);
+static void stub_areameas_selected(void);
+static void stub_tangent_selected(void);
+// #taskQuickColoring_Icon
+//----------------------------------- Code Starts Here ----------------------------------
+// GOAL: Call the objcolor function and pass in void as the argument.
+
+//----------------------------------- Code ends Here ------------------------------------
 
 /**************	    local variables and routines   **************/
 
@@ -126,16 +136,16 @@ DeclareStaticArgs(13);
 static mode_sw_info *current = NULL;
 
 /* button selection event handler */
-static void     sel_mode_but(Widget widget, XtPointer closure, XEvent *event, Boolean *continue_to_dispatch);
+static void sel_mode_but(Widget widget, XtPointer closure, XEvent *event, Boolean *continue_to_dispatch);
 
 #ifndef XAW3D1_5E
 /* popup message over button when mouse enters it */
-static void     mode_balloon_trigger(Widget widget, XtPointer closure, XEvent *event, Boolean *continue_to_dispatch);
-static void     mode_unballoon(Widget widget, XtPointer closure, XEvent *event, Boolean *continue_to_dispatch);
+static void mode_balloon_trigger(Widget widget, XtPointer closure, XEvent *event, Boolean *continue_to_dispatch);
+static void mode_unballoon(Widget widget, XtPointer closure, XEvent *event, Boolean *continue_to_dispatch);
 #endif /* XAW3D1_5E */
 
 /* popdown message */
-static void     turn_on(mode_sw_info *msw);
+static void turn_on(mode_sw_info *msw);
 
 /* The M_XXX indicate which objects are selectable when the mode is on, and
    the I_XXX say which indicator buttons will appear on the indicator panel */
@@ -145,171 +155,175 @@ static void     turn_on(mode_sw_info *msw);
    cases, the LeaveWindow event never happens on that button so the balloon popup
    would never be destroyed in that case.  */
 
+// #taskQuickColoring_Icon
+//----------------------------------- Code Starts Here ----------------------------------
+// GOAL: Give information about the tool inserting a entry in the mode_switches.
+
 mode_sw_info mode_switches[] = {
 
-    /* DRAWING MODES */
+	/* DRAWING MODES */
 
 	{&ellrad_ic, F_CIRCLE_BY_RAD, circle_ellipse_byradius_drawing_selected,
-		M_NONE, I_ELLIPSE,
-		"CIRCLE/ELLIPSE drawing: specify RADII   (c or e)", False,
-		NULL, (Pixmap)0, (Pixmap)0},
-	{&elldia_ic, F_CIRCLE_BY_DIA,circle_ellipse_bydiameter_drawing_selected,
-		M_NONE, I_ELLIPSE,
-		"CIRCLE/ELLIPSE drawing: specify DIAMETER(S)   (Shift-c or e)",
-		False, NULL, (Pixmap)0, (Pixmap)0},
+	 M_NONE, I_ELLIPSE,
+	 "CIRCLE/ELLIPSE drawing: specify RADII   (c or e)", False,
+	 NULL, (Pixmap)0, (Pixmap)0},
+	{&elldia_ic, F_CIRCLE_BY_DIA, circle_ellipse_bydiameter_drawing_selected,
+	 M_NONE, I_ELLIPSE,
+	 "CIRCLE/ELLIPSE drawing: specify DIAMETER(S)   (Shift-c or e)",
+	 False, NULL, (Pixmap)0, (Pixmap)0},
 	{&c_spl_ic, F_CLOSED_APPROX_SPLINE, spline_drawing_selected,
-		M_NONE, I_CLOSED,
-		"CLOSED APPROXIMATED SPLINE drawing: specify control points   (Shift-s)",
-		False, NULL, (Pixmap)0, (Pixmap)0},
+	 M_NONE, I_CLOSED,
+	 "CLOSED APPROXIMATED SPLINE drawing: specify control points   (Shift-s)",
+	 False, NULL, (Pixmap)0, (Pixmap)0},
 	{&spl_ic, F_APPROX_SPLINE, spline_drawing_selected, M_NONE, I_OPEN,
-		"APPROXIMATED SPLINE drawing: specify control points   (s)",
-		False, NULL, (Pixmap)0, (Pixmap)0},
+	 "APPROXIMATED SPLINE drawing: specify control points   (s)",
+	 False, NULL, (Pixmap)0, (Pixmap)0},
 	{&c_intspl_ic, F_CLOSED_INTERP_SPLINE, spline_drawing_selected, M_NONE,
-		I_CLOSED,
-	       "CLOSED INTERPOLATED SPLINE drawing: specify control points   (Shift-i)",
-		False, NULL, (Pixmap)0, (Pixmap)0},
+	 I_CLOSED,
+	 "CLOSED INTERPOLATED SPLINE drawing: specify control points   (Shift-i)",
+	 False, NULL, (Pixmap)0, (Pixmap)0},
 	{&intspl_ic, F_INTERP_SPLINE, spline_drawing_selected, M_NONE, I_OPEN,
-		"INTERPOLATED SPLINE drawing: specify control points   (i)",
-		False, NULL, (Pixmap)0, (Pixmap)0},
+	 "INTERPOLATED SPLINE drawing: specify control points   (i)",
+	 False, NULL, (Pixmap)0, (Pixmap)0},
 	{&polygon_ic, F_POLYGON, line_drawing_selected, M_NONE, I_CLOSED,
-		"POLYGON drawing   (p)",
-		False, NULL, (Pixmap)0, (Pixmap)0},
+	 "POLYGON drawing   (p)",
+	 False, NULL, (Pixmap)0, (Pixmap)0},
 	{&line_ic, F_POLYLINE, line_drawing_selected, M_NONE, I_LINE,
-		"POLYLINE drawing   (l)",
-		False, NULL, (Pixmap)0, (Pixmap)0},
+	 "POLYLINE drawing   (l)",
+	 False, NULL, (Pixmap)0, (Pixmap)0},
 	{&box_ic, F_BOX, box_drawing_selected, M_NONE, I_BOX,
-		"Rectangular BOX drawing   (b)",
-		False, NULL, (Pixmap)0, (Pixmap)0},
+	 "Rectangular BOX drawing   (b)",
+	 False, NULL, (Pixmap)0, (Pixmap)0},
 	{&arc_box_ic, F_ARCBOX, arcbox_drawing_selected, M_NONE, I_ARCBOX,
-		"Rectangular BOX drawing with ROUNDED CORNERS   (Shift-b)",
-		False, NULL, (Pixmap)0, (Pixmap)0},
+	 "Rectangular BOX drawing with ROUNDED CORNERS   (Shift-b)",
+	 False, NULL, (Pixmap)0, (Pixmap)0},
 	{&regpoly_ic, F_REGPOLY, regpoly_drawing_selected, M_NONE, I_REGPOLY,
-		"Regular Polygon   (Shift-p)",
-		False, NULL, (Pixmap)0, (Pixmap)0},
+	 "Regular Polygon   (Shift-p)",
+	 False, NULL, (Pixmap)0, (Pixmap)0},
 	{&arc_ic, F_CIRCULAR_ARC, arc_drawing_selected, M_NONE, I_ARC,
-		"ARC drawing: specify three points on the arc   (r)",
-		False, NULL, (Pixmap)0, (Pixmap)0},
+	 "ARC drawing: specify three points on the arc   (r)",
+	 False, NULL, (Pixmap)0, (Pixmap)0},
 	{&picobj_ic, F_PICOBJ, picobj_drawing_selected, M_NONE, I_PICOBJ,
-		"Picture Object   (Ctrl-p)",
-		True, NULL, (Pixmap)0, (Pixmap)0},	/* popups a panel */
+	 "Picture Object   (Ctrl-p)",
+	 True, NULL, (Pixmap)0, (Pixmap)0}, /* popups a panel */
 	{&text_ic, F_TEXT, text_drawing_selected, M_TEXT_NORMAL, I_TEXT,
-		"TEXT input from keyboard   (t)",
-		False, NULL, (Pixmap)0, (Pixmap)0},
+	 "TEXT input from keyboard   (t)",
+	 False, NULL, (Pixmap)0, (Pixmap)0},
 	{&library_ic, F_PLACE_LIB_OBJ, sel_place_lib_obj, M_NONE, I_MIN2,
-		"PLACE a library element   (Shift-l)",
-		True, NULL, (Pixmap)0, (Pixmap)0},	/* popups a panel */
+	 "PLACE a library element   (Shift-l)",
+	 True, NULL, (Pixmap)0, (Pixmap)0}, /* popups a panel */
 
-      /* EDITING MODES FOLLOW */
+	/* EDITING MODES FOLLOW */
 
 	{&glue_ic, F_GLUE, compound_selected, M_ALL, I_MIN2,
-		"GLUE objects into COMPOUND object   (g)",
-		False, NULL, (Pixmap)0, (Pixmap)0},
+	 "GLUE objects into COMPOUND object   (g)",
+	 False, NULL, (Pixmap)0, (Pixmap)0},
 	{&break_ic, F_BREAK, break_selected, M_COMPOUND, 0,
-		"BREAK COMPOUND object   (Shift-g)",
-		False, NULL, (Pixmap)0, (Pixmap)0},
+	 "BREAK COMPOUND object   (Shift-g)",
+	 False, NULL, (Pixmap)0, (Pixmap)0},
 	{&open_comp_ic, F_ENTER_COMP, open_compound_selected, M_COMPOUND, 0,
-		"OPEN COMPOUND object   (o)",
-		False, NULL, (Pixmap)0, (Pixmap)0},
+	 "OPEN COMPOUND object   (o)",
+	 False, NULL, (Pixmap)0, (Pixmap)0},
 	{&join_split_ic, F_JOIN, join_split_selected,
-		M_POLYLINE | M_SPLINE_O |M_SPLINE_C, 0,
-		"Join or Split lines/splines   (j)",
-		False, NULL, (Pixmap)0, (Pixmap)0},
+	 M_POLYLINE | M_SPLINE_O | M_SPLINE_C, 0,
+	 "Join or Split lines/splines   (j)",
+	 False, NULL, (Pixmap)0, (Pixmap)0},
 	{&chop_ic, F_CHOP, chop_selected,
-		M_POLYLINE | M_ARC |M_ELLIPSE,  /* maybe spline someday */
-		I_CHOP,
-		"Chop objects   (x)",
-		False, NULL, (Pixmap)0, (Pixmap)0},
+	 M_POLYLINE | M_ARC | M_ELLIPSE, /* maybe spline someday */
+	 I_CHOP,
+	 "Chop objects   (x)",
+	 False, NULL, (Pixmap)0, (Pixmap)0},
 	{&scale_ic, F_SCALE, scale_selected, M_NO_TEXT, I_MIN2,
-		"SCALE objects   (Ctrl-s)",
-		False, NULL, (Pixmap)0, (Pixmap)0},
+	 "SCALE objects   (Ctrl-s)",
+	 False, NULL, (Pixmap)0, (Pixmap)0},
 	{&align_ic, F_ALIGN, align_selected, M_COMPOUND, I_ALIGN,
-		"ALIGN objects within a COMPOUND or to CANVAS   (a)",
-		False, NULL, (Pixmap)0, (Pixmap)0},
+	 "ALIGN objects within a COMPOUND or to CANVAS   (a)",
+	 False, NULL, (Pixmap)0, (Pixmap)0},
 	{&movept_ic, F_MOVE_POINT, move_point_selected, M_NO_TEXT, I_ADDMOVPT,
-		"MOVE POINTs   (Shift-m)",
-		False, NULL, (Pixmap)0, (Pixmap)0},
+	 "MOVE POINTs   (Shift-m)",
+	 False, NULL, (Pixmap)0, (Pixmap)0},
 	{&move_ic, F_MOVE, move_selected, M_ALL, I_MIN3,
-		"MOVE objects   (m)",
-		False, NULL, (Pixmap)0, (Pixmap)0},
+	 "MOVE objects   (m)",
+	 False, NULL, (Pixmap)0, (Pixmap)0},
 	{&addpt_ic, F_ADD_POINT, point_adding_selected, M_VARPTS_OBJECT,
-		I_ADDMOVPT,
-		"ADD POINTs to lines, polygons and splines   (Ctrl-a)",
-		False, NULL, (Pixmap)0, (Pixmap)0},
+	 I_ADDMOVPT,
+	 "ADD POINTs to lines, polygons and splines   (Ctrl-a)",
+	 False, NULL, (Pixmap)0, (Pixmap)0},
 	{&copy_ic, F_COPY, copy_selected, M_ALL, I_COPY,
-		"COPY objects  (Ctrl-c)",
-		False, NULL, (Pixmap)0, (Pixmap)0},
-	{&deletept_ic, F_DELETE_POINT, delete_point_selected, M_VARPTS_OBJECT,0,
-		"DELETE POINTs from lines, polygons and splines   (Shift-d)",
-		False, NULL, (Pixmap)0, (Pixmap)0},
+	 "COPY objects  (Ctrl-c)",
+	 False, NULL, (Pixmap)0, (Pixmap)0},
+	{&deletept_ic, F_DELETE_POINT, delete_point_selected, M_VARPTS_OBJECT, 0,
+	 "DELETE POINTs from lines, polygons and splines   (Shift-d)",
+	 False, NULL, (Pixmap)0, (Pixmap)0},
 	{&delete_ic, F_DELETE, delete_selected, M_ALL, 0,
-		"DELETE objects   (d)",
-		False, NULL, (Pixmap)0, (Pixmap)0},
+	 "DELETE objects   (d)",
+	 False, NULL, (Pixmap)0, (Pixmap)0},
 	{&update_ic, F_UPDATE, update_selected, M_ALL, I_OBJECT,
-		"UPDATE object <-> current settings   (u)",
-		False, NULL, (Pixmap)0, (Pixmap)0},
+	 "UPDATE object <-> current settings   (u)",
+	 False, NULL, (Pixmap)0, (Pixmap)0},
 	{&edit_ic, F_EDIT, edit_item_selected, M_ALL, 0,
-		"CHANGE OBJECT via EDIT panel   (Ctrl-e)",
-		False, NULL, (Pixmap)0, (Pixmap)0},
+	 "CHANGE OBJECT via EDIT panel   (Ctrl-e)",
+	 False, NULL, (Pixmap)0, (Pixmap)0},
 	{&flip_y_ic, F_FLIP, flip_ud_selected, M_NO_TEXT, I_MIN2,
-		"FLIP objects up or down   (f)",
-		False, NULL, (Pixmap)0, (Pixmap)0},
+	 "FLIP objects up or down   (f)",
+	 False, NULL, (Pixmap)0, (Pixmap)0},
 	{&flip_x_ic, F_FLIP, flip_lr_selected, M_NO_TEXT, I_MIN2,
-		"FLIP objects left or right   (Shift-f)",
-		False, NULL, (Pixmap)0, (Pixmap)0},
+	 "FLIP objects left or right   (Shift-f)",
+	 False, NULL, (Pixmap)0, (Pixmap)0},
 	{&rotCW_ic, F_ROTATE, rotate_cw_selected, M_ALL, I_ROTATE,
-		"ROTATE objects clockwise   (Ctrl-r)",
-		False, NULL, (Pixmap)0, (Pixmap)0},
+	 "ROTATE objects clockwise   (Ctrl-r)",
+	 False, NULL, (Pixmap)0, (Pixmap)0},
 	{&rotCCW_ic, F_ROTATE, rotate_ccw_selected, M_ALL, I_ROTATE,
-		"ROTATE objects counter-clockwise   (Shift-r)",
-		False, NULL, (Pixmap)0, (Pixmap)0},
+	 "ROTATE objects counter-clockwise   (Shift-r)",
+	 False, NULL, (Pixmap)0, (Pixmap)0},
 	{&convert_ic, F_CONVERT, convert_selected,
-		M_VARPTS_OBJECT | M_POLYLINE_BOX, 0,
-		"CONVERSION between lines, polygons and splines   (v)",
-		False, NULL, (Pixmap)0, (Pixmap)0},
+	 M_VARPTS_OBJECT | M_POLYLINE_BOX, 0,
+	 "CONVERSION between lines, polygons and splines   (v)",
+	 False, NULL, (Pixmap)0, (Pixmap)0},
 	{&autoarrow_ic, F_AUTOARROW, arrow_head_selected, M_OPEN_OBJECT,
-		I_ADD_DEL_ARROW,
-		"ADD/DELETE ARROWHEADS   (Shift-a)",
-		False, NULL, (Pixmap)0, (Pixmap)0},
+	 I_ADD_DEL_ARROW,
+	 "ADD/DELETE ARROWHEADS   (Shift-a)",
+	 False, NULL, (Pixmap)0, (Pixmap)0},
 	{&tangent_ic, F_TANGENT, tangent_selected, M_TANGENT_OBJECT, I_TANGENT,
-		"Add TANGENT/NORMAL to curve   (n)",
-		False, NULL, (Pixmap)0, (Pixmap)0},
+	 "Add TANGENT/NORMAL to curve   (n)",
+	 False, NULL, (Pixmap)0, (Pixmap)0},
 	{&anglemeas_ic, F_ANGLEMEAS, anglemeas_selected, M_ANGLEMEAS_OBJECT,
-		I_MIN2,
-		"MEASURE angle (specify three points or select object)   (Ctrl-g)",
-		False, NULL, (Pixmap)0, (Pixmap)0},
+	 I_MIN2,
+	 "MEASURE angle (specify three points or select object)   (Ctrl-g)",
+	 False, NULL, (Pixmap)0, (Pixmap)0},
 	{&lenmeas_ic, F_LENMEAS, lenmeas_selected, M_LENMEAS_OBJECT, I_MIN2,
-		"Measure LENGTH of polylines, arcs and ellipses   (Ctrl-n)",
-		False, NULL, (Pixmap)0, (Pixmap)0},
+	 "Measure LENGTH of polylines, arcs and ellipses   (Ctrl-n)",
+	 False, NULL, (Pixmap)0, (Pixmap)0},
 	{&areameas_ic, F_AREAMEAS, areameas_selected, M_AREAMEAS_OBJECT, I_MIN2,
-		"Measure AREA of polygons, arcs and ellipses   (Ctrl-m)",
-		False, NULL, (Pixmap)0, (Pixmap)0},
+	 "Measure AREA of polygons, arcs and ellipses   (Ctrl-m)",
+	 False, NULL, (Pixmap)0, (Pixmap)0},
 
 	/* This must be last for create_mode_panel() (in w_canvas.c) */
-	{ NULL, 0, NULL, 0, 0, "", False, NULL, 0, 0}
+	{NULL, 0, NULL, 0, 0, "", False, NULL, 0, 0}
 
 };
 
-int	NUM_MODE_SW = (sizeof(mode_switches) / sizeof(mode_sw_info)) - 1;
+//----------------------------------- Code ends Here ------------------------------------
 
-static Arg      button_args[] =
-{
-     /* 0 */ {XtNlabel, (XtArgVal) "    "},
-     /* 1 */ {XtNwidth, (XtArgVal) 0},
-     /* 2 */ {XtNheight, (XtArgVal) 0},
-     /* 3 */ {XtNresizable, (XtArgVal) False},
-     /* 4 */ {XtNborderWidth, (XtArgVal) 0},
-     /* 5 */ {XtNresize, (XtArgVal) False},	/* keeps buttons from being
-						 * resized when there are not
-						 * a multiple of three of
-						 * them */
-     /* 6 */ {XtNbackgroundPixmap, (XtArgVal) NULL},
+int NUM_MODE_SW = (sizeof(mode_switches) / sizeof(mode_sw_info)) - 1;
+
+static Arg button_args[] =
+	{
+		/* 0 */ {XtNlabel, (XtArgVal) "    "},
+		/* 1 */ {XtNwidth, (XtArgVal)0},
+		/* 2 */ {XtNheight, (XtArgVal)0},
+		/* 3 */ {XtNresizable, (XtArgVal)False},
+		/* 4 */ {XtNborderWidth, (XtArgVal)0},
+		/* 5 */ {XtNresize, (XtArgVal)False}, /* keeps buttons from being
+											   * resized when there are not
+											   * a multiple of three of
+											   * them */
+		/* 6 */ {XtNbackgroundPixmap, (XtArgVal)NULL},
 };
-
-
 
 static void
 stub_enter_mode_btn(Widget widget, XEvent *event, String *params,
-		Cardinal *num_params)
+					Cardinal *num_params)
 {
 	(void)widget;
 	(void)event;
@@ -320,57 +334,63 @@ stub_enter_mode_btn(Widget widget, XEvent *event, String *params,
 }
 
 static XtActionsRec mode_actions[] =
-{
-    {"EnterModeSw", (XtActionProc) stub_enter_mode_btn},
-    {"LeaveModeSw", (XtActionProc) clear_mousefun},
-    {"PressMiddle", (XtActionProc) notused_middle},
-    {"ReleaseMiddle", (XtActionProc) clear_middle},
-    {"PressRight", (XtActionProc) notused_right},
-    {"ReleaseRight", (XtActionProc) clear_right},
-    {"ModeEllipseR", (XtActionProc) stub_circle_ellipse_byradius_drawing_selected},
-    {"ModeEllipseD", (XtActionProc) stub_circle_ellipse_bydiameter_drawing_selected},
-    {"ModeBox", (XtActionProc) stub_box_drawing_selected},
-    {"ModeArcBox", (XtActionProc) stub_arcbox_drawing_selected},
-    {"ModeLine", (XtActionProc) stub_line_drawing_selected},
-    {"ModePoly", (XtActionProc) stub_poly_drawing_selected},
-    {"ModeRegPoly", (XtActionProc) stub_regpoly_drawing_selected},
-    {"ModePIC", (XtActionProc) stub_picobj_drawing_selected},
-    {"ModeText", (XtActionProc) stub_text_drawing_selected},
-    {"ModeArc", (XtActionProc) stub_arc_drawing_selected},
-    {"ModeSpline", (XtActionProc) stub_spline_drawing_selected},
-    {"ModeClSpline", (XtActionProc) stub_cl_spline_drawing_selected},
-    {"ModeIntSpline", (XtActionProc) stub_intspline_drawing_selected},
-    {"ModeClIntSpline", (XtActionProc) stub_cl_intspline_drawing_selected},
-    {"ModeAlign", (XtActionProc) stub_align_selected},
-    {"ModeCompound", (XtActionProc) stub_compound_selected},
-    {"ModeBreakCompound", (XtActionProc) stub_break_selected},
-    {"ModeOpenCompound", (XtActionProc) stub_open_compound_selected},
-    {"ModeJoinSplit", (XtActionProc) stub_join_split_selected},
-    {"ModeScale", (XtActionProc) stub_scale_selected},
-    {"ModeAddPoint", (XtActionProc) stub_point_adding_selected},
-    {"ModeDeletePoint", (XtActionProc) stub_delete_point_selected},
-    {"ModeMoveObject", (XtActionProc) stub_move_selected},
-    {"ModePopupLibrary", (XtActionProc) stub_popup_library},
-    {"ModeMovePoint", (XtActionProc) stub_move_point_selected},
-    {"ModeDeleteObject", (XtActionProc) stub_delete_selected},
-    {"ModeCopyObject", (XtActionProc) stub_copy_selected},
-    {"ModeRotateObjectCW", (XtActionProc) stub_rotate_cw_selected},
-    {"ModeRotateObjectCCW", (XtActionProc) stub_rotate_ccw_selected},
-    {"ModeFlipObjectUD", (XtActionProc) stub_flip_ud_selected},
-    {"ModeFlipObjectLR", (XtActionProc) stub_flip_lr_selected},
-    {"ModeConvertObject", (XtActionProc) stub_convert_selected},
-    {"ModeChopObject", (XtActionProc) stub_chop_selected},
-    {"ModeArrow", (XtActionProc) stub_arrow_head_selected},
-    {"ModeEditObject", (XtActionProc) stub_edit_item_selected},
-    {"ModeUpdateObject", (XtActionProc) stub_update_selected},
-    {"ModeTangent", (XtActionProc) stub_tangent_selected},
-    {"ModeAnglemeas", (XtActionProc) stub_anglemeas_selected},
-    {"ModeLenmeas", (XtActionProc) stub_lenmeas_selected},
-    {"ModeAreameas", (XtActionProc) stub_areameas_selected},
+	{
+		{"EnterModeSw", (XtActionProc)stub_enter_mode_btn},
+		{"LeaveModeSw", (XtActionProc)clear_mousefun},
+		{"PressMiddle", (XtActionProc)notused_middle},
+		{"ReleaseMiddle", (XtActionProc)clear_middle},
+		{"PressRight", (XtActionProc)notused_right},
+		{"ReleaseRight", (XtActionProc)clear_right},
+		{"ModeEllipseR", (XtActionProc)stub_circle_ellipse_byradius_drawing_selected},
+		{"ModeEllipseD", (XtActionProc)stub_circle_ellipse_bydiameter_drawing_selected},
+		{"ModeBox", (XtActionProc)stub_box_drawing_selected},
+		{"ModeArcBox", (XtActionProc)stub_arcbox_drawing_selected},
+		{"ModeLine", (XtActionProc)stub_line_drawing_selected},
+		{"ModePoly", (XtActionProc)stub_poly_drawing_selected},
+		{"ModeRegPoly", (XtActionProc)stub_regpoly_drawing_selected},
+		{"ModePIC", (XtActionProc)stub_picobj_drawing_selected},
+		{"ModeText", (XtActionProc)stub_text_drawing_selected},
+		{"ModeArc", (XtActionProc)stub_arc_drawing_selected},
+		{"ModeSpline", (XtActionProc)stub_spline_drawing_selected},
+		{"ModeClSpline", (XtActionProc)stub_cl_spline_drawing_selected},
+		{"ModeIntSpline", (XtActionProc)stub_intspline_drawing_selected},
+		{"ModeClIntSpline", (XtActionProc)stub_cl_intspline_drawing_selected},
+		{"ModeAlign", (XtActionProc)stub_align_selected},
+		{"ModeCompound", (XtActionProc)stub_compound_selected},
+		{"ModeBreakCompound", (XtActionProc)stub_break_selected},
+		{"ModeOpenCompound", (XtActionProc)stub_open_compound_selected},
+		{"ModeJoinSplit", (XtActionProc)stub_join_split_selected},
+		{"ModeScale", (XtActionProc)stub_scale_selected},
+		{"ModeAddPoint", (XtActionProc)stub_point_adding_selected},
+		{"ModeDeletePoint", (XtActionProc)stub_delete_point_selected},
+		{"ModeMoveObject", (XtActionProc)stub_move_selected},
+		{"ModePopupLibrary", (XtActionProc)stub_popup_library},
+		{"ModeMovePoint", (XtActionProc)stub_move_point_selected},
+		{"ModeDeleteObject", (XtActionProc)stub_delete_selected},
+		{"ModeCopyObject", (XtActionProc)stub_copy_selected},
+		{"ModeRotateObjectCW", (XtActionProc)stub_rotate_cw_selected},
+		{"ModeRotateObjectCCW", (XtActionProc)stub_rotate_ccw_selected},
+		{"ModeFlipObjectUD", (XtActionProc)stub_flip_ud_selected},
+		{"ModeFlipObjectLR", (XtActionProc)stub_flip_lr_selected},
+		{"ModeConvertObject", (XtActionProc)stub_convert_selected},
+		{"ModeChopObject", (XtActionProc)stub_chop_selected},
+		{"ModeArrow", (XtActionProc)stub_arrow_head_selected},
+		{"ModeEditObject", (XtActionProc)stub_edit_item_selected},
+		{"ModeUpdateObject", (XtActionProc)stub_update_selected},
+		{"ModeTangent", (XtActionProc)stub_tangent_selected},
+		{"ModeAnglemeas", (XtActionProc)stub_anglemeas_selected},
+		{"ModeLenmeas", (XtActionProc)stub_lenmeas_selected},
+		{"ModeAreameas", (XtActionProc)stub_areameas_selected},
+		// #taskQuickColoring_Icon
+		//----------------------------------- Code Starts Here ----------------------------------
+		/* GOAL: Here, you'll be adding the action of objcolor when it is selected. Use
+		 *   ModeObjcolor and the objcolor keyword.      									   */
+
+		//----------------------------------- Code ends Here ------------------------------------
 };
 
-static String   mode_translations =
-"<EnterWindow>:EnterModeSw()highlight()\n\
+static String mode_translations =
+	"<EnterWindow>:EnterModeSw()highlight()\n\
     <Btn1Down>:\n\
     <Btn1Up>:\n\
     <Btn2Down>:PressMiddle()\n\
@@ -379,73 +399,76 @@ static String   mode_translations =
     <Btn3Up>:ReleaseRight()\n\
     <LeaveWindow>:LeaveModeSw()unhighlight()\n";
 
-void
-init_mode_panel(Widget tool)
+void init_mode_panel(Widget tool)
 {
-    register int    i;
-    register mode_sw_info *sw;
+	register int i;
+	register mode_sw_info *sw;
 
-    FirstArg(XtNwidth, MODEPANEL_WD);
-    NextArg(XtNhSpace, INTERNAL_BW);
-    NextArg(XtNvSpace, INTERNAL_BW);
-    NextArg(XtNtop, XtChainTop);
-    NextArg(XtNbottom, XtChainTop);
-    NextArg(XtNfromVert, msg_panel);
-    NextArg(XtNvertDistance, -INTERNAL_BW);
-    NextArg(XtNleft, XtChainLeft);
-    NextArg(XtNright, XtChainLeft);
-    NextArg(XtNresizable, False);
-    NextArg(XtNborderWidth, 0);
-    NextArg(XtNmappedWhenManaged, False);
+	FirstArg(XtNwidth, MODEPANEL_WD);
+	NextArg(XtNhSpace, INTERNAL_BW);
+	NextArg(XtNvSpace, INTERNAL_BW);
+	NextArg(XtNtop, XtChainTop);
+	NextArg(XtNbottom, XtChainTop);
+	NextArg(XtNfromVert, msg_panel);
+	NextArg(XtNvertDistance, -INTERNAL_BW);
+	NextArg(XtNleft, XtChainLeft);
+	NextArg(XtNright, XtChainLeft);
+	NextArg(XtNresizable, False);
+	NextArg(XtNborderWidth, 0);
+	NextArg(XtNmappedWhenManaged, False);
 
-    mode_panel = XtCreateWidget("mode_panel", boxWidgetClass, tool,
-				Args, ArgCount);
+	mode_panel = XtCreateWidget("mode_panel", boxWidgetClass, tool,
+								Args, ArgCount);
 
-    XtAppAddActions(tool_app, mode_actions, XtNumber(mode_actions));
+	XtAppAddActions(tool_app, mode_actions, XtNumber(mode_actions));
 
-    for (i = 0; i < NUM_MODE_SW; ++i) {
-	sw = &mode_switches[i];
-	if (sw->mode == FIRST_DRAW_MODE) {
-	    FirstArg(XtNwidth, mode_sw_wd * SW_PER_ROW +
-		     INTERNAL_BW * (SW_PER_ROW - 1));
-	    NextArg(XtNborderWidth, 0);
-	    NextArg(XtNresize, False);
-	    NextArg(XtNheight, (MODEPANEL_SPACE + 1) / 2);
-	    NextArg(XtNlabel, "Drawing");
-	    d_label = XtCreateManagedWidget("label", labelWidgetClass,
-					    mode_panel, Args, ArgCount);
-	} else if (sw->mode == FIRST_EDIT_MODE) {
-	    /* assume Args still set up from d_label */
-	    ArgCount -= 2;
-	    NextArg(XtNheight, (MODEPANEL_SPACE) / 2);
-	    NextArg(XtNlabel, "Editing");
-	    e_label = XtCreateManagedWidget("label", labelWidgetClass,
-					    mode_panel, Args, ArgCount);
-	}
-	button_args[1].value = sw->icon->width;
-	button_args[2].value = sw->icon->height;
-	sw->widget = XtCreateManagedWidget("button", commandWidgetClass,
-			    mode_panel, button_args, XtNumber(button_args));
+	for (i = 0; i < NUM_MODE_SW; ++i)
+	{
+		sw = &mode_switches[i];
+		if (sw->mode == FIRST_DRAW_MODE)
+		{
+			FirstArg(XtNwidth, mode_sw_wd * SW_PER_ROW +
+								   INTERNAL_BW * (SW_PER_ROW - 1));
+			NextArg(XtNborderWidth, 0);
+			NextArg(XtNresize, False);
+			NextArg(XtNheight, (MODEPANEL_SPACE + 1) / 2);
+			NextArg(XtNlabel, "Drawing");
+			d_label = XtCreateManagedWidget("label", labelWidgetClass,
+											mode_panel, Args, ArgCount);
+		}
+		else if (sw->mode == FIRST_EDIT_MODE)
+		{
+			/* assume Args still set up from d_label */
+			ArgCount -= 2;
+			NextArg(XtNheight, (MODEPANEL_SPACE) / 2);
+			NextArg(XtNlabel, "Editing");
+			e_label = XtCreateManagedWidget("label", labelWidgetClass,
+											mode_panel, Args, ArgCount);
+		}
+		button_args[1].value = sw->icon->width;
+		button_args[2].value = sw->icon->height;
+		sw->widget = XtCreateManagedWidget("button", commandWidgetClass,
+										   mode_panel, button_args, XtNumber(button_args));
 
-	/* left button changes mode */
-	XtAddEventHandler(sw->widget, ButtonPressMask, False,
-			  sel_mode_but, (XtPointer) sw);
+		/* left button changes mode */
+		XtAddEventHandler(sw->widget, ButtonPressMask, False,
+						  sel_mode_but, (XtPointer)sw);
 #ifndef XAW3D1_5E
-	/* popup when mouse passes over button */
-	XtAddEventHandler(sw->widget, EnterWindowMask, False,
-			  mode_balloon_trigger, (XtPointer) sw);
-	XtAddEventHandler(sw->widget, LeaveWindowMask, False,
-			  mode_unballoon, (XtPointer) sw);
+		/* popup when mouse passes over button */
+		XtAddEventHandler(sw->widget, EnterWindowMask, False,
+						  mode_balloon_trigger, (XtPointer)sw);
+		XtAddEventHandler(sw->widget, LeaveWindowMask, False,
+						  mode_unballoon, (XtPointer)sw);
 #endif /* XAW3D1_5E */
-	XtOverrideTranslations(sw->widget,
-			       XtParseTranslationTable(mode_translations));
-    }
+		XtOverrideTranslations(sw->widget,
+							   XtParseTranslationTable(mode_translations));
+	}
 
 #ifdef XAW3D1_5E
-    update_modepanel();
+	update_modepanel();
 #endif /* XAW3D1_5E */
 
-    return;
+	return;
 }
 
 /*
@@ -454,70 +477,74 @@ init_mode_panel(Widget tool)
 
 void setup_mode_panel(void)
 {
-    register int    i;
-    register mode_sw_info *msw;
+	register int i;
+	register mode_sw_info *msw;
 
-    blank_gc = XCreateGC(tool_d, XtWindow(mode_panel), (unsigned long) 0, NULL);
-    FirstArg(XtNforeground, &but_fg);
-    NextArg(XtNbackground, &but_bg);
-    GetValues(mode_switches[0].widget);
+	blank_gc = XCreateGC(tool_d, XtWindow(mode_panel), (unsigned long)0, NULL);
+	FirstArg(XtNforeground, &but_fg);
+	NextArg(XtNbackground, &but_bg);
+	GetValues(mode_switches[0].widget);
 
-    XSetBackground(tool_d, blank_gc, but_bg);
-    XSetForeground(tool_d, blank_gc, but_bg);
+	XSetBackground(tool_d, blank_gc, but_bg);
+	XSetForeground(tool_d, blank_gc, but_bg);
 
-    FirstArg(XtNfont, button_font);
-    SetValues(d_label);
-    SetValues(e_label);
+	FirstArg(XtNfont, button_font);
+	SetValues(d_label);
+	SetValues(e_label);
 
-    for (i = 0; i < NUM_MODE_SW; ++i) {
-	msw = &mode_switches[i];
-	/* create normal bitmaps */
-	msw->pixmap = XCreatePixmapFromBitmapData(tool_d, XtWindow(msw->widget),
-		       msw->icon->bits, msw->icon->width, msw->icon->height,
-				   but_fg, but_bg, tool_dpth);
+	for (i = 0; i < NUM_MODE_SW; ++i)
+	{
+		msw = &mode_switches[i];
+		/* create normal bitmaps */
+		msw->pixmap = XCreatePixmapFromBitmapData(tool_d, XtWindow(msw->widget),
+												  msw->icon->bits, msw->icon->width, msw->icon->height,
+												  but_fg, but_bg, tool_dpth);
 
-	FirstArg(XtNbackgroundPixmap, msw->pixmap);
-	SetValues(msw->widget);
+		FirstArg(XtNbackgroundPixmap, msw->pixmap);
+		SetValues(msw->widget);
 
-	/* create reverse bitmaps */
-	msw->reversePM = XCreatePixmapFromBitmapData(tool_d, XtWindow(msw->widget),
-		       msw->icon->bits, msw->icon->width, msw->icon->height,
-				   but_bg, but_fg, tool_dpth);
-    }
+		/* create reverse bitmaps */
+		msw->reversePM = XCreatePixmapFromBitmapData(tool_d, XtWindow(msw->widget),
+													 msw->icon->bits, msw->icon->width, msw->icon->height,
+													 but_bg, but_fg, tool_dpth);
+	}
 
-    XDefineCursor(tool_d, XtWindow(mode_panel), arrow_cursor);
-    FirstArg(XtNmappedWhenManaged, True);
-    SetValues(mode_panel);
+	XDefineCursor(tool_d, XtWindow(mode_panel), arrow_cursor);
+	FirstArg(XtNmappedWhenManaged, True);
+	SetValues(mode_panel);
 }
 
 #ifdef XAW3D1_5E
 void update_modepanel()
 {
-    register int    i;
-    register mode_sw_info *sw;
+	register int i;
+	register mode_sw_info *sw;
 
-    /*
-     * We must test for the widgets, as this is called by
-     * w_cmdpanel.c:refresh_view_menu().
-     */
+	/*
+	 * We must test for the widgets, as this is called by
+	 * w_cmdpanel.c:refresh_view_menu().
+	 */
 
-    for (i = 0; i < NUM_MODE_SW; ++i) {
-	sw = &mode_switches[i];
-	if (!sw->widget)
-	    continue;
-	if (appres.showballoons) {
-	    XawTipEnable(sw->widget, sw->modemsg);
-	} else
-	    XawTipDisable(sw->widget);
-    }
+	for (i = 0; i < NUM_MODE_SW; ++i)
+	{
+		sw = &mode_switches[i];
+		if (!sw->widget)
+			continue;
+		if (appres.showballoons)
+		{
+			XawTipEnable(sw->widget, sw->modemsg);
+		}
+		else
+			XawTipDisable(sw->widget);
+	}
 }
 #else
 /* come here when the mouse passes over a button in the mode panel */
 
-static	Widget mode_balloon_popup = (Widget) 0;
-static	XtIntervalId balloon_id = (XtIntervalId) 0;
-static	Widget balloon_w;
-static	XtPointer clos;
+static Widget mode_balloon_popup = (Widget)0;
+static XtIntervalId balloon_id = (XtIntervalId)0;
+static Widget balloon_w;
+static XtPointer clos;
 
 static void mode_balloon(void);
 
@@ -529,56 +556,58 @@ mode_balloon_trigger(Widget widget, XtPointer closure, XEvent *event, Boolean *c
 	balloon_w = widget;
 	clos = closure;
 	/* if an old balloon is still up, destroy it */
-	if ((balloon_id != 0) || (mode_balloon_popup != (Widget) 0)) {
-		mode_unballoon((Widget) 0, (XtPointer) 0, (XEvent*) 0, (Boolean*) 0);
+	if ((balloon_id != 0) || (mode_balloon_popup != (Widget)0))
+	{
+		mode_unballoon((Widget)0, (XtPointer)0, (XEvent *)0, (Boolean *)0);
 	}
 	balloon_id = XtAppAddTimeOut(tool_app, appres.balloon_delay,
-			(XtTimerCallbackProc) mode_balloon, (XtPointer) NULL);
+								 (XtTimerCallbackProc)mode_balloon, (XtPointer)NULL);
 }
 
 static void
 mode_balloon(void)
 {
-	Position  x, y;
-	mode_sw_info *msw = (mode_sw_info *) clos;
+	Position x, y;
+	mode_sw_info *msw = (mode_sw_info *)clos;
 	Widget box, balloon_label;
 
 	/* get position of this button */
-	XtTranslateCoords(balloon_w, msw->icon->width+2, 0, &x, &y);
+	XtTranslateCoords(balloon_w, msw->icon->width + 2, 0, &x, &y);
 	FirstArg(XtNx, x);
 	NextArg(XtNy, y);
 	mode_balloon_popup = XtCreatePopupShell("mode_balloon_popup",
-				    overrideShellWidgetClass, tool, Args, ArgCount);
+											overrideShellWidgetClass, tool, Args, ArgCount);
 	FirstArg(XtNborderWidth, 0);
 	NextArg(XtNhSpace, 0);
 	NextArg(XtNvSpace, 0);
 	box = XtCreateManagedWidget("box", boxWidgetClass, mode_balloon_popup,
-				Args, ArgCount);
+								Args, ArgCount);
 	FirstArg(XtNborderWidth, 0);
 	NextArg(XtNlabel, msw->modemsg);
 	balloon_label = XtCreateManagedWidget("label", labelWidgetClass,
-				    box, Args, ArgCount);
+										  box, Args, ArgCount);
 
 	/* if the panel is on the right-hand side shift popup to the left */
-	if (appres.RHS_PANEL) {
-	    XtWidgetGeometry xtgeom,comp;
-	    Dimension wpop,wbut;
+	if (appres.RHS_PANEL)
+	{
+		XtWidgetGeometry xtgeom, comp;
+		Dimension wpop, wbut;
 
-	    /* get width of popup with label in it */
-	    FirstArg(XtNwidth, &wpop);
-	    GetValues(balloon_label);
-	    /* and width of button */
-	    FirstArg(XtNwidth, &wbut);
-	    GetValues(balloon_w);
-	    /* only change X position of widget */
-	    xtgeom.request_mode = CWX;
-	    /* shift popup left */
-	    xtgeom.x = x-wpop-wbut-10;
-	    (void) XtMakeGeometryRequest(mode_balloon_popup, &xtgeom, &comp);
+		/* get width of popup with label in it */
+		FirstArg(XtNwidth, &wpop);
+		GetValues(balloon_label);
+		/* and width of button */
+		FirstArg(XtNwidth, &wbut);
+		GetValues(balloon_w);
+		/* only change X position of widget */
+		xtgeom.request_mode = CWX;
+		/* shift popup left */
+		xtgeom.x = x - wpop - wbut - 10;
+		(void)XtMakeGeometryRequest(mode_balloon_popup, &xtgeom, &comp);
 	}
-	XtPopup(mode_balloon_popup,XtGrabNone);
+	XtPopup(mode_balloon_popup, XtGrabNone);
 	XtRemoveTimeOut(balloon_id);
-	balloon_id = (XtIntervalId) 0;
+	balloon_id = (XtIntervalId)0;
 }
 
 /* come here when the mouse leaves a button in the mode panel */
@@ -586,13 +615,14 @@ mode_balloon(void)
 static void
 mode_unballoon(Widget widget, XtPointer closure, XEvent *event, Boolean *continue_to_dispatch)
 {
-    if (balloon_id)
-	XtRemoveTimeOut(balloon_id);
-    balloon_id = (XtIntervalId) 0;
-    if (mode_balloon_popup != (Widget) 0) {
-	XtDestroyWidget(mode_balloon_popup);
-	mode_balloon_popup = (Widget) 0;
-    }
+	if (balloon_id)
+		XtRemoveTimeOut(balloon_id);
+	balloon_id = (XtIntervalId)0;
+	if (mode_balloon_popup != (Widget)0)
+	{
+		XtDestroyWidget(mode_balloon_popup);
+		mode_balloon_popup = (Widget)0;
+	}
 }
 #endif /* XAW3D1_5E */
 
@@ -600,152 +630,158 @@ mode_unballoon(Widget widget, XtPointer closure, XEvent *event, Boolean *continu
 
 static void
 sel_mode_but(Widget widget, XtPointer closure, XEvent *event,
-		Boolean *continue_to_dispatch)
+			 Boolean *continue_to_dispatch)
 {
 	(void)widget;
 	(void)continue_to_dispatch;
-    XButtonEvent    xbutton;
-    mode_sw_info    *msw = (mode_sw_info *) closure;
+	XButtonEvent xbutton;
+	mode_sw_info *msw = (mode_sw_info *)closure;
 
-    /* erase any existing anchor for flips */
-    if (setanchor)
-	center_marker(setanchor_x, setanchor_y);
-    /* and any center for rotations */
-    if (setcenter)
-	center_marker(setcenter_x, setcenter_y);
-    setcenter = 0;
-    setanchor = 0;
+	/* erase any existing anchor for flips */
+	if (setanchor)
+		center_marker(setanchor_x, setanchor_y);
+	/* and any center for rotations */
+	if (setcenter)
+		center_marker(setcenter_x, setcenter_y);
+	setcenter = 0;
+	setanchor = 0;
 
-    xbutton = event->xbutton;
-    if (check_action_on())
-	return;
-    else if (highlighting)
-	erase_objecthighlight();
+	xbutton = event->xbutton;
+	if (check_action_on())
+		return;
+	else if (highlighting)
+		erase_objecthighlight();
 
 #ifndef XAW3D1_5E
-    /* if this command popups a window, destroy the balloon popup now. See the
-       note above about this above the command panel definition. */
-    if (msw->popup) {
-	mode_unballoon((Widget) 0, (XtPointer) 0, (XEvent*) 0, (Boolean*) 0);
-    }
-    app_flush();
+	/* if this command popups a window, destroy the balloon popup now. See the
+	   note above about this above the command panel definition. */
+	if (msw->popup)
+	{
+		mode_unballoon((Widget)0, (XtPointer)0, (XEvent *)0, (Boolean *)0);
+	}
+	app_flush();
 #endif /* XAW3D1_5E */
 
-    if (xbutton.button == Button1) {	/* left button */
-	turn_off_current();
-	turn_on(msw);
+	if (xbutton.button == Button1)
+	{ /* left button */
+		turn_off_current();
+		turn_on(msw);
 
-		update_indpanel(0);	/* first remove ind buttons */
+		update_indpanel(0); /* first remove ind buttons */
 		XtUnmanageChild(ind_panel);
-	if (msw->mode != F_UPDATE)
-	    XtUnmanageChild(upd_ctrl);
-	FirstArg(XtNwidth, 1);	/* force a resize to update scrollbar */
+		if (msw->mode != F_UPDATE)
+			XtUnmanageChild(upd_ctrl);
+		FirstArg(XtNwidth, 1); /* force a resize to update scrollbar */
 		SetValues(ind_panel);
-	if (msw->mode == F_UPDATE) {
-	    if (cur_mode != F_UPDATE) {
-		/* map the set/clr/toggle button for update */
-		XtManageChild(upd_ctrl);
-	    }
-	    /* set the adjacent widget and width */
-	    FirstArg(XtNfromHoriz, upd_ctrl);
-	    NextArg(XtNwidth, INDPANEL_WD-UPD_CTRL_WD-2*INTERNAL_BW);
-	} else {
-	    if (cur_mode == F_UPDATE) {
-		/* unmap the set/clr/toggle button for update */
-		unmanage_update_buts();
-	    }
-	    /* clear the adjacent widget and set width */
-		FirstArg(XtNfromHoriz, NULL);
-	    NextArg(XtNwidth, INDPANEL_WD);
-	}
+		if (msw->mode == F_UPDATE)
+		{
+			if (cur_mode != F_UPDATE)
+			{
+				/* map the set/clr/toggle button for update */
+				XtManageChild(upd_ctrl);
+			}
+			/* set the adjacent widget and width */
+			FirstArg(XtNfromHoriz, upd_ctrl);
+			NextArg(XtNwidth, INDPANEL_WD - UPD_CTRL_WD - 2 * INTERNAL_BW);
+		}
+		else
+		{
+			if (cur_mode == F_UPDATE)
+			{
+				/* unmap the set/clr/toggle button for update */
+				unmanage_update_buts();
+			}
+			/* clear the adjacent widget and set width */
+			FirstArg(XtNfromHoriz, NULL);
+			NextArg(XtNwidth, INDPANEL_WD);
+		}
 		SetValues(ind_panel);
 		XtManageChild(ind_panel);
-		update_indpanel(msw->indmask);	/* now manage the relevant buttons */
+		update_indpanel(msw->indmask); /* now manage the relevant buttons */
 
-	put_msg(msw->modemsg);
-	if ((cur_mode == F_GLUE || cur_mode == F_BREAK) &&
-	    msw->mode != F_GLUE && msw->mode != F_BREAK) {
-		/* reset tagged items when changing modes; perhaps this
-		   is not really necessary */
-		set_tags(&objects, 0);
+		put_msg(msw->modemsg);
+		if ((cur_mode == F_GLUE || cur_mode == F_BREAK) &&
+			msw->mode != F_GLUE && msw->mode != F_BREAK)
+		{
+			/* reset tagged items when changing modes; perhaps this
+			   is not really necessary */
+			set_tags(&objects, 0);
+		}
+		cur_mode = msw->mode;
+		anypointposn = !(msw->indmask & I_POINTPOSN);
+		new_objmask = msw->objmask;
+		if ((cur_mode == F_ROTATE) &&
+			fabs(cur_rotnangle) != 90.0 && fabs(cur_rotnangle) != 180.0)
+			new_objmask = M_ROTATE_ANGLE;
+		update_markers(new_objmask);
+		current = msw;
+		/* reset the "first length message" flag in case show_length is on */
+		first_lenmsg = True;
+		/* call the mode function */
+		msw->setmode_func();
 	}
-	cur_mode = msw->mode;
-	anypointposn = !(msw->indmask & I_POINTPOSN);
-	new_objmask = msw->objmask;
-	if ((cur_mode == F_ROTATE) &&
-	    fabs(cur_rotnangle) != 90.0 && fabs(cur_rotnangle) != 180.0)
-		new_objmask = M_ROTATE_ANGLE;
-	update_markers(new_objmask);
-	current = msw;
-	/* reset the "first length message" flag in case show_length is on */
-	first_lenmsg = True;
-	/* call the mode function */
-	msw->setmode_func();
-    }
 }
 
-void
-force_positioning(void)
+void force_positioning(void)
 {
-    update_indpanel(current->indmask | I_POINTPOSN);
-    anypointposn = 0;
+	update_indpanel(current->indmask | I_POINTPOSN);
+	anypointposn = 0;
 }
 
-void
-force_nopositioning(void)
+void force_nopositioning(void)
 {
-    update_indpanel(current->indmask & ~I_POINTPOSN);
-    anypointposn = 1;
+	update_indpanel(current->indmask & ~I_POINTPOSN);
+	anypointposn = 1;
 }
 
-void
-force_anglegeom(void)
+void force_anglegeom(void)
 {
-    update_indpanel(current->indmask | I_ANGLEGEOM);
+	update_indpanel(current->indmask | I_ANGLEGEOM);
 }
 
-void
-force_noanglegeom(void)
+void force_noanglegeom(void)
 {
-    update_indpanel(current->indmask & ~I_ANGLEGEOM);
+	update_indpanel(current->indmask & ~I_ANGLEGEOM);
 }
 
 static void
 turn_on(mode_sw_info *msw)
 {
-    FirstArg(XtNbackgroundPixmap, msw->reversePM);
-    SetValues(msw->widget);
+	FirstArg(XtNbackgroundPixmap, msw->reversePM);
+	SetValues(msw->widget);
 }
 
 void turn_on_current(void)
 {
-    if (current)
-	turn_on(current);
+	if (current)
+		turn_on(current);
 }
 
 void turn_off_current(void)
 {
-    if (current) {
-	XtOverrideTranslations(current->widget,
-		XtParseTranslationTable(mode_translations));
-	FirstArg(XtNbackgroundPixmap, current->pixmap);
-	SetValues(current->widget);
-    }
+	if (current)
+	{
+		XtOverrideTranslations(current->widget,
+							   XtParseTranslationTable(mode_translations));
+		FirstArg(XtNbackgroundPixmap, current->pixmap);
+		SetValues(current->widget);
+	}
 }
 
 void change_mode(icon_struct *icon)
 {
-    int i;
-    XButtonEvent ev; /* To fake an event with */
+	int i;
+	XButtonEvent ev; /* To fake an event with */
 
-    ev.button = Button1;
-    for (i = 0; i < NUM_MODE_SW; ++i)
-	if (mode_switches[i].icon == icon) {
-	    sel_mode_but(0,(XtPointer)&mode_switches[i],(XEvent*)&ev,0);
-	    break;
-	}
-    /* force update of mouse function window */
-    draw_mousefun_canvas();
+	ev.button = Button1;
+	for (i = 0; i < NUM_MODE_SW; ++i)
+		if (mode_switches[i].icon == icon)
+		{
+			sel_mode_but(0, (XtPointer)&mode_switches[i], (XEvent *)&ev, 0);
+			break;
+		}
+	/* force update of mouse function window */
+	draw_mousefun_canvas();
 }
 
 static void
@@ -891,7 +927,6 @@ stub_popup_library(void)
 	change_mode(&library_ic);
 }
 
-
 static void
 stub_move_point_selected(void)
 {
@@ -988,5 +1023,9 @@ stub_areameas_selected(void)
 	change_mode(&areameas_ic);
 }
 
+// #taskQuickColoring_Icon
+//----------------------------------- Code Starts Here ----------------------------------
+/* GOAL: Here,  you'll  be  calling the  function  when the  quick color changing tool is
+ *   selected. Pass in void as the argument and change the mode to the objcolor tool.  */
 
-
+//----------------------------------- Code ends Here ------------------------------------

@@ -20,6 +20,14 @@
 
 #include <stddef.h>
 
+// #taskQuickColoring_newFiles
+//--------------------------------- Instructions Start Here -----------------------------
+/* INFO:  This file has the global  information used to manipulate information while xFig
+ *   is running.  The compound  'objects'  is the first object created, and we can use it
+ *   to access all objects in a file.  The global object pointers 'cur_' are the pointers
+ *   to the current object,  the 'new_' are the pointers to a new object created, and the
+ *   'old_' are the pointer to the old object.								     	   */
+//---------------------------------- Instructions End Here ------------------------------
 
 /************************  Objects  **********************/
 
