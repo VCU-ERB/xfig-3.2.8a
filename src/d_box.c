@@ -29,18 +29,20 @@
 #include "u_redraw.h"
 #include "w_canvas.h"
 #include "w_cursor.h"
+// #taskDefaultDepth
+//----------------------------------- Code Starts Here ----------------------------------
+// GOAL: Include the file you need to add from the assignment information.
+
+//------------------------------------ Code ends Here -----------------------------------
 #include "w_mousefun.h"
 #include "w_msgpanel.h"
 
 /*************************** local declarations *********************/
 
-static void	create_boxobject(int x, int y);
-static void	cancel_box(void);
+static void create_boxobject(int x, int y);
+static void cancel_box(void);
 
-
-
-void
-box_drawing_selected(void)
+void box_drawing_selected(void)
 {
     set_mousefun("corner point", "", "", "", "", "");
     canvas_kbd_proc = null_proc;
@@ -52,8 +54,7 @@ box_drawing_selected(void)
     reset_action_on();
 }
 
-void
-init_box_drawing(int x, int y)
+void init_box_drawing(int x, int y)
 {
     cur_x = fix_x = x;
     cur_y = fix_y = y;
@@ -81,38 +82,59 @@ cancel_box(void)
 static void
 create_boxobject(int x, int y)
 {
-    F_line	   *box;
-    F_point	   *point;
+    F_line *box;
+    F_point *point;
 
     elastic_box(fix_x, fix_y, cur_x, cur_y);
     /* erase last lengths if appres.showlengths is true */
     erase_box_lengths();
 
-    if (fix_x == x || fix_y == y) {
-	beep();
-	put_msg("Box must have area");
-	box_drawing_selected();
-	draw_mousefun_canvas();
-	return;
+    if (fix_x == x || fix_y == y)
+    {
+        beep();
+        put_msg("Box must have area");
+        box_drawing_selected();
+        draw_mousefun_canvas();
+        return;
     }
 
     if ((point = create_point()) == NULL)
-	return;
+        return;
 
     point->x = fix_x;
     point->y = fix_y;
     point->next = NULL;
 
-    if ((box = create_line()) == NULL) {
-	free((char *) point);
-	return;
+    if ((box = create_line()) == NULL)
+    {
+        free((char *)point);
+        return;
     }
     box->type = T_BOX;
     box->style = cur_linestyle;
     box->thickness = cur_linewidth;
     box->pen_color = cur_pencolor;
     box->fill_color = cur_fillcolor;
-    box->depth = cur_depth;
+
+	// #taskDefaultDepth
+    //---------------------------------- Code Starts Here ----------------------------------
+	/* INFO: This code is inside the method to create a new box. What is the method's name?
+     *   What is the file's name? Is there something similar between the names of the files
+     *   to edit?
+	 * GOAL: The current code doesn't increment the value  when a new object is added.  How
+	 *   would  you modify the  code so that the default depth increases by 1 anytime a new
+	 *   object is added? 
+	 * CHALLENGE: Valid the boundaries. The depth cannot be more than 999.          	 */
+	box->depth = cur_depth;
+
+	/* INFO: After  increment  the current  depth,  the line of code  above only updates the
+	 *   depth of the object internally (i.e., the model). 
+	 * GOAL: call the 'show_depth' method and pass in depth_button as the argument to update
+	 *   the toolbar at the bottom.                                                       */
+
+	/* GOAL: Continue to the next file.                                                   */
+    //----------------------------------- Code ends Here -----------------------------------
+
     box->pen_style = -1;
     box->join_style = cur_joinstyle;
     box->cap_style = cur_capstyle;

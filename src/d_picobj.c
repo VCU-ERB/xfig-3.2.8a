@@ -32,20 +32,21 @@
 #include "u_redraw.h"
 #include "w_canvas.h"
 #include "w_cursor.h"
+// #taskDefaultDepth
+//----------------------------------- Code Starts Here ----------------------------------
+// GOAL: Include the file you need to add.
+
+//------------------------------------ Code ends Here -----------------------------------
 #include "w_mousefun.h"
 #include "w_msgpanel.h"
 
-
 /*************************** local declarations *********************/
 
-static void	init_picobj_drawing(int x, int y);
-static void	create_picobj(int x, int y);
-static void	cancel_picobj(void);
+static void init_picobj_drawing(int x, int y);
+static void create_picobj(int x, int y);
+static void cancel_picobj(void);
 
-
-
-void
-picobj_drawing_selected(void)
+void picobj_drawing_selected(void)
 {
     set_mousefun("corner point", "", "", "", "", "");
     canvas_kbd_proc = null_proc;
@@ -76,8 +77,8 @@ cancel_picobj(void)
 static void
 create_picobj(int x, int y)
 {
-    F_line	   *box;
-    F_point	   *point;
+    F_line *box;
+    F_point *point;
 
     /* erase last lengths if appres.showlengths is true */
     erase_lengths();
@@ -85,34 +86,49 @@ create_picobj(int x, int y)
     canvas_locmove_proc = null_proc;
 
     if ((point = create_point()) == NULL)
-	return;
+        return;
 
     point->x = fix_x;
     point->y = fix_y;
     point->next = NULL;
 
-    if ((box = create_line()) == NULL) {
-	free((char *) point);
-	return;
+    if ((box = create_line()) == NULL)
+    {
+        free((char *)point);
+        return;
     }
     box->type = T_PICTURE;
     box->style = SOLID_LINE;
     box->thickness = 1;
     box->pen_color = cur_pencolor;
     box->fill_color = DEFAULT;
-    box->depth = cur_depth;
+
+	// #taskDefaultDepth
+    //---------------------------------- Code Starts Here ----------------------------------
+	/* GOAL: Modify the  code so that the default depth increases by 1 anytime a  new object
+	 *   is added!
+	 * CHALLENGE: Valid the boundaries. The depth cannot be more than 999.                */
+	box->depth = cur_depth;
+
+	/* GOAL: The line of code above only updates the depth of the object internally.  Update 
+     *   the toolbar at the bottom.                                                       */
+
+	/* GOAL: Continue to the next file.                                                   */
+    //----------------------------------- Code ends Here -----------------------------------
+
     box->pen_style = -1;
-    box->join_style = 0;	/* not used */
-    box->cap_style = 0;		/* not used */
+    box->join_style = 0; /* not used */
+    box->cap_style = 0;  /* not used */
     box->fill_style = UNFILLED;
     box->style_val = 0;
 
-    if ((box->pic = create_pic()) == NULL) {
-	free((char *) point);
-	free((char *) box);
-	return;
+    if ((box->pic = create_pic()) == NULL)
+    {
+        free((char *)point);
+        free((char *)box);
+        return;
     }
-    box->pic->new = True;		/* set new flag to delete if it user cancels edit operation */
+    box->pic->new = True; /* set new flag to delete if it user cancels edit operation */
     box->pic->pic_cache = NULL;
     box->pic->flipped = 0;
     box->pic->hw_ratio = 0.0;

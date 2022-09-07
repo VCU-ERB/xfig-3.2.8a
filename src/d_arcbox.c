@@ -27,20 +27,21 @@
 #include "u_redraw.h"
 #include "w_canvas.h"
 #include "w_cursor.h"
+// #taskDefaultDepth
+//----------------------------------- Code Starts Here ----------------------------------
+// GOAL: Include the file you need to add from the assignment information.
+
+//------------------------------------ Code ends Here -----------------------------------
 #include "w_msgpanel.h"
 #include "w_mousefun.h"
 
-
 /*************************** local procedures *********************/
 
-static void	create_arc_boxobject(int x, int y);
-static void	cancel_arc_boxobject(void);
-static void	init_arc_box_drawing(int x, int y);
+static void create_arc_boxobject(int x, int y);
+static void cancel_arc_boxobject(void);
+static void init_arc_box_drawing(int x, int y);
 
-
-
-void
-arcbox_drawing_selected(void)
+void arcbox_drawing_selected(void)
 {
     set_mousefun("corner point", "", "", "", "", "");
     canvas_kbd_proc = null_proc;
@@ -79,45 +80,68 @@ cancel_arc_boxobject(void)
 static void
 create_arc_boxobject(int x, int y)
 {
-    F_line	   *box;
-    F_point	   *point;
+    F_line *box;
+    F_point *point;
 
     elastic_box(fix_x, fix_y, cur_x, cur_y);
     /* erase last lengths if appres.showlengths is true */
     erase_box_lengths();
 
-    if (fix_x == x || fix_y == y) {
-	beep();
-	put_msg("Arc box must have area");
-	arcbox_drawing_selected();
-	draw_mousefun_canvas();
-	return;
+    if (fix_x == x || fix_y == y)
+    {
+        beep();
+        put_msg("Arc box must have area");
+        arcbox_drawing_selected();
+        draw_mousefun_canvas();
+        return;
     }
 
     if ((point = create_point()) == NULL)
-	return;
+        return;
 
     point->x = x;
     point->y = y;
     point->next = NULL;
 
-    if ((box = create_line()) == NULL) {
-	free((char *) point);
-	return;
+    if ((box = create_line()) == NULL)
+    {
+        free((char *)point);
+        return;
     }
     box->type = T_ARCBOX;
     box->style = cur_linestyle;
     box->thickness = cur_linewidth;
     box->pen_color = cur_pencolor;
     box->fill_color = cur_fillcolor;
-    box->depth = cur_depth;
+
+	// #taskDefaultDepth
+    //---------------------------------- Code Starts Here ---------------------------------
+	/* INFO:  This code is  inside the method to create a new arcbox.  What is the method's 
+     *   name? What is the file's name? Is there something similar between the names of the 
+     *   files to edit?
+	 * GOAL: The current code doesn't increment the value  when a new object is added.  How
+	 *   would  you modify the  code so that the default depth increases by 1 anytime a new
+	 *   object is added? 
+	 * HINT: use post-increment.
+	 * CHALLENGE: Valid the boundaries. The depth cannot be more than 999.          	 */
+	box->depth = cur_depth;
+
+	/* INFO: After incrementing the current  depth, the line of code  above only updates the
+	 *   depth of the object internally (i.e., the model). 
+	 * GOAL: Call the 'show_depth' method and pass in depth_button as the argument to update
+	 *   the toolbar at the bottom.                                                       */
+
+	/* GOAL: Continue to the third file. Did you save the file?  This warning will not be in 
+     *   the next files.                                                                  */
+    //----------------------------------- Code ends Here -----------------------------------
+
     box->pen_style = -1;
     box->join_style = cur_joinstyle;
     box->cap_style = cur_capstyle;
     box->fill_style = cur_fillstyle;
     /* multiply	 dash length by line thickness */
     box->style_val = cur_styleval * (cur_linewidth + 1) / 2;
-    box->radius = cur_boxradius;/* corner radius */
+    box->radius = cur_boxradius; /* corner radius */
     box->points = point;
     append_point(x, fix_y, &point);
     append_point(fix_x, fix_y, &point);
