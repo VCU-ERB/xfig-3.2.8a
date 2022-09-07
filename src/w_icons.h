@@ -133,6 +133,11 @@ extern icon_struct	tangent_ic;
 extern icon_struct	anglemeas_ic;
 extern icon_struct	lenmeas_ic;
 extern icon_struct	areameas_ic;
+// #taskToggleUnit
+//----------------------------------- Code Starts Here ----------------------------------
+// GOAL: Extend the unittoggle icon structure.
+
+//----------------------------------- Code ends Here ------------------------------------
 
 /* misc icons */
 

@@ -407,6 +407,20 @@ static unsigned char areameas_bits_small[] = {
  0x78,0x5c,0xcd,0x18,0x58,0xc7,0x00,0xf8,0xc1,0x00,0x20,0xc0,0x00,0x00,0xc0,
  0x00,0x00,0xc0,0x00,0x00,0xc0};
 
+// #taskToggleUnit
+//----------------------------------- Code Starts Here ----------------------------------
+/* INFO: This time, the task includes creating the shortcut and the function. First, 
+ *   create the shortcutt in the left panel following the instructions be on.
+ * GOAL: Define the unittoggle width and height to small 22. Then, declare and initialize
+ *   the small unittoggle array using the following elements:
+ *   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x08, 0x00, 0x00,
+ *   0x80, 0x01, 0x00, 0x48, 0x02, 0x18, 0x48, 0x02, 0x06, 0x48, 0x82, 0x01,
+ *   0x48, 0x42, 0x00, 0x00, 0x30, 0x00, 0x00, 0x0c, 0x00, 0x00, 0x03, 0x00,
+ *   0xc0, 0x00, 0x00, 0x30, 0x00, 0x00, 0x1c, 0x00, 0x00, 0x86, 0x63, 0x03,
+ *   0x40, 0x90, 0x04, 0x40, 0x90, 0x04, 0x40, 0x90, 0x04, 0x80, 0x93, 0x04,
+ *   0x00, 0x00, 0x00, 0x00, 0x00, 0x00                                                */
+
+//----------------------------------- Code ends Here ------------------------------------
 
 /****** NORMAL SIZE ICONS ******/
 
@@ -1198,6 +1212,26 @@ static unsigned char lenmeas_bits_big[] = {
 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
 0x00,0x00,0x00,0x00};
 
+// #taskToggleUnit
+//----------------------------------- Code Starts Here ----------------------------------
+/* GOAL: Define the unittoggle width and height to big 36 and 32, respectively. Then
+ *   declare and initialize the big unittoggle array using the following elements:
+ *   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+ *   0x00, 0x60, 0x00, 0x00, 0x00, 0x00, 0x70, 0x00, 0x00, 0x00, 0x00, 0x38,
+ *   0x00, 0x40, 0x00, 0x00, 0x1c, 0x00, 0x00, 0x38, 0x00, 0x0e, 0x00, 0x40,
+ *   0x44, 0x00, 0x07, 0x00, 0x40, 0x44, 0x80, 0x03, 0x00, 0x40, 0x44, 0xc0,
+ *   0x01, 0x00, 0x40, 0x44, 0xe0, 0x00, 0x00, 0x40, 0x44, 0x70, 0x00, 0x00,
+ *   0x40, 0x44, 0x38, 0x00, 0x00, 0x00, 0x00, 0x1c, 0x00, 0x00, 0x00, 0x00,
+ *   0x0e, 0x00, 0x00, 0x00, 0x00, 0x07, 0x00, 0x00, 0x00, 0x80, 0x03, 0x00,
+ *   0x00, 0x00, 0xc0, 0x01, 0x00, 0x00, 0x00, 0xe0, 0x00, 0x00, 0x00, 0x00,
+ *   0x70, 0x00, 0x00, 0x00, 0x00, 0x38, 0x60, 0xdc, 0x01, 0x00, 0x1c, 0x10,
+ *   0x22, 0x02, 0x00, 0x0e, 0x10, 0x22, 0x02, 0x00, 0x07, 0x10, 0x22, 0x02,
+ *   0x80, 0x03, 0x10, 0x22, 0x02, 0xc0, 0x01, 0x60, 0x22, 0x02, 0xe0, 0x00,
+ *   0x00, 0x00, 0x00, 0x60, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+ *   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+ *   0x00, 0x00, 0x00, 0x00                                                            */
+
+//----------------------------------- Code ends Here ------------------------------------
 
 /********* special icon for X-Splines used in popup edit panel */
 
@@ -2151,7 +2185,11 @@ icon_struct	tangent_ic;
 icon_struct	anglemeas_ic;
 icon_struct	lenmeas_ic;
 icon_struct	areameas_ic;
+// #taskToggleUnit
+//----------------------------------- Code Starts Here ----------------------------------
+// GOAL: Define a unittoggle icon structure.
 
+//----------------------------------- Code ends Here ------------------------------------
 
 
 void populate_icons_big()
@@ -2198,6 +2236,12 @@ void populate_icons_big()
 	icon_struct	anglemeas_ic_ = { anglemeas_width_big, anglemeas_height_big, (char*)anglemeas_bits_big };
 	icon_struct	lenmeas_ic_ = { lenmeas_width_big, lenmeas_height_big, (char*)lenmeas_bits_big };
 	icon_struct	areameas_ic_ = { areameas_width_big, areameas_height_big, (char*)areameas_bits_big };
+	// #taskToggleUnit
+	//----------------------------------- Code Starts Here ----------------------------------
+	/* GOAL: Populate the unittoggle icon structure with the big width, height, and its bits
+	 *   casted to a pointer.                                                              */
+
+	//----------------------------------- Code ends Here ------------------------------------
 	regpoly_ic = regpoly_ic_;
 	addpt_ic = addpt_ic_;
 	align_ic = align_ic_;
@@ -2240,6 +2284,11 @@ void populate_icons_big()
 	anglemeas_ic = anglemeas_ic_;
 	lenmeas_ic = lenmeas_ic_;
 	areameas_ic = areameas_ic_;
+	// #taskToggleUnit
+	//----------------------------------- Code Starts Here ----------------------------------
+	// GOAL: Populate the big unittoggle icon.
+
+	//----------------------------------- Code ends Here ------------------------------------
 }
 
 
@@ -2287,6 +2336,12 @@ void populate_icons_small()
 	icon_struct	anglemeas_ic_ = { anglemeas_width_small, anglemeas_height_small, (char*)anglemeas_bits_small };
 	icon_struct	lenmeas_ic_ = { lenmeas_width_small, lenmeas_height_small, (char*)lenmeas_bits_small };
 	icon_struct	areameas_ic_ = { areameas_width_small, areameas_height_small, (char*)areameas_bits_small };
+	// #taskToggleUnit
+	//----------------------------------- Code Starts Here ----------------------------------
+	/* GOAL: Populate the unittoggle icon structure with the small width, height, and its
+	 *   bits casted to a pointer.                                                         */
+
+	//----------------------------------- Code ends Here ------------------------------------
 	regpoly_ic = regpoly_ic_;
 	addpt_ic = addpt_ic_;
 	align_ic = align_ic_;
@@ -2329,6 +2384,11 @@ void populate_icons_small()
 	anglemeas_ic = anglemeas_ic_;
 	lenmeas_ic = lenmeas_ic_;
 	areameas_ic = areameas_ic_;
+	// #taskToggleUnit
+	//----------------------------------- Code Starts Here ----------------------------------
+	// GOAL: Populate the small unittoggle icon.
+
+	//----------------------------------- Code ends Here ------------------------------------
 }
 
 
@@ -3241,9 +3301,9 @@ char * fig_reduced_c_icon_X[] = {
 
 #include "splash.xbm"
 
-icon_struct	letters_ic = { (int) letters_width, (int) letters_height,
+icon_struct	letters_ic = { letters_width, letters_height,
 			      (char*)letters_bits };
-icon_struct	spl_bckgnd_ic = { (int) spl_bckgnd_width, (int) spl_bckgnd_height,
+icon_struct	spl_bckgnd_ic = { spl_bckgnd_width, spl_bckgnd_height,
 			      (char*)spl_bckgnd_bits };
 
 #define		MODE_SW_HT_SMALL	22	/* height of a small mode switch icon */

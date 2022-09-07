@@ -15,6 +15,7 @@
  *
  */
 
+
 extern void	init_topruler(Widget tool);
 extern void	popup_unit_panel(void);
 extern void	erase_rulermark(void);
@@ -38,3 +39,9 @@ extern void set_rulermark(int x, int y);
 extern void set_siderulermark(int y);
 extern void set_toprulermark(int x);
 extern void setup_topruler(void);
+// #taskToggleUnit
+//----------------------------------- Code Starts Here ----------------------------------
+/* GOAL:  Extend the function that changes the internal  units  and pass in  void  as the 
+ *   argument.                                                                         */
+
+//----------------------------------- Code ends Here ------------------------------------
