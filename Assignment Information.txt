@@ -1,0 +1,63 @@
+TASK UNDO REDO
+
+DETAILED INSTRUCTIONS: 
+https://github.com/Da-vid21/xfig-3.2.8a/issues/7 - GitHub Issue
+
+GOAL:
+The current Undo feature needs to be enhanced to support multi-level undo. This new 
+feature will allow a user to undo or redo an unlimited number of times. The maximum 
+number of undo/redo operations is only limited by the amount of available memory 
+determined by the computer system.
+
+INSTRUCTIONS:
+In this task, the changing will impact all xFig's action. It means you will need to
+creat new strutures and include this new behavior in a lot of different files. We will
+work with one hashtag and some variations to help organize it. The hashtag is 
+"#taskUndoRedo", but information was added in it to help you.
+Follow this steps to make sure everything will work in the end:
+
+FASE 1 - PREPARATION:
+    Use a stack to keep the actions and then you can undo and redo it.
+
+#taskUndoRedo_00: Action
+    Add the new action in xFig in the file 'main.c'.
+
+#taskUndoRedo_01: Create
+    Create a structure in the file 'object.h'.
+
+#taskUndoRedo_02: Create                
+    Make the structure ready to use in 'u_create.c' and 'u_create.h'.       
+
+#taskUndoRedo_03: Create
+    Create functions to Undo and Redo in 'u_undo.c' and 'u_undo.h'.
+    Create functions to free the history in 'u_free.c'.
+    Organize the interface in the file 'w_cmdpanel.c'.
+
+FASE 2 - USE:
+    To include the behavior into the xFig, it is necessary to include the new behavior
+    into a lot of diffent files. The needed functions are the one to update the
+    history and the one to freeze additional undo actions.
+    WARNING: In order to reduce the hashtag ocurrences, there is no hashtag in the 
+    include section in this fase. Just Go to the begining and include the header file.
+
+#taskUndoRedo_04: Update 
+    Into each file with this hashtag, include the file with the Undo/Redo behavior 
+    and call the function to update the undo history. 
+
+#taskUndoRedo_05: Call
+    Into each file with this hashtag, call the apropriated function.
+
+**TIP: It is important that you understand what you will be implementing before you go in and create certain methods.
+It is reccomended that you read through and analyze the entire u_undo.c file before attempting to code as this will help
+you understand the methods you will be creating and why they are being created.
+
+STEPS:
+1. Open Visual Studio Code or your choice of IDE(open it from GitHub)
+2. Click on the search icon on the left toolbar and search "#taskUndoRedo".
+3. Use the direction provided as comments to work on the assignment.
+5. Go to the desktop and double click the configure.sh file to compile/test.
+
+If you are having trouble understanding the undo/redo code please access this document for additional reference:
+https://docs.google.com/document/d/19WBGfpc0BdXht4-idMbPxs3lm8EigATB4-KCLRZarGM/edit
+
+If you are confused at any point with xfig or linux environment, check the youtube video at https://www.youtube.com/watch?v=Csxk165L358.

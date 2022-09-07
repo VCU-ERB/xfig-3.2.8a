@@ -18,7 +18,6 @@
  *
  */
 
-
 #include <stdlib.h>
 #include <stdio.h>
 
@@ -36,97 +35,105 @@
 #include "w_setup.h"
 #include "w_util.h"
 
-static char	Err_mem[] = "Running out of memory.";
-
+static char Err_mem[] = "Running out of memory.";
 
 /****************** ARROWS ****************/
-
 
 F_arrow *
 create_arrow(void)
 {
-    F_arrow	   *a;
+    F_arrow *a;
 
-    if ((a = (F_arrow *) malloc(ARROW_SIZE)) == NULL)
-	put_msg(Err_mem);
+    if ((a = (F_arrow *)malloc(ARROW_SIZE)) == NULL)
+        put_msg(Err_mem);
     return a;
 }
 
-F_arrow	       *
+F_arrow *
 forward_arrow(void)
 {
-    F_arrow	   *a;
+    F_arrow *a;
 
-    if ((a = create_arrow()) == NULL) {
-	put_msg(Err_mem);
-	return NULL;
+    if ((a = create_arrow()) == NULL)
+    {
+        put_msg(Err_mem);
+        return NULL;
     }
 
     a->type = ARROW_TYPE(cur_arrowtype);
     a->style = ARROW_STYLE(cur_arrowtype);
-    if (use_abs_arrowvals) {
-	a->thickness = cur_arrowthick;
-	a->wd = cur_arrowwidth;
-	a->ht = cur_arrowheight;
-    } else {
-	a->thickness = cur_arrow_multthick*cur_linewidth;
-	a->wd = cur_arrow_multwidth*cur_linewidth;
-	a->ht = cur_arrow_multheight*cur_linewidth;
+    if (use_abs_arrowvals)
+    {
+        a->thickness = cur_arrowthick;
+        a->wd = cur_arrowwidth;
+        a->ht = cur_arrowheight;
+    }
+    else
+    {
+        a->thickness = cur_arrow_multthick * cur_linewidth;
+        a->wd = cur_arrow_multwidth * cur_linewidth;
+        a->ht = cur_arrow_multheight * cur_linewidth;
     }
     return a;
 }
 
-F_arrow	       *
+F_arrow *
 backward_arrow(void)
 {
-    F_arrow	   *a;
+    F_arrow *a;
 
-    if ((a = create_arrow()) == NULL) {
-	put_msg(Err_mem);
-	return NULL;
+    if ((a = create_arrow()) == NULL)
+    {
+        put_msg(Err_mem);
+        return NULL;
     }
 
     a->type = ARROW_TYPE(cur_arrowtype);
     a->style = ARROW_STYLE(cur_arrowtype);
-    if (use_abs_arrowvals) {
-	a->thickness = cur_arrowthick;
-	a->wd = cur_arrowwidth;
-	a->ht = cur_arrowheight;
-    } else {
-	a->thickness = cur_arrow_multthick*cur_linewidth;
-	a->wd = cur_arrow_multwidth*cur_linewidth;
-	a->ht = cur_arrow_multheight*cur_linewidth;
+    if (use_abs_arrowvals)
+    {
+        a->thickness = cur_arrowthick;
+        a->wd = cur_arrowwidth;
+        a->ht = cur_arrowheight;
+    }
+    else
+    {
+        a->thickness = cur_arrow_multthick * cur_linewidth;
+        a->wd = cur_arrow_multwidth * cur_linewidth;
+        a->ht = cur_arrow_multheight * cur_linewidth;
     }
     return a;
 }
 
-F_arrow	       *
+F_arrow *
 new_arrow(int type, int style, float thickness, float wd, float ht)
 {
-    F_arrow	   *a;
+    F_arrow *a;
 
-    if ((a = create_arrow()) == NULL) {
-	put_msg(Err_mem);
-	return NULL;
+    if ((a = create_arrow()) == NULL)
+    {
+        put_msg(Err_mem);
+        return NULL;
     }
 
     /* check arrow type for legality */
-    if (type > NUM_ARROW_TYPES/2) { /* type*2+style = NUM_ARROW_TYPES */
-	type = style = 0;
+    if (type > NUM_ARROW_TYPES / 2)
+    { /* type*2+style = NUM_ARROW_TYPES */
+        type = style = 0;
     }
     /* only open or filled allowed */
     if (style > 1)
-	style = 0;
+        style = 0;
 
     /* if thickness is <= 0 or > 10 inches, make reasonable values */
     if (thickness <= 0.0 || thickness > 10.0 * DISPLAY_PIX_PER_INCH)
-	thickness = cur_arrowthick;
+        thickness = cur_arrowthick;
     /* if width is <= 0 or > 20 inches, make reasonable values */
     if (wd <= 0.0)
-	wd = cur_arrowwidth;
+        wd = cur_arrowwidth;
     /* if height is < 0 or > 50 inches, make reasonable values */
     if (ht < 0.0 || ht > 50.0 * DISPLAY_PIX_PER_INCH)
-	ht = cur_arrowheight;
+        ht = cur_arrowheight;
     a->type = type;
     a->style = style;
     a->thickness = thickness;
@@ -137,28 +144,29 @@ new_arrow(int type, int style, float thickness, float wd, float ht)
 
 /************************ COMMENTS *************************/
 
-void
-copy_comments(char **source, char **dest)
+void copy_comments(char **source, char **dest)
 {
-    if (*source == NULL) {
-	*dest = NULL;
-	return;
+    if (*source == NULL)
+    {
+        *dest = NULL;
+        return;
     }
-    if ((*dest = (char*) new_string(strlen(*source))) == NULL)
-	return;
-    strcpy(*dest,*source);
+    if ((*dest = (char *)new_string(strlen(*source))) == NULL)
+        return;
+    strcpy(*dest, *source);
 }
 
 /************************ SMART LINKS *************************/
 
-F_linkinfo     *
+F_linkinfo *
 new_link(F_line *l, F_point *ep, F_point *pp)
 {
-    F_linkinfo	   *k;
+    F_linkinfo *k;
 
-    if ((k = (F_linkinfo *) malloc(LINKINFO_SIZE)) == NULL) {
-	put_msg(Err_mem);
-	return NULL;
+    if ((k = (F_linkinfo *)malloc(LINKINFO_SIZE)) == NULL)
+    {
+        put_msg(Err_mem);
+        return NULL;
     }
     k->line = l;
     k->endpt = ep;
@@ -169,14 +177,15 @@ new_link(F_line *l, F_point *ep, F_point *pp)
 
 /************************ POINTS *************************/
 
-F_point	       *
+F_point *
 create_point(void)
 {
-    F_point	   *p;
+    F_point *p;
 
-    if ((p = (F_point *) malloc(POINT_SIZE)) == NULL) {
-	put_msg(Err_mem);
-	return NULL;
+    if ((p = (F_point *)malloc(POINT_SIZE)) == NULL)
+    {
+        put_msg(Err_mem);
+        return NULL;
     }
     p->x = 0;
     p->y = 0;
@@ -184,40 +193,43 @@ create_point(void)
     return p;
 }
 
-F_sfactor      *
+F_sfactor *
 create_sfactor(void)
 {
-    F_sfactor	   *cp;
+    F_sfactor *cp;
 
-    if ((cp = (F_sfactor *) malloc(CONTROL_SIZE)) == NULL) {
-	put_msg(Err_mem);
-	return NULL;
+    if ((cp = (F_sfactor *)malloc(CONTROL_SIZE)) == NULL)
+    {
+        put_msg(Err_mem);
+        return NULL;
     }
     cp->next = NULL;
     return cp;
 }
 
-F_point	       *
+F_point *
 copy_points(F_point *orig_pt)
 {
-    F_point	   *new_pt, *prev_pt, *first_pt;
+    F_point *new_pt, *prev_pt, *first_pt;
 
     if ((new_pt = create_point()) == NULL)
-	return NULL;
+        return NULL;
 
     first_pt = new_pt;
     *new_pt = *orig_pt;
     new_pt->next = NULL;
     prev_pt = new_pt;
-    for (orig_pt = orig_pt->next; orig_pt != NULL; orig_pt = orig_pt->next) {
-	if ((new_pt = create_point()) == NULL) {
-	    free_points(first_pt);
-	    return NULL;
-	}
-	prev_pt->next = new_pt;
-	*new_pt = *orig_pt;
-	new_pt->next = NULL;
-	prev_pt = new_pt;
+    for (orig_pt = orig_pt->next; orig_pt != NULL; orig_pt = orig_pt->next)
+    {
+        if ((new_pt = create_point()) == NULL)
+        {
+            free_points(first_pt);
+            return NULL;
+        }
+        prev_pt->next = new_pt;
+        *new_pt = *orig_pt;
+        new_pt->next = NULL;
+        prev_pt = new_pt;
     }
     return first_pt;
 }
@@ -225,56 +237,59 @@ copy_points(F_point *orig_pt)
 F_sfactor *
 copy_sfactors(F_sfactor *orig_sf)
 {
-    F_sfactor	 *new_sf, *prev_sf, *first_sf;
+    F_sfactor *new_sf, *prev_sf, *first_sf;
 
     if ((new_sf = create_sfactor()) == NULL)
-	return NULL;
+        return NULL;
 
     first_sf = new_sf;
     *new_sf = *orig_sf;
     new_sf->next = NULL;
     prev_sf = new_sf;
-    for (orig_sf = orig_sf->next; orig_sf != NULL; orig_sf = orig_sf->next) {
-	if ((new_sf = create_sfactor()) == NULL) {
-	    free_sfactors(first_sf);
-	    return NULL;
-	}
-	prev_sf->next = new_sf;
-	*new_sf = *orig_sf;
-	new_sf->next = NULL;
-	prev_sf = new_sf;
+    for (orig_sf = orig_sf->next; orig_sf != NULL; orig_sf = orig_sf->next)
+    {
+        if ((new_sf = create_sfactor()) == NULL)
+        {
+            free_sfactors(first_sf);
+            return NULL;
+        }
+        prev_sf->next = new_sf;
+        *new_sf = *orig_sf;
+        new_sf->next = NULL;
+        prev_sf = new_sf;
     }
     return first_sf;
 }
 
 /* reverse points in list */
 
-void
-reverse_points(F_point *orig_pt)
+void reverse_points(F_point *orig_pt)
 {
-    F_point	   *cur_pt;
-    int		    npts,i;
-    F_point	   *tmp_pts;
+    F_point *cur_pt;
+    int npts, i;
+    F_point *tmp_pts;
 
     /* count how many points are in the list */
     cur_pt = orig_pt;
-    for (npts=0; cur_pt; cur_pt=cur_pt->next)
-	npts++;
+    for (npts = 0; cur_pt; cur_pt = cur_pt->next)
+        npts++;
     /* make a temporary stack (array) */
-    tmp_pts = (F_point *) malloc(npts*sizeof(F_point));
+    tmp_pts = (F_point *)malloc(npts * sizeof(F_point));
     cur_pt = orig_pt;
     /* and put them on in reverse order */
-    for (i=npts-1; i>=0; i--) {
-	tmp_pts[i].x = cur_pt->x;
-	tmp_pts[i].y = cur_pt->y;
-	cur_pt = cur_pt->next;
+    for (i = npts - 1; i >= 0; i--)
+    {
+        tmp_pts[i].x = cur_pt->x;
+        tmp_pts[i].y = cur_pt->y;
+        cur_pt = cur_pt->next;
     }
     /* now reverse them */
     cur_pt = orig_pt;
-    for (i=0; i<npts; i++) {
-	cur_pt->x = tmp_pts[i].x;
-	cur_pt->y = tmp_pts[i].y;
-	cur_pt = cur_pt->next;
+    for (i = 0; i < npts; i++)
+    {
+        cur_pt->x = tmp_pts[i].x;
+        cur_pt->y = tmp_pts[i].y;
+        cur_pt = cur_pt->next;
     }
     /* free the temp array */
     free(tmp_pts);
@@ -282,30 +297,31 @@ reverse_points(F_point *orig_pt)
 
 /* reverse sfactors in list */
 
-void
-reverse_sfactors(F_sfactor *orig_sf)
+void reverse_sfactors(F_sfactor *orig_sf)
 {
-    F_sfactor	   *cur_sf;
-    int		    nsf,i;
-    F_sfactor	   *tmp_sf;
+    F_sfactor *cur_sf;
+    int nsf, i;
+    F_sfactor *tmp_sf;
 
     /* count how many sfactors are in the list */
     cur_sf = orig_sf;
-    for (nsf=0; cur_sf; cur_sf=cur_sf->next)
-	nsf++;
+    for (nsf = 0; cur_sf; cur_sf = cur_sf->next)
+        nsf++;
     /* make a temporary stack (array) */
-    tmp_sf = (F_sfactor *) malloc(nsf*sizeof(F_sfactor));
+    tmp_sf = (F_sfactor *)malloc(nsf * sizeof(F_sfactor));
     cur_sf = orig_sf;
     /* and put them on in reverse order */
-    for (i=nsf-1; i>=0; i--) {
-	tmp_sf[i].s = cur_sf->s;
-	cur_sf = cur_sf->next;
+    for (i = nsf - 1; i >= 0; i--)
+    {
+        tmp_sf[i].s = cur_sf->s;
+        cur_sf = cur_sf->next;
     }
     /* now reverse them */
     cur_sf = orig_sf;
-    for (i=0; i<nsf; i++) {
-	cur_sf->s = tmp_sf[i].s;
-	cur_sf = cur_sf->next;
+    for (i = 0; i < nsf; i++)
+    {
+        cur_sf->s = tmp_sf[i].s;
+        cur_sf = cur_sf->next;
     }
     /* free the temp array */
     free(tmp_sf);
@@ -313,14 +329,15 @@ reverse_sfactors(F_sfactor *orig_sf)
 
 /************************ ARCS *************************/
 
-F_arc	       *
+F_arc *
 create_arc(void)
 {
-    F_arc	   *a;
+    F_arc *a;
 
-    if ((a = (F_arc *) malloc(ARCOBJ_SIZE)) == NULL) {
-	put_msg(Err_mem);
-	return NULL;
+    if ((a = (F_arc *)malloc(ARCOBJ_SIZE)) == NULL)
+    {
+        put_msg(Err_mem);
+        return NULL;
     }
     a->tagged = 0;
     a->next = NULL;
@@ -342,14 +359,14 @@ create_arc(void)
     return a;
 }
 
-F_arc	       *
+F_arc *
 copy_arc(F_arc *a)
 {
-    F_arc	   *arc;
-    F_arrow	   *arrow;
+    F_arc *arc;
+    F_arrow *arrow;
 
     if ((arc = create_arc()) == NULL)
-	return NULL;
+        return NULL;
 
     /* copy static items first */
     *arc = *a;
@@ -358,35 +375,40 @@ copy_arc(F_arc *a)
     /* do comments next */
     copy_comments(&a->comments, &arc->comments);
 
-    if (a->for_arrow) {
-	if ((arrow = create_arrow()) == NULL) {
-	    free((char *) arc);
-	    return NULL;
-	}
-	arc->for_arrow = arrow;
-	*arrow = *a->for_arrow;
+    if (a->for_arrow)
+    {
+        if ((arrow = create_arrow()) == NULL)
+        {
+            free((char *)arc);
+            return NULL;
+        }
+        arc->for_arrow = arrow;
+        *arrow = *a->for_arrow;
     }
-    if (a->back_arrow) {
-	if ((arrow = create_arrow()) == NULL) {
-	    free((char *) arc);
-	    return NULL;
-	}
-	arc->back_arrow = arrow;
-	*arrow = *a->back_arrow;
+    if (a->back_arrow)
+    {
+        if ((arrow = create_arrow()) == NULL)
+        {
+            free((char *)arc);
+            return NULL;
+        }
+        arc->back_arrow = arrow;
+        *arrow = *a->back_arrow;
     }
     return arc;
 }
 
 /************************ ELLIPSES *************************/
 
-F_ellipse      *
+F_ellipse *
 create_ellipse(void)
 {
-    F_ellipse	   *e;
+    F_ellipse *e;
 
-    if ((e = (F_ellipse *) malloc(ELLOBJ_SIZE)) == NULL) {
-	put_msg(Err_mem);
-	return NULL;
+    if ((e = (F_ellipse *)malloc(ELLOBJ_SIZE)) == NULL)
+    {
+        put_msg(Err_mem);
+        return NULL;
     }
     e->tagged = 0;
     e->next = NULL;
@@ -394,13 +416,13 @@ create_ellipse(void)
     return e;
 }
 
-F_ellipse      *
+F_ellipse *
 copy_ellipse(F_ellipse *e)
 {
-    F_ellipse	   *ellipse;
+    F_ellipse *ellipse;
 
     if ((ellipse = create_ellipse()) == NULL)
-	return NULL;
+        return NULL;
 
     /* copy static items first */
     *ellipse = *e;
@@ -414,14 +436,15 @@ copy_ellipse(F_ellipse *e)
 
 /************************ LINES *************************/
 
-F_line	       *
+F_line *
 create_line(void)
 {
-    F_line	   *l;
+    F_line *l;
 
-    if ((l = (F_line *) malloc(LINOBJ_SIZE)) == NULL) {
-	put_msg(Err_mem);
-	return NULL;
+    if ((l = (F_line *)malloc(LINOBJ_SIZE)) == NULL)
+    {
+        put_msg(Err_mem);
+        return NULL;
     }
     l->tagged = 0;
     l->next = NULL;
@@ -434,16 +457,17 @@ create_line(void)
     return l;
 }
 
-F_pic	       *
+F_pic *
 create_pic(void)
 {
-    F_pic	   *pic;
+    F_pic *pic;
 
-    if ((pic = (F_pic *) malloc(PIC_SIZE)) == NULL) {
-	put_msg(Err_mem);
-	return NULL;
+    if ((pic = (F_pic *)malloc(PIC_SIZE)) == NULL)
+    {
+        put_msg(Err_mem);
+        return NULL;
     }
-    pic->mask = (Pixmap) 0;
+    pic->mask = (Pixmap)0;
     pic->new = False;
     pic->pic_cache = NULL;
     return pic;
@@ -465,20 +489,20 @@ create_picture_entry(void)
     picture->refcount = 0;
     picture->prev = picture->next = NULL;
     if (appres.DEBUG)
-	fprintf(stderr,"create picture entry %p\n", picture);
+        fprintf(stderr, "create picture entry %p\n", picture);
     return picture;
 }
 
-F_line	       *
+F_line *
 copy_line(F_line *l)
 {
-    F_line	   *line;
-    F_arrow	   *arrow;
-    int		    width, height;
-    GC		    one_bit_gc;
+    F_line *line;
+    F_arrow *arrow;
+    int width, height;
+    GC one_bit_gc;
 
     if ((line = create_line()) == NULL)
-	return NULL;
+        return NULL;
 
     /* copy static items first */
     *line = *l;
@@ -487,72 +511,82 @@ copy_line(F_line *l)
     /* do comments next */
     copy_comments(&l->comments, &line->comments);
 
-    if (l->for_arrow) {
-	if ((arrow = create_arrow()) == NULL) {
-	    free((char *) line);
-	    return NULL;
-	}
-	line->for_arrow = arrow;
-	*arrow = *l->for_arrow;
+    if (l->for_arrow)
+    {
+        if ((arrow = create_arrow()) == NULL)
+        {
+            free((char *)line);
+            return NULL;
+        }
+        line->for_arrow = arrow;
+        *arrow = *l->for_arrow;
     }
-    if (l->back_arrow) {
-	if ((arrow = create_arrow()) == NULL) {
-	    free((char *) line);
-	    return NULL;
-	}
-	line->back_arrow = arrow;
-	*arrow = *l->back_arrow;
+    if (l->back_arrow)
+    {
+        if ((arrow = create_arrow()) == NULL)
+        {
+            free((char *)line);
+            return NULL;
+        }
+        line->back_arrow = arrow;
+        *arrow = *l->back_arrow;
     }
     line->points = copy_points(l->points);
-    if (NULL == line->points) {
-	put_msg(Err_mem);
-	free_linestorage(line);
-	return NULL;
+    if (NULL == line->points)
+    {
+        put_msg(Err_mem);
+        free_linestorage(line);
+        return NULL;
     }
     /* copy picture information */
-    if (l->pic) {
-	if ((line->pic = create_pic()) == NULL) {
-	    free((char *) line);
-	    return NULL;
-	}
-	/* copy all the numbers and the pointer to the picture repository (pic->pic_cache) */
-	memcpy(line->pic, l->pic, PIC_SIZE);
-	/* increase reference count for this picture */
-	if (line->pic->pic_cache)
-	    line->pic->pic_cache->refcount++;
+    if (l->pic)
+    {
+        if ((line->pic = create_pic()) == NULL)
+        {
+            free((char *)line);
+            return NULL;
+        }
+        /* copy all the numbers and the pointer to the picture repository (pic->pic_cache) */
+        memcpy(line->pic, l->pic, PIC_SIZE);
+        /* increase reference count for this picture */
+        if (line->pic->pic_cache)
+            line->pic->pic_cache->refcount++;
 
-	width = l->pic->pix_width;
-	height = l->pic->pix_height;
-	/* copy pixmap */
-	if (l->pic->pixmap != 0) {
-	    line->pic->pixmap = XCreatePixmap(tool_d, tool_w,
-				width, height, tool_dpth);
-	    XCopyArea(tool_d, l->pic->pixmap, line->pic->pixmap, gccache[PAINT],
-				0, 0, width, height, 0, 0);
-	}
-	/* and copy any mask (GIF transparency) */
-	if (l->pic->mask != 0) {
+        width = l->pic->pix_width;
+        height = l->pic->pix_height;
+        /* copy pixmap */
+        if (l->pic->pixmap != 0)
+        {
+            line->pic->pixmap = XCreatePixmap(tool_d, tool_w,
+                                              width, height, tool_dpth);
+            XCopyArea(tool_d, l->pic->pixmap, line->pic->pixmap, gccache[PAINT],
+                      0, 0, width, height, 0, 0);
+        }
+        /* and copy any mask (GIF transparency) */
+        if (l->pic->mask != 0)
+        {
             line->pic->mask = XCreatePixmap(tool_d, tool_w, width, height, 1);
-	    /* need a 1-bit deep GC to copy it */
-	    one_bit_gc = XCreateGC(tool_d, line->pic->mask, (unsigned long) 0, 0);
-	    XSetForeground(tool_d, one_bit_gc, 0);
-	    XCopyArea(tool_d, l->pic->mask, line->pic->mask, one_bit_gc,
-				0, 0, width, height, 0, 0);
-	}
+            /* need a 1-bit deep GC to copy it */
+            one_bit_gc = XCreateGC(tool_d, line->pic->mask, (unsigned long)0, 0);
+            XSetForeground(tool_d, one_bit_gc, 0);
+            XCopyArea(tool_d, l->pic->mask, line->pic->mask, one_bit_gc,
+                      0, 0, width, height, 0, 0);
+        }
     }
     return line;
 }
 
 /************************ SPLINES *************************/
 
-F_spline       *
+F_spline *
 create_spline(void)
 {
-    F_spline	   *s;
+    F_spline *s;
 
-    if ((s = (F_spline *) malloc(SPLOBJ_SIZE)) == NULL) {
-	put_msg(Err_mem);
-	return NULL;
+    if ((s = (F_spline *)malloc(SPLOBJ_SIZE)) == NULL)
+    {
+        put_msg(Err_mem);
+        return NULL;
     }
     s->tagged = 0;
     s->next = NULL;
@@ -560,14 +594,14 @@ create_spline(void)
     return s;
 }
 
-F_spline       *
+F_spline *
 copy_spline(F_spline *s)
 {
-    F_spline	   *spline;
-    F_arrow	   *arrow;
+    F_spline *spline;
+    F_arrow *arrow;
 
     if ((spline = create_spline()) == NULL)
-	return NULL;
+        return NULL;
 
     /* copy static items first */
     *spline = *s;
@@ -576,36 +610,42 @@ copy_spline(F_spline *s)
     /* do comments next */
     copy_comments(&s->comments, &spline->comments);
 
-    if (s->for_arrow) {
-	if ((arrow = create_arrow()) == NULL) {
-	    free((char *) spline);
-	    return NULL;
-	}
-	spline->for_arrow = arrow;
-	*arrow = *s->for_arrow;
+    if (s->for_arrow)
+    {
+        if ((arrow = create_arrow()) == NULL)
+        {
+            free((char *)spline);
+            return NULL;
+        }
+        spline->for_arrow = arrow;
+        *arrow = *s->for_arrow;
     }
-    if (s->back_arrow) {
-	if ((arrow = create_arrow()) == NULL) {
-	    free((char *) spline);
-	    return NULL;
-	}
-	spline->back_arrow = arrow;
-	*arrow = *s->back_arrow;
+    if (s->back_arrow)
+    {
+        if ((arrow = create_arrow()) == NULL)
+        {
+            free((char *)spline);
+            return NULL;
+        }
+        spline->back_arrow = arrow;
+        *arrow = *s->back_arrow;
     }
     spline->points = copy_points(s->points);
-    if (NULL == spline->points) {
-	put_msg(Err_mem);
-	free_splinestorage(spline);
-	return NULL;
+    if (NULL == spline->points)
+    {
+        put_msg(Err_mem);
+        free_splinestorage(spline);
+        return NULL;
     }
 
     if (s->sfactors == NULL)
-	return spline;
+        return spline;
     spline->sfactors = copy_sfactors(s->sfactors);
-    if (NULL == spline->sfactors) {
-	put_msg(Err_mem);
-	free_splinestorage(spline);
-	return NULL;
+    if (NULL == spline->sfactors)
+    {
+        put_msg(Err_mem);
+        free_splinestorage(spline);
+        return NULL;
     }
 
     return spline;
@@ -613,14 +653,15 @@ copy_spline(F_spline *s)
 
 /************************ TEXTS *************************/
 
-F_text	       *
+F_text *
 create_text(void)
 {
-    F_text	   *t;
+    F_text *t;
 
-    if ((t = (F_text *) malloc(TEXOBJ_SIZE)) == NULL) {
-	put_msg(Err_mem);
-	return NULL;
+    if ((t = (F_text *)malloc(TEXOBJ_SIZE)) == NULL)
+    {
+        put_msg(Err_mem);
+        return NULL;
     }
     t->tagged = 0;
     t->fontstruct = 0;
@@ -632,23 +673,23 @@ create_text(void)
 
 /* allocate len+1 characters in a new string */
 
-char	       *
+char *
 new_string(int len)
 {
-    char	   *c;
+    char *c;
 
-    if ((c = (char *) calloc((unsigned) len + 1, sizeof(char))) == NULL)
-	put_msg(Err_mem);
+    if ((c = (char *)calloc((unsigned)len + 1, sizeof(char))) == NULL)
+        put_msg(Err_mem);
     return c;
 }
 
-F_text	       *
+F_text *
 copy_text(F_text *t)
 {
-    F_text	   *text;
+    F_text *text;
 
     if ((text = create_text()) == NULL)
-	return NULL;
+        return NULL;
 
     /* copy static items first */
     *text = *t;
@@ -657,24 +698,24 @@ copy_text(F_text *t)
     /* do comments next */
     copy_comments(&t->comments, &text->comments);
 
-    if ((text->cstring = new_string(strlen(t->cstring))) == NULL) {
-	free((char *) text);
-	return NULL;
+    if ((text->cstring = new_string(strlen(t->cstring))) == NULL)
+    {
+        free((char *)text);
+        return NULL;
     }
     strcpy(text->cstring, t->cstring);
     return text;
 }
 
-/************************ COMPOUNDS *************************/
-
-F_compound     *
+F_compound *
 create_compound(void)
 {
-    F_compound	   *c;
+    F_compound *c;
 
-    if ((c = (F_compound *) malloc(COMOBJ_SIZE)) == NULL) {
-	put_msg(Err_mem);
-	return NULL;
+    if ((c = (F_compound *)malloc(COMOBJ_SIZE)) == NULL)
+    {
+        put_msg(Err_mem);
+        return NULL;
     }
     c->nwcorner.x = 0;
     c->nwcorner.y = 0;
@@ -696,18 +737,53 @@ create_compound(void)
     return c;
 }
 
-F_compound     *
+/************************ COMPOUNDS *************************/
+
+// #taskUndoRedo_02: Create
+/*------------------------------------Code Starts Here------------------------*/
+// Create an F_history create_history method that returns void.
+// This method will allow us to initialize the variables needed to keep a running
+// track of our undo/redo history.
+
+// 1. If the current malloced history is NULL, output an error message and return NULL.
+// 2. Otherwise, initialize the h pointers to the following items to their default values:
+/*      h->last_action
+    h->last_object
+    h->new_x
+    h->new_y
+    h->last_x
+    h->last_y
+    h->last_arcpointnum
+    h->last_selected_sfactor
+    h->latest_line
+    h->next
+    h->saved_for_arrow
+    h->saved_back_arrow
+    h->last_selected_point
+    h->last_prev_point
+    h->saved_objects */
+// have it return h.
+// use the compound above for reference.
+
+F_history *
+create_history(void)
+{
+}
+
+/*------------------------------------Code Ends Here--------------------------*/
+
+F_compound *
 copy_compound(F_compound *c)
 {
-    F_ellipse	   *e, *ee;
-    F_arc	   *a, *aa;
-    F_line	   *l, *ll;
-    F_spline	   *s, *ss;
-    F_text	   *t, *tt;
-    F_compound	   *cc, *ccc, *compound;
+    F_ellipse *e, *ee;
+    F_arc *a, *aa;
+    F_line *l, *ll;
+    F_spline *s, *ss;
+    F_text *t, *tt;
+    F_compound *cc, *ccc, *compound;
 
     if ((compound = create_compound()) == NULL)
-	return NULL;
+        return NULL;
 
     compound->nwcorner = c->nwcorner;
     compound->secorner = c->secorner;
@@ -722,47 +798,59 @@ copy_compound(F_compound *c)
     /* do comments first */
     copy_comments(&c->comments, &compound->comments);
 
-    for (e = c->ellipses; e != NULL; e = e->next) {
-	if (NULL == (ee = copy_ellipse(e))) {
-	    put_msg(Err_mem);
-	    return NULL;
-	}
-	list_add_ellipse(&compound->ellipses, ee);
+    for (e = c->ellipses; e != NULL; e = e->next)
+    {
+        if (NULL == (ee = copy_ellipse(e)))
+        {
+            put_msg(Err_mem);
+            return NULL;
+        }
+        list_add_ellipse(&compound->ellipses, ee);
     }
-    for (a = c->arcs; a != NULL; a = a->next) {
-	if (NULL == (aa = copy_arc(a))) {
-	    put_msg(Err_mem);
-	    return NULL;
-	}
-	list_add_arc(&compound->arcs, aa);
+    for (a = c->arcs; a != NULL; a = a->next)
+    {
+        if (NULL == (aa = copy_arc(a)))
+        {
+            put_msg(Err_mem);
+            return NULL;
+        }
+        list_add_arc(&compound->arcs, aa);
     }
-    for (l = c->lines; l != NULL; l = l->next) {
-	if (NULL == (ll = copy_line(l))) {
-	    put_msg(Err_mem);
-	    return NULL;
-	}
-	list_add_line(&compound->lines, ll);
+    for (l = c->lines; l != NULL; l = l->next)
+    {
+        if (NULL == (ll = copy_line(l)))
+        {
+            put_msg(Err_mem);
+            return NULL;
+        }
+        list_add_line(&compound->lines, ll);
     }
-    for (s = c->splines; s != NULL; s = s->next) {
-	if (NULL == (ss = copy_spline(s))) {
-	    put_msg(Err_mem);
-	    return NULL;
-	}
-	list_add_spline(&compound->splines, ss);
+    for (s = c->splines; s != NULL; s = s->next)
+    {
+        if (NULL == (ss = copy_spline(s)))
+        {
+            put_msg(Err_mem);
+            return NULL;
+        }
+        list_add_spline(&compound->splines, ss);
     }
-    for (t = c->texts; t != NULL; t = t->next) {
-	if (NULL == (tt = copy_text(t))) {
-	    put_msg(Err_mem);
-	    return NULL;
-	}
-	list_add_text(&compound->texts, tt);
+    for (t = c->texts; t != NULL; t = t->next)
+    {
+        if (NULL == (tt = copy_text(t)))
+        {
+            put_msg(Err_mem);
+            return NULL;
+        }
+        list_add_text(&compound->texts, tt);
     }
-    for (cc = c->compounds; cc != NULL; cc = cc->next) {
-	if (NULL == (ccc = copy_compound(cc))) {
-	    put_msg(Err_mem);
-	    return NULL;
-	}
-	list_add_compound(&compound->compounds, ccc);
+    for (cc = c->compounds; cc != NULL; cc = cc->next)
+    {
+        if (NULL == (ccc = copy_compound(cc)))
+        {
+            put_msg(Err_mem);
+            return NULL;
+        }
+        list_add_compound(&compound->compounds, ccc);
     }
     return compound;
 }
@@ -781,27 +869,31 @@ copy_compound(F_compound *c)
    Call with add_to_figure = True to add to main figure objects
 */
 
-F_compound*
+F_compound *
 create_dimension_line(F_line *line, Boolean add_to_figure)
 {
-    F_compound	   *comp;
-    F_line	   *box, *tick1, *tick2;
-    F_text	   *text;
-    F_point	   *pnt;
+    F_compound *comp;
+    F_line *box, *tick1, *tick2;
+    F_text *text;
+    F_point *pnt;
 
     /* make a new compound */
     comp = create_compound();
     /* if fixed text, put in an unchanging comment for the compound */
     /* (rescale_dimension_line will create the comment if the text not fixed (=length)) */
-    if (cur_dimline_fixed) {
-	comp->comments = strdup("Dimension line: User-defined text");
-    } else {
-	comp->comments = strdup("Dimension line:");
+    if (cur_dimline_fixed)
+    {
+        comp->comments = strdup("Dimension line: User-defined text");
+    }
+    else
+    {
+        comp->comments = strdup("Dimension line:");
     }
 
     /* need two objects *on top of* the basic line */
-    if (line->depth < 2) {
-	line->depth = 2;
+    if (line->depth < 2)
+    {
+        line->depth = 2;
     }
 
     /* put the main line in the compound */
@@ -813,15 +905,17 @@ create_dimension_line(F_line *line, Boolean add_to_figure)
     line->fill_style = UNFILLED;
     line->style = cur_dimline_style;
     if (line->style == DOTTED_LINE)
-	line->style_val = cur_dotgap * (cur_dimline_thick + 1) / 2;
+        line->style_val = cur_dotgap * (cur_dimline_thick + 1) / 2;
     else
-	line->style_val = cur_dashlength * (cur_dimline_thick + 1) / 2;
+        line->style_val = cur_dashlength * (cur_dimline_thick + 1) / 2;
     line->pen_color = cur_dimline_color;
-    if (cur_dimline_leftarrow != -1) {
-	line->back_arrow = backward_dim_arrow();
+    if (cur_dimline_leftarrow != -1)
+    {
+        line->back_arrow = backward_dim_arrow();
     }
-    if (cur_dimline_rightarrow != -1) {
-	line->for_arrow = forward_dim_arrow();
+    if (cur_dimline_rightarrow != -1)
+    {
+        line->for_arrow = forward_dim_arrow();
     }
 
     /***************************************/
@@ -829,12 +923,12 @@ create_dimension_line(F_line *line, Boolean add_to_figure)
     /***************************************/
 
     text = create_text();
-    text->depth  = line->depth-2;
-    text->cstring = (char *) NULL;	/* the string will be put in later */
+    text->depth = line->depth - 2;
+    text->cstring = (char *)NULL; /* the string will be put in later */
     text->color = cur_dimline_textcolor;
     text->font = cur_dimline_font;
     text->size = cur_dimline_fontsize;
-    text->flags = cur_dimline_psflag? PSFONT_TEXT: 0;
+    text->flags = cur_dimline_psflag ? PSFONT_TEXT : 0;
     text->pen_style = -1;
     text->type = T_CENTER_JUSTIFIED;
 
@@ -847,14 +941,14 @@ create_dimension_line(F_line *line, Boolean add_to_figure)
 
     box = create_line();
     box->comments = strdup("text box");
-    box->depth = line->depth-1;
+    box->depth = line->depth - 1;
     box->type = T_POLYGON;
     box->style = SOLID_LINE;
     box->style_val = 0.0;
     box->thickness = cur_dimline_boxthick;
     box->pen_color = cur_pencolor;
     box->fill_color = cur_dimline_boxcolor;
-    box->fill_style = NUMSHADEPATS-1;	 /* full saturation color */
+    box->fill_style = NUMSHADEPATS - 1; /* full saturation color */
     box->pen_style = -1;
     box->join_style = cur_joinstyle;
     box->cap_style = CAP_BUTT;
@@ -877,49 +971,55 @@ create_dimension_line(F_line *line, Boolean add_to_figure)
     /* make the two ticks at the endpoints if cur_dimline_ticks == True */
     /********************************************************************/
 
-    if (cur_dimline_ticks) {
-	create_dimline_ticks(line, &tick1, &tick2);
+    if (cur_dimline_ticks)
+    {
+        create_dimline_ticks(line, &tick1, &tick2);
 
-	/* add this to the lines in the compound */
-	box->next = tick1;
+        /* add this to the lines in the compound */
+        box->next = tick1;
 
-	/* add this to the lines in the compound */
-	tick1->next = tick2;
-    } else
-	box->next = (F_line *) NULL;
+        /* add this to the lines in the compound */
+        tick1->next = tick2;
+    }
+    else
+        box->next = (F_line *)NULL;
 
     /* if user wants fixed text, add an empty string and a comment to the text part. */
-    if (cur_dimline_fixed) {
-	text->comments = strdup("fixed text");
-	/* if not adding to figure, this must be the dimension line setting panel */
-	if (!add_to_figure)
-	    text->cstring = strdup("user text");
-	else
-	    text->cstring = strdup("");
+    if (cur_dimline_fixed)
+    {
+        text->comments = strdup("fixed text");
+        /* if not adding to figure, this must be the dimension line setting panel */
+        if (!add_to_figure)
+            text->cstring = strdup("user text");
+        else
+            text->cstring = strdup("");
     }
 
     /* add it to the figure */
-    if (add_to_figure) {
-	add_compound(comp);
-	/* if fixed text, popup editor so user can edit text */
-	if (cur_dimline_fixed) {
-	    clear_mousefun();
-	    set_mousefun("","","", "", "", "");
-	    turn_off_current();
-	    set_cursor(arrow_cursor);
-	    /* make the shapes (ticks, etc) */
-	    rescale_dimension_line(comp, 1.0, 1.0, 0, 0);
-	    /* tells the editor to switch back to line mode when done */
-	    edit_remember_dimline_mode = True;
-	    /* now let the user change the text */
-	    edit_item(comp, O_COMPOUND, 0, 0);
-	}
+    if (add_to_figure)
+    {
+        add_compound(comp);
+        /* if fixed text, popup editor so user can edit text */
+        if (cur_dimline_fixed)
+        {
+            clear_mousefun();
+            set_mousefun("", "", "", "", "", "");
+            turn_off_current();
+            set_cursor(arrow_cursor);
+            /* make the shapes (ticks, etc) */
+            rescale_dimension_line(comp, 1.0, 1.0, 0, 0);
+            /* tells the editor to switch back to line mode when done */
+            edit_remember_dimline_mode = True;
+            /* now let the user change the text */
+            edit_item(comp, O_COMPOUND, 0, 0);
+        }
     }
     /* calculate angles, box size etc */
     /* if user just edited it (both cur_dimline_fixed and add_to_figure = True) then
        it has already been scaled */
-    if (!cur_dimline_fixed || !add_to_figure) {
-	rescale_dimension_line(comp, 1.0, 1.0, 0, 0);
+    if (!cur_dimline_fixed || !add_to_figure)
+    {
+        rescale_dimension_line(comp, 1.0, 1.0, 0, 0);
     }
 
     /* return it to the caller */
@@ -931,93 +1031,94 @@ create_dimension_line(F_line *line, Boolean add_to_figure)
  * the actual values of the ticks' points are computed in rescale_dimension_line()
  */
 
-void
-create_dimline_ticks(F_line *line, F_line **tick1, F_line **tick2)
+void create_dimline_ticks(F_line *line, F_line **tick1, F_line **tick2)
 {
-	F_point	   *pnt;
-	F_line	   *tick;
+    F_point *pnt;
+    F_line *tick;
 
-	/* first tick */
+    /* first tick */
 
-	tick = create_line();
-	/* copy the attributes from the main line */
-	*tick = *line;
-	/* set thickness */
-	tick->thickness = cur_dimline_tickthick;
-	/* make solid */
-	tick->style = SOLID_LINE;
-	tick->comments = strdup("tick");
-	/* zero the arrows and next pointer */
-	tick->for_arrow = tick->back_arrow = (F_arrow *) NULL;
-	tick->next = (F_line *) NULL;
-	pnt = create_point();
-	tick->points = pnt;
-	pnt->next = create_point();
-	*tick1 = tick;
+    tick = create_line();
+    /* copy the attributes from the main line */
+    *tick = *line;
+    /* set thickness */
+    tick->thickness = cur_dimline_tickthick;
+    /* make solid */
+    tick->style = SOLID_LINE;
+    tick->comments = strdup("tick");
+    /* zero the arrows and next pointer */
+    tick->for_arrow = tick->back_arrow = (F_arrow *)NULL;
+    tick->next = (F_line *)NULL;
+    pnt = create_point();
+    tick->points = pnt;
+    pnt->next = create_point();
+    *tick1 = tick;
 
-	/* now the other tick */
+    /* now the other tick */
 
-	tick = create_line();
-	/* copy the attributes from the main line */
-	*tick = *line;
-	/* set thickness */
-	tick->thickness = cur_dimline_tickthick;
-	/* make solid */
-	tick->style = SOLID_LINE;
-	tick->comments = strdup("tick");
-	/* zero the arrows and next pointer */
-	tick->for_arrow = tick->back_arrow = (F_arrow *) NULL;
-	tick->next = (F_line *) NULL;
-	pnt = create_point();
-	tick->points = pnt;
-	pnt->next = create_point();
-	*tick2 = tick;
+    tick = create_line();
+    /* copy the attributes from the main line */
+    *tick = *line;
+    /* set thickness */
+    tick->thickness = cur_dimline_tickthick;
+    /* make solid */
+    tick->style = SOLID_LINE;
+    tick->comments = strdup("tick");
+    /* zero the arrows and next pointer */
+    tick->for_arrow = tick->back_arrow = (F_arrow *)NULL;
+    tick->next = (F_line *)NULL;
+    pnt = create_point();
+    tick->points = pnt;
+    pnt->next = create_point();
+    *tick2 = tick;
 }
 
-F_arrow*
+F_arrow *
 backward_dim_arrow(void)
 {
-    F_arrow	   *a;
+    F_arrow *a;
 
-    if ((a = create_arrow()) == NULL) {
-	put_msg("Running out of memory");
-	return NULL;
+    if ((a = create_arrow()) == NULL)
+    {
+        put_msg("Running out of memory");
+        return NULL;
     }
 
     a->type = ARROW_TYPE(cur_dimline_leftarrow);
     a->style = ARROW_STYLE(cur_dimline_leftarrow);
     a->thickness = cur_dimline_thick;
     if (a->thickness == 0.0)
-	    a->thickness = 1.0;
-    a->wd = cur_dimline_arrowwidth*cur_dimline_thick;
-    a->ht = cur_dimline_arrowlength*cur_dimline_thick;
+        a->thickness = 1.0;
+    a->wd = cur_dimline_arrowwidth * cur_dimline_thick;
+    a->ht = cur_dimline_arrowlength * cur_dimline_thick;
     if (a->wd == 0.0)
-	    a->wd = 1.0;
+        a->wd = 1.0;
     if (a->ht == 0.0)
-	    a->ht = 1.0;
+        a->ht = 1.0;
     return a;
 }
 
-F_arrow*
+F_arrow *
 forward_dim_arrow(void)
 {
-    F_arrow	   *a;
+    F_arrow *a;
 
-    if ((a = create_arrow()) == NULL) {
-	put_msg("Running out of memory");
-	return NULL;
+    if ((a = create_arrow()) == NULL)
+    {
+        put_msg("Running out of memory");
+        return NULL;
     }
 
     a->type = ARROW_TYPE(cur_dimline_rightarrow);
     a->style = ARROW_STYLE(cur_dimline_rightarrow);
     a->thickness = cur_dimline_thick;
     if (a->thickness == 0.0)
-	    a->thickness = 1.0;
-    a->wd = cur_dimline_arrowwidth*cur_dimline_thick;
-    a->ht = cur_dimline_arrowlength*cur_dimline_thick;
+        a->thickness = 1.0;
+    a->wd = cur_dimline_arrowwidth * cur_dimline_thick;
+    a->ht = cur_dimline_arrowlength * cur_dimline_thick;
     if (a->wd == 0.0)
-	    a->wd = 1.0;
+        a->wd = 1.0;
     if (a->ht == 0.0)
-	    a->ht = 1.0;
+        a->ht = 1.0;
     return a;
 }
