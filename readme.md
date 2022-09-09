@@ -65,7 +65,7 @@ Every time you start and stop an instance, the IP address changes. you need to c
 
 Always stop your session after you are done, or else you would be charged money as if you were using the machine. You can set a rule for the time limit. For more [Check here](https://aws.amazon.com/about-aws/whats-new/2013/01/08/use-amazon-cloudwatch-to-detect-and-shut-down-unused-amazon-ec2-instances/). If you leave you machine running 24/7, you will be billed anywhere between **30-50 dollars per month**.
 
-You should be *Stopping* your instance and not *Terminating* it, as this will delete your instance and you will need to complete these steps again.
+You should be **Stopping** your instance and not **Terminating** it, as this will delete your instance and you will need to complete these steps again.
 
 # Let's go to work!
 
