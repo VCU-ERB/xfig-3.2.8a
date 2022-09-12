@@ -5,7 +5,7 @@ interactively in an X window.  The resulting pictures can be saved, printed
 on postscript printers, or converted to a variety of other formats (e.g. to
 allow inclusion in LaTeX documents).
 
-For More info about Xfig check out the [YouTube video](https://www.youtube.com/watch?v=9wOMELa_Nx4 "YouTube Video").
+For More info about Xfig check out the [YouTube video](https://www.youtube.com/watch?v=IlKFDVOZ8w8 "YouTube Video").
 
 # XFIG Tasks Project
 
@@ -19,7 +19,7 @@ Before starting, you need to follow the steps below to access a virtual machine 
 
 Remote Desktop Connection app, Credit/Debit Card, Phone number (for Verification), Internet Browser.
 
-1. Setting Up AWS ([Video Tutorial](https://youtu.be/xkicUjw4wvs))
+1. Setting Up AWS ([Video Tutorial](https://www.youtube.com/watch?v=1tCjLKcgvzA))
     1. The first thing to do is to create a personal account on AWS. This can be done by simply navigating to 
 [AWS Console](https://aws.amazon.com/console/ "AWS Console") (Note this might take more time to set-up).
     2. After Signing in, go to the menu 'Services' and click on 'Compute', then click on 'EC2 (Virtual Servers in the Cloud)'.
@@ -54,7 +54,7 @@ Remote Desktop Connection app, Credit/Debit Card, Phone number (for Verification
 
 3. Connecting the machine to your computer
     1. Go to your AWS instance page and select your instance. Find the 'Public IP' and copy it.
-    > (Just For Mac | [Video Tutorial](https://youtu.be/Dl_7oaLulag)) Open the 'App Store' and install 'Microsoft Remote Desktop'.
+    > (Just For Mac | [Video Tutorial](https://www.youtube.com/watch?v=uXtLfE4pmxQ)) Open the 'App Store' and install 'Microsoft Remote Desktop'.
     2. Open the aplication 'Remote desktop connection' and past the public IP to 'Computer' box.
     3. A security pop-up will appear. Click on Yes.
     4. On the login page, write the username "ubuntu" and password "ubuntu", then log in.
