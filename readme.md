@@ -97,4 +97,4 @@ You should be **Stopping** your instance and not **Terminating** it, as this wil
 
     2. Continue to Visual Studio Code and the project should be re-opened.
 
-For more info about managing, accessing, or compiling your projects on GitHub: [Video Tutorial](https://youtu.be/_jMa9k74U7s).
+For more info about managing, accessing, or compiling your projects on GitHub: [Video Tutorial](https://www.youtube.com/watch?v=zKSgYOjtX1I).
