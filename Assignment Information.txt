@@ -2,7 +2,7 @@
 -------------------------------- Instructions Start Here --------------------------------
 TASK ENHANCED ROTATION
 
-DETAILED INSTRUCTIONS: https://github.com/Da-vid21/xfig-3.2.8a/issues/2
+DETAILED INSTRUCTIONS: https://github.com/VCU-ERB/xfig-3.2.8a/issues/1
 
 GOAL:  This project aims to unlock the predefined angles xFig.  Xfig has currently locked
 the rotation angles to  90 and 180 angles,  you need to change that to accept any angles.
