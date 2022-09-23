@@ -2,7 +2,7 @@
 --------------------------------- Instructions Start Here -------------------------------
 TASK UNDO SHORTCUT
 
-DETAILED INSTRUCTIONS: https://github.com/Da-vid21/xfig-3.2.8a/issues/4
+DETAILED INSTRUCTIONS: https://github.com/VCU-ERB/xfig-3.2.8a/issues/3
 
 GOAL: The goal of this project is to create a shortcut button that undoes the user's last
   action.
