@@ -2,7 +2,7 @@
 -------------------------------- Instructions Start Here --------------------------------
 TASK DEFAULT DEPTH
 
-DETAILED INSTRUCTIONS: https://github.com/Da-vid21/xfig-3.2.8a/issues/1
+DETAILED INSTRUCTIONS: https://github.com/VCU-ERB/xfig-3.2.8a/issues/2
 
 GOAL:  This project's  goal is to increment the  depth  of new objects when added  to the
 drawing.  When an object is added,  it does not have depth properties.  As a result,  all
