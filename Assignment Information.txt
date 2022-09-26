@@ -2,7 +2,7 @@
 -------------------------------- Instructions Start Here --------------------------------
 TASK TOGGLE UNIT
 
-DETAILED INSTRUCTIONS:https://github.com/Da-vid21/xfig-3.2.8a/tree/Project-4(Toggle-Unit)
+DETAILED INSTRUCTIONS: https://github.com/VCU-ERB/xfig-3.2.8a/issues/4
 
 GOAL: The goal of this project is to create a  shortcut  button that allows the  user  to
 toggle between imperial and metric units.
