@@ -178,12 +178,12 @@ static void     turn_on(mode_sw_info *msw);
  *       beginning with "F_". Use the constant that represents not using a mode.
  *	  b) function name:  find the file with the undo operation.  There is the name of the
  *       function.
- *	  c) objmask:  when  "M_Objects"  is added it tells the function which  objects can be 
- *       affected.  M_NONE  tells xfig that tools will  not work with any  objects,  M_ALL 
- *       tells xfig otherwise.  When we use the undo function, it needs to work with every
+ *	  c) objmask: when  "M_Objects"  is added it tells the function which  objects can be
+ *       affected. M_NONE  tells xfig that tools will  not work with any  objects,  M_ALL 
+ *       tells xfig otherwise. When we use the undo function, it needs to work with every
  *       object.
- *	  d) indmask: indicate that it will not use a mask.  The "I_Properties" list  all  the 
- *       properties/characters available to the tools or the object.                    */  
+ *	  d) indmask: indicate that it will not use a mask. The "I_Properties" list  all  the 
+ *       properties/characters available to the tools or the object.                   */
 	
 mode_sw_info mode_switches[] = {
 
