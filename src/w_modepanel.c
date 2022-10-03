@@ -68,7 +68,8 @@
 #include "w_util.h"
 // #taskToggleUnit
 //----------------------------------- Code Starts Here ----------------------------------
-// GOAL: Include the 'w_rulers' header file. You will create your funcion there.
+// **Please make sure that you have worked on w_rulers.c and w_rulers.h first**
+// GOAL: Include the 'w_rulers' header file. You will create your function there.
 
 //----------------------------------- Code ends Here ------------------------------------
 
@@ -152,11 +153,11 @@ static void turn_on(mode_sw_info *msw);
 
 // #taskToggleUnit
 //----------------------------------- Code Starts Here ----------------------------------
-/* GOAL: Add a toggle mode using the icon that you previosly defined. Read the
+/* GOAL: Add a toggle mode using the icon that you previously defined. Read the
  *   mode_switches entries and figure out where to put you entry.
  * HINTS:
  *   mode:     Constant beginning with "F_" that represents not using a mode.
- *   function: name of your function to change the units in the 'w_rules.c' file.
+ *   function: name of your function to change the units in the 'w_rulers.c' file.
  *   objmask:  indicate that all objects will be affected.
  *   indmask:  indicate that it will not use a mask.                                    */
 

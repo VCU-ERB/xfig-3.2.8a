@@ -137,6 +137,7 @@ extern icon_struct	areameas_ic;
 //----------------------------------- Code Starts Here ----------------------------------
 // GOAL: Extend the unittoggle icon structure.
 
+// **Then continue to w_rulers.c**
 //----------------------------------- Code ends Here ------------------------------------
 
 /* misc icons */
