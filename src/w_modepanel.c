@@ -66,6 +66,7 @@
 #include "w_msgpanel.h"
 #include "w_setup.h"
 #include "w_util.h"
+// **Please make sure that you have worked on w_rulers.c and w_rulers.h first**
 // #taskToggleUnit
 //----------------------------------- Code Starts Here ----------------------------------
 // **Please make sure that you have worked on w_rulers.c and w_rulers.h first**

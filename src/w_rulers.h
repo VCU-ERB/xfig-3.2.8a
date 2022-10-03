@@ -44,4 +44,5 @@ extern void setup_topruler(void);
 /* GOAL:  Extend the function that changes the internal  units  and pass in  void  as the 
  *   argument.                                                                         */
 
+// **Now continue to w_modepanel.c**
 //----------------------------------- Code ends Here ------------------------------------

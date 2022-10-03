@@ -410,9 +410,9 @@ static unsigned char areameas_bits_small[] = {
 // #taskToggleUnit
 //----------------------------------- Code Starts Here ----------------------------------
 /* INFO: This time, the task includes creating the shortcut and the function. First, 
- *   create the shortcutt in the left panel following the instructions be on.
- * GOAL: Define the unittoggle width and height to small 22. Then, declare and initialize
- *   the small unittoggle array using the following elements:
+ *   create the shortcut in the left panel following the instructions be on.
+ * GOAL: Define the "unittoggle" width and height to small 22. Then, declare and initialize
+ *   the small "unittoggle" array using the following elements:
  *   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x08, 0x00, 0x00,
  *   0x80, 0x01, 0x00, 0x48, 0x02, 0x18, 0x48, 0x02, 0x06, 0x48, 0x82, 0x01,
  *   0x48, 0x42, 0x00, 0x00, 0x30, 0x00, 0x00, 0x0c, 0x00, 0x00, 0x03, 0x00,
@@ -1214,8 +1214,8 @@ static unsigned char lenmeas_bits_big[] = {
 
 // #taskToggleUnit
 //----------------------------------- Code Starts Here ----------------------------------
-/* GOAL: Define the unittoggle width and height to big 36 and 32, respectively. Then
- *   declare and initialize the big unittoggle array using the following elements:
+/* GOAL: Define the "unittoggle" width and height to big 36 and 32, respectively. Then
+ *   declare and initialize the big "unittoggle" array using the following elements:
  *   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
  *   0x00, 0x60, 0x00, 0x00, 0x00, 0x00, 0x70, 0x00, 0x00, 0x00, 0x00, 0x38,
  *   0x00, 0x40, 0x00, 0x00, 0x1c, 0x00, 0x00, 0x38, 0x00, 0x0e, 0x00, 0x40,
@@ -2187,7 +2187,7 @@ icon_struct	lenmeas_ic;
 icon_struct	areameas_ic;
 // #taskToggleUnit
 //----------------------------------- Code Starts Here ----------------------------------
-// GOAL: Define a unittoggle icon structure.
+// GOAL: Define a "unittoggle" icon structure.
 
 //----------------------------------- Code ends Here ------------------------------------
 
@@ -2238,7 +2238,7 @@ void populate_icons_big()
 	icon_struct	areameas_ic_ = { areameas_width_big, areameas_height_big, (char*)areameas_bits_big };
 	// #taskToggleUnit
 	//----------------------------------- Code Starts Here ----------------------------------
-	/* GOAL: Populate the unittoggle icon structure with the big width, height, and its bits
+	/* GOAL: Populate the "unittoggle" icon structure with the big width, height, and its bits
 	 *   casted to a pointer.                                                              */
 
 	//----------------------------------- Code ends Here ------------------------------------
@@ -2286,7 +2286,7 @@ void populate_icons_big()
 	areameas_ic = areameas_ic_;
 	// #taskToggleUnit
 	//----------------------------------- Code Starts Here ----------------------------------
-	// GOAL: Populate the big unittoggle icon.
+	// GOAL: Populate the big "unittoggle" icon.
 
 	//----------------------------------- Code ends Here ------------------------------------
 }
@@ -2338,7 +2338,7 @@ void populate_icons_small()
 	icon_struct	areameas_ic_ = { areameas_width_small, areameas_height_small, (char*)areameas_bits_small };
 	// #taskToggleUnit
 	//----------------------------------- Code Starts Here ----------------------------------
-	/* GOAL: Populate the unittoggle icon structure with the small width, height, and its
+	/* GOAL: Populate the "unittoggle" icon structure with the small width, height, and its
 	 *   bits casted to a pointer.                                                         */
 
 	//----------------------------------- Code ends Here ------------------------------------
@@ -2386,7 +2386,7 @@ void populate_icons_small()
 	areameas_ic = areameas_ic_;
 	// #taskToggleUnit
 	//----------------------------------- Code Starts Here ----------------------------------
-	// GOAL: Populate the small unittoggle icon.
+	// GOAL: Populate the small "unittoggle" icon.
 
 	//----------------------------------- Code ends Here ------------------------------------
 }
