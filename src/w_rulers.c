@@ -594,7 +594,7 @@ unit_panel_set(Widget w, XButtonEvent *ev)
 	
 	/* 3. 'cur_gridunit'  is a  INT variable and has the current unit. You need to switch 
      * between  decimal  and  imperial  units.   The possible  values  are  in  the  enum
-     * NUM_GRID_UNITS, defined in the file 'mode.h'. You will have to switch between the 
+     * NUM_GRID_UNITS, defined in the file 'mode.h'. You will have to switch between  the 
      * values depending on the value of appres.INCHES                                  */
 
     /* 4. Call the next function in this file to set the unit indicator.  We will not use
