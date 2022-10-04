@@ -585,7 +585,7 @@ unit_panel_set(Widget w, XButtonEvent *ev)
  * INFO: You  can  use  the  name  you  want,  but remember,  it is the same name used in 
  * 'w_modepanel.c'. */
 
-// 1. Define a function. It will not receive arguments.
+// 1. Define the function. It will not receive arguments.
 {
     /* 2. 'appres.INCHES'  is  a boolean variable that indicates if the unit is inches or
      * not . The fist thing you need to do is set it  so  the units switch between inches 
@@ -604,7 +604,7 @@ unit_panel_set(Widget w, XButtonEvent *ev)
      * objects.                                                                        */
 	if ()
 	{
-        // 6.Verify if de units are not in inches.
+        // 6.Verify if the units are not in inches.
 		if ()
 		{
 			read_scale_compound(&objects,(2.54*PPCM)/((float)PPI),0);
