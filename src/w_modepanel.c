@@ -66,10 +66,8 @@
 #include "w_msgpanel.h"
 #include "w_setup.h"
 #include "w_util.h"
-// **Please make sure that you have worked on w_rulers.c and w_rulers.h first**
 // #taskToggleUnit
 //----------------------------------- Code Starts Here ----------------------------------
-// **Please make sure that you have worked on w_rulers.c and w_rulers.h first**
 // GOAL: Include the 'w_rulers' header file. You will create your function there.
 
 //----------------------------------- Code ends Here ------------------------------------
@@ -301,7 +299,8 @@ mode_sw_info mode_switches[] = {
 	 "Measure AREA of polygons, arcs and ellipses   (Ctrl-m)",
 	 False, NULL, (Pixmap)0, (Pixmap)0},
 
-	/* This must be last for create_mode_panel() (in w_canvas.c) */
+	/* This must be last for create_mode_panel() (in w_canvas.c) . Do not remove or 
+	   change this line! Insert your line before it!                                  */
 	{NULL, 0, NULL, 0, 0, "", False, NULL, 0, 0}
 
 };

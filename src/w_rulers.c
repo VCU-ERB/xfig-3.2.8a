@@ -583,8 +583,8 @@ unit_panel_set(Widget w, XButtonEvent *ev)
 /* GOAL: Follow  steps  1  to  7 and create the function. It needs to change the internal
  *   units and update the interface. 
  * INFO: You  can  use  the  name  you  want,  but remember,  it is the same name used in 
- * 'w_modepanel.c'. 
- * In C, 0 is also True, and any non-zero values is true                               */
+ * 'w_modepanel.c'. Also, attenction whith boolean values in C, 0 is also False,  and any 
+ *  non-zero values is True.                                                           */
 
 // 1. Define the function. It will not receive arguments.
 {
@@ -595,7 +595,7 @@ unit_panel_set(Widget w, XButtonEvent *ev)
 	/* 3. 'cur_gridunit'  is a  INT variable and has the current unit. You need to switch 
      * between  decimal  and  imperial  units.   The possible  values  are  in  the  enum
      * NUM_GRID_UNITS, defined in the file 'mode.h'. You will have to switch between  the 
-     * values depending on the value of appres.INCHES                                  */
+     * values depending on the value of appres.INCHES. Use MM_UNIT or FRACT_UNIT.      */
 
     /* 4. Call the next function in this file to set the unit indicator.  We will not use
      * user scale.                                                                     */
