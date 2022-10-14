@@ -134,6 +134,12 @@ extern icon_struct	anglemeas_ic;
 extern icon_struct	lenmeas_ic;
 extern icon_struct	areameas_ic;
 
+// #taskSendBack_Icon
+//----------------------------------- Code Starts Here ----------------------------------
+// GOAL: Create a depthctrl icon.
+
+//----------------------------------- Code ends Here ------------------------------------
+
 /* misc icons */
 
 extern icon_struct	kbd_ic;

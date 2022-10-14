@@ -48,6 +48,10 @@
 #include "e_copy.h"
 #include "e_delete.h"
 #include "e_deletept.h"
+
+// #taskSendBack_Icon
+#include "e_depthctrl.h"
+
 #include "e_edit.h"
 #include "e_glue.h"
 #include "e_joinsplit.h"
@@ -118,6 +122,9 @@ static void	stub_anglemeas_selected(void);
 static void	stub_lenmeas_selected(void);
 static void	stub_areameas_selected(void);
 static void	stub_tangent_selected(void);
+
+// #taskSendBack_Icon
+static void	stub_depth_control_selected(void);
 
 /**************	    local variables and routines   **************/
 
@@ -283,6 +290,16 @@ mode_sw_info mode_switches[] = {
 	{&areameas_ic, F_AREAMEAS, areameas_selected, M_AREAMEAS_OBJECT, I_MIN2,
 		"Measure AREA of polygons, arcs and ellipses   (Ctrl-m)",
 		False, NULL, (Pixmap)0, (Pixmap)0},
+
+	// #taskSendBack_Icon
+	/**
+	 * 1. You'll need to add the function that was extended in the e_depthctrl header file
+	 * 2. You'll also need to add the indmask you have created in the indpanel header file
+	 * 
+	 */
+    {&depthctrl_ic, F_DEPTHCTRL, //Function that was extended, M_ALL,
+         //**Add the indmask you created here**,
+         "Send to back, Bring to Front", False},
 
 	/* This must be last for create_mode_panel() (in w_canvas.c) */
 	{ NULL, 0, NULL, 0, 0, "", False, NULL, 0, 0}
@@ -988,5 +1005,10 @@ stub_areameas_selected(void)
 	change_mode(&areameas_ic);
 }
 
-
+// #taskSendBack_Icon
+static void
+stub_depth_control_selected(void)
+{
+	change_mode(&depthctrl_ic);
+}
 
