@@ -22,5 +22,5 @@ void adjustdepth(F_line* p, int type);
 
 // #taskSendBack_newFiles
 //------------------------------- Instructions Start Here -------------------------------
-/* INFO: This file make the new functions avaliable to use inside other files.         */
+/* INFO: This file make the new functions available to use inside other files.         */
 //-------------------------------- Instructions End Here --------------------------------
