@@ -6,10 +6,10 @@
 
 //#taskSendBack_newFiles
 /**
- * @brief 
+ * 
  * You'll need this extended function later to connect the icon with the function
  * INFO: This file make the new functions available to use inside other files.
- * @return int 
+ * 
  */
 extern int depthctrl_selected(void);
 
