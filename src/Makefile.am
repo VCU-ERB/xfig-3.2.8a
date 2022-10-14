@@ -38,7 +38,6 @@ bin_PROGRAMS = xfig
 # #taskSendBack_addFiles
 #----------------------------------- Code Starts Here ----------------------------------
 # GOAL: Add the depthctrl c source and header file to the xfig_sources field.
-#----------------------------------- Code ends Here ------------------------------------
 
 xfig_SOURCES = d_arcbox.c d_arcbox.h d_arc.c d_arc.h d_box.c d_box.h \
 	d_ellipse.c d_ellipse.h d_line.c d_line.h d_picobj.c d_picobj.h \
@@ -76,6 +75,8 @@ xfig_SOURCES = d_arcbox.c d_arcbox.h d_arc.c d_arc.h d_box.c d_box.h \
 	w_setup.h w_snap.c w_snap.h w_srchrepl.c w_srchrepl.h w_style.c \
 	w_style.h w_util.c w_util.h w_zoom.c w_zoom.h splash.xbm version.xbm \
 	xfig_math.h
+
+#----------------------------------- Code ends Here ------------------------------------
 
 if HAVE_JPEG
 xfig_SOURCES += f_readjpg.c

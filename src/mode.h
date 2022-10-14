@@ -88,10 +88,13 @@
 #define		F_AREAMEAS		60
 #define		F_PASTE			61
 #define		F_CHOP			62
+
 //#taskSendBack_icon
-/**
- * You need to define a depthctrl mode with 63 for the mode number
- */
+//----------------------------------- Code Starts Here ----------------------------------
+// GOAL: Define a depthctrl mode with 63 for the mode number
+
+//----------------------------------- Code ends Here ------------------------------------
+
 extern int	cur_mode;
 
 /* alignment mode */

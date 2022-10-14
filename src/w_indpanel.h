@@ -111,11 +111,10 @@ extern Dimension UPD_CTRL_WD;		/* actual width is det. in setup_ind_panel */
 #define I_TANGENT       (I_MIN2 | I_LINE1 | I_DEPTH | I_ARROWTYPE | I_ARROWMODE | I_TANGNORMLEN)
 
 //#taskSendBack_Icon
-/**
- * Create an indmask named DEPTHCTRL with "I_DEPTH" as the point position
- * 
- */
+//----------------------------------- Code Starts Here ----------------------------------
+// GOAL: Create an indmask named DEPTHCTRL with "I_DEPTH" as the point position
 
+//----------------------------------- Code ends Here ------------------------------------
 
 /* for checking which parts to update */
 #define I_UPDATEMASK	(I_OBJECT)

@@ -143,7 +143,7 @@ libxfig_a_DEPENDENCIES = $(LIBOBJS)
 #----------------------------------- Code Starts Here ----------------------------------
 # GOAL: Add the depthctrl C source and header file to the am__libxfig_a_SOURCES_DIST 
 #     field.																			 
-#----------------------------------- Code ends Here ------------------------------------
+
 
 am__libxfig_a_SOURCES_DIST = d_arcbox.c \
 	d_arcbox.h d_arc.c d_arc.h d_box.c d_box.h d_ellipse.c \
@@ -200,10 +200,11 @@ am__objects_5 =
 @XAW3D1_5E_FALSE@	SmeCascade.$(OBJEXT) SimpleMenu.$(OBJEXT) \
 @XAW3D1_5E_FALSE@	SmeBSB.$(OBJEXT)
 
+#----------------------------------- Code ends Here ------------------------------------
+
 #taskSendBack_addFiles
 #----------------------------------- Code Starts Here ----------------------------------
 # GOAL: Add the e_depthctrl OBJECXT in am__objects_8(don't include the file extension name)
-#----------------------------------- Code ends Here ------------------------------------
 
 am__objects_8 =  d_arcbox.$(OBJEXT) \
 	d_arc.$(OBJEXT) d_box.$(OBJEXT) d_ellipse.$(OBJEXT) \
@@ -246,10 +247,11 @@ am__objects_8 =  d_arcbox.$(OBJEXT) \
 am_libxfig_a_OBJECTS = $(am__objects_8)
 libxfig_a_OBJECTS = $(am_libxfig_a_OBJECTS)
 
+#----------------------------------- Code ends Here ------------------------------------
+
 #taskSendBack_addFiles
 #----------------------------------- Code Starts Here ----------------------------------
 # GOAL: Add the depthctrl C source and header file to the am__xfig_SOURCES_DIST field.
-#----------------------------------- Code ends Here ------------------------------------
 
 am__xfig_SOURCES_DIST =  d_arcbox.c \
 	d_arcbox.h d_arc.c d_arc.h d_box.c d_box.h d_ellipse.c \
@@ -297,11 +299,11 @@ am__xfig_SOURCES_DIST =  d_arcbox.c \
 	SmeBSB.h SmeCascade.c SmeCascade.h SmeCascadeP.h SimpleMenu.c \
 	SmeBSB.c SmeBSBP.h
 
+#----------------------------------- Code ends Here ------------------------------------
 
 #taskSendBack_addFiles
 #----------------------------------- Code Starts Here ----------------------------------
 # GOAL: Add the e_depthctrl OBJECXT in am_xfig_OBJECTS(don't include the file extension name)
-#----------------------------------- Code ends Here ------------------------------------
 
 am_xfig_OBJECTS = d_arcbox.$(OBJEXT) \
 	d_arc.$(OBJEXT) d_box.$(OBJEXT) d_ellipse.$(OBJEXT) \
@@ -342,6 +344,9 @@ am_xfig_OBJECTS = d_arcbox.$(OBJEXT) \
 	$(am__objects_2) $(am__objects_3) $(am__objects_4) \
 	$(am__objects_5) $(am__objects_6) $(am__objects_7)
 xfig_OBJECTS = $(am_xfig_OBJECTS)
+
+#----------------------------------- Code ends Here ------------------------------------
+
 am__DEPENDENCIES_1 =
 xfig_DEPENDENCIES = $(LIBOBJS) $(am__DEPENDENCIES_1)
 AM_V_P = $(am__v_P_@AM_V@)
@@ -598,7 +603,6 @@ DISTCLEANFILES = splash.xbm splash.xpm version.xbm
 #taskSendBack_addFiles
 #----------------------------------- Code Starts Here ----------------------------------
 # GOAL: Add the depthctrl C source and header file to the xfig_SOURCES field.
-#----------------------------------- Code ends Here ------------------------------------
 
 xfig_SOURCES = d_arcbox.c d_arcbox.h \
 	d_arc.c d_arc.h d_box.c d_box.h d_ellipse.c d_ellipse.h \
@@ -644,6 +648,8 @@ xfig_SOURCES = d_arcbox.c d_arcbox.h \
 	$(am__append_4) $(am__append_5) $(am__append_6) \
 	$(am__append_7)
 EXTRA_DIST = u_draw_spline.c
+
+#----------------------------------- Code ends Here ------------------------------------
 
 # Create a convenience library. Unit tests are linked with libxfig.a.
 check_LIBRARIES = libxfig.a

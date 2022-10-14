@@ -50,8 +50,10 @@
 #include "e_deletept.h"
 
 // #taskSendBack_Icon
-// Import the depthctrl header file
+//----------------------------------- Code Starts Here ----------------------------------
+// GOAL: Import the depthctrl header file.
 
+//----------------------------------- Code ends Here ------------------------------------
 
 #include "e_edit.h"
 #include "e_glue.h"
@@ -125,10 +127,10 @@ static void	stub_areameas_selected(void);
 static void	stub_tangent_selected(void);
 
 // #taskSendBack_Icon
-/**
- * Declare a stub function called "depth_control_selected"
- * You'll pass in and return void
- */
+//----------------------------------- Code ends Here ------------------------------------
+// GOAL: Declare a stub function called "depth_control_selected". Pass in and return void.
+
+//----------------------------------- Code ends Here ------------------------------------
 
 /**************	    local variables and routines   **************/
 
@@ -296,19 +298,16 @@ mode_sw_info mode_switches[] = {
 		False, NULL, (Pixmap)0, (Pixmap)0},
 
 	// #taskSendBack_Icon
-	/**
-	 * 1. Add the depthctrl icon structure
-	 * 2. Add the mode that you created 
-	 * 3. Add the function that was in the depthctrl header file
-	 * 4. For the object yo have to state that it affects all objects
-	 * 5. Add the ind mask that you created
-	 * 
-	 */
+	//----------------------------------- Code Starts Here ----------------------------------
+	/* GOAL: Describe the shortcutt in the left panel. 
+	 * HINT: 
+	 * 		1. Add the depthctrl icon structure.
+	 * 		2. Add the mode that you created. 
+	 * 		3. Add the function that was in the depthctrl header file.
+	 * 		4. State that it affects all objects.
+	 * 		5. Add the ind mask that you created.										   */
 
-	//**Add your code here**// 
-    /**{, , , ,
-         //**Add the indmask you created here**,
-         "Send to back, Bring to Front", False},*/
+    //----------------------------------- Code ends Here ------------------------------------
 
 	/* This must be last for create_mode_panel() (in w_canvas.c) */
 	{ NULL, 0, NULL, 0, 0, "", False, NULL, 0, 0}
@@ -1015,8 +1014,10 @@ stub_areameas_selected(void)
 }
 
 // #taskSendBack_Icon
-/**
- * Create the depth_control_selected function
- * Change the mode of the depthctrl icon structure
- */
+//----------------------------------- Code Starts Here ----------------------------------
+/* GOAL: Create the depth_control_selected function and change the mode of the depthctrl 
+     icon structure.                                                                   */
+	 
+//----------------------------------- Code ends Here ------------------------------------
+
 

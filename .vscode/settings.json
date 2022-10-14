@@ -1,6 +1,7 @@
 {
     "files.associations": {
-        "*.xbm": "c"
+        "*.xbm": "c",
+        "e_edit.h": "c"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }
