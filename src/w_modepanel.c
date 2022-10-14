@@ -50,7 +50,8 @@
 #include "e_deletept.h"
 
 // #taskSendBack_Icon
-#include "e_depthctrl.h"
+// Import the depthctrl header file
+
 
 #include "e_edit.h"
 #include "e_glue.h"
@@ -124,7 +125,10 @@ static void	stub_areameas_selected(void);
 static void	stub_tangent_selected(void);
 
 // #taskSendBack_Icon
-static void	stub_depth_control_selected(void);
+/**
+ * Declare a stub function called "depth_control_selected"
+ * You'll pass in and return void
+ */
 
 /**************	    local variables and routines   **************/
 
@@ -293,13 +297,18 @@ mode_sw_info mode_switches[] = {
 
 	// #taskSendBack_Icon
 	/**
-	 * 1. You'll need to add the function that was extended in the e_depthctrl header file
-	 * 2. You'll also need to add the indmask you have created in the indpanel header file
+	 * 1. Add the depthctrl icon structure
+	 * 2. Add the mode that you created 
+	 * 3. Add the function that was in the depthctrl header file
+	 * 4. For the object yo have to state that it affects all objects
+	 * 5. Add the ind mask that you created
 	 * 
 	 */
-    {&depthctrl_ic, F_DEPTHCTRL, //Function that was extended, M_ALL,
+
+	//**Add your code here**// 
+    /**{, , , ,
          //**Add the indmask you created here**,
-         "Send to back, Bring to Front", False},
+         "Send to back, Bring to Front", False},*/
 
 	/* This must be last for create_mode_panel() (in w_canvas.c) */
 	{ NULL, 0, NULL, 0, 0, "", False, NULL, 0, 0}
@@ -1006,9 +1015,8 @@ stub_areameas_selected(void)
 }
 
 // #taskSendBack_Icon
-static void
-stub_depth_control_selected(void)
-{
-	change_mode(&depthctrl_ic);
-}
+/**
+ * Create the depth_control_selected function
+ * Change the mode of the depthctrl icon structure
+ */
 

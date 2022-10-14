@@ -8,6 +8,7 @@
 /**
  * @brief 
  * You'll need this extended function later to connect the icon with the function
+ * INFO: This file make the new functions available to use inside other files.
  * @return int 
  */
 extern int depthctrl_selected(void);
@@ -19,8 +20,3 @@ void sendtoback(F_line* p, int type);
 void adjustdepth(F_line* p, int type);
 
 #endif
-
-// #taskSendBack_newFiles
-//------------------------------- Instructions Start Here -------------------------------
-/* INFO: This file make the new functions available to use inside other files.         */
-//-------------------------------- Instructions End Here --------------------------------

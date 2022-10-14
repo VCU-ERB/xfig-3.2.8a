@@ -141,7 +141,7 @@ libxfig_a_DEPENDENCIES = $(LIBOBJS)
 
 #taskSendBack_addFiles
 #----------------------------------- Code Starts Here ----------------------------------
-#GOAL: Add the depthctrl C source and header file to the am__libxfig_a_SOURCES_DIST 
+# GOAL: Add the depthctrl C source and header file to the am__libxfig_a_SOURCES_DIST 
 #     field.																			 
 #----------------------------------- Code ends Here ------------------------------------
 
@@ -202,7 +202,7 @@ am__objects_5 =
 
 #taskSendBack_addFiles
 #----------------------------------- Code Starts Here ----------------------------------
-#GOAL: Add the e_depthctrl OBJECXT in am__objects_8(don't include the file extension name)
+# GOAL: Add the e_depthctrl OBJECXT in am__objects_8(don't include the file extension name)
 #----------------------------------- Code ends Here ------------------------------------
 
 am__objects_8 =  d_arcbox.$(OBJEXT) \
@@ -248,7 +248,7 @@ libxfig_a_OBJECTS = $(am_libxfig_a_OBJECTS)
 
 #taskSendBack_addFiles
 #----------------------------------- Code Starts Here ----------------------------------
-#GOAL: Add the depthctrl C source and header file to the am__xfig_SOURCES_DIST field.
+# GOAL: Add the depthctrl C source and header file to the am__xfig_SOURCES_DIST field.
 #----------------------------------- Code ends Here ------------------------------------
 
 am__xfig_SOURCES_DIST =  d_arcbox.c \
@@ -597,7 +597,7 @@ DISTCLEANFILES = splash.xbm splash.xpm version.xbm
 
 #taskSendBack_addFiles
 #----------------------------------- Code Starts Here ----------------------------------
-#GOAL: Add the depthctrl C source and header file to the xfig_SOURCES field.
+# GOAL: Add the depthctrl C source and header file to the xfig_SOURCES field.
 #----------------------------------- Code ends Here ------------------------------------
 
 xfig_SOURCES = d_arcbox.c d_arcbox.h \
