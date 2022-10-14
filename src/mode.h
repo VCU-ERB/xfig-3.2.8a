@@ -91,7 +91,6 @@
 //#taskSendBack_icon
 /**
  * You need to define a depthctrl mode with 63 for the mode number
- * 
  */
 extern int	cur_mode;
 

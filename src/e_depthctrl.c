@@ -42,7 +42,8 @@ depthctrl_selected(void)
  *   the front of a new xFig file by manipulating depth.
  * INFO: There are two type cases in this method, one for compound objects and one for 
  *   single objects. 
- * 
+ *  
+ * **Use adjustDepth method as reference for creating your methods
  *   First Step:
  *          You have to check if the passed object is compound or single for that you can 
  *          compare it to "O_COMPOUND" which is a generic object variable
