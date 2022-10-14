@@ -35,6 +35,11 @@ DISTCLEANFILES = splash.xbm splash.xpm version.xbm
 
 bin_PROGRAMS = xfig
 
+# #taskSendBack_addFiles
+#----------------------------------- Code Starts Here ----------------------------------
+# GOAL: Add the depthctrl c source and header file to the xfig_sources field.
+#----------------------------------- Code ends Here ------------------------------------
+
 xfig_SOURCES = d_arcbox.c d_arcbox.h d_arc.c d_arc.h d_box.c d_box.h \
 	d_ellipse.c d_ellipse.h d_line.c d_line.h d_picobj.c d_picobj.h \
 	d_regpoly.c d_regpoly.h d_spline.c d_spline.h d_subspline.c \

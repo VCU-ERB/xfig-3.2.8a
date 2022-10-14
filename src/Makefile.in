@@ -137,6 +137,13 @@ libxfig_a_AR = $(AR) $(ARFLAGS)
 LIBOBJDIR = ../lib/
 am__dirstamp = $(am__leading_dot)dirstamp
 libxfig_a_DEPENDENCIES = $(LIBOBJS)
+
+#taskSendBack_addFiles
+#----------------------------------- Code Starts Here ----------------------------------
+#GOAL: Add the depthctrl C source and header file to the am__libxfig_a_SOURCES_DIST 
+#     field.																			 
+#----------------------------------- Code ends Here ------------------------------------
+
 am__libxfig_a_SOURCES_DIST = d_arcbox.c d_arcbox.h d_arc.c d_arc.h \
 	d_box.c d_box.h d_ellipse.c d_ellipse.h d_line.c d_line.h \
 	d_picobj.c d_picobj.h d_regpoly.c d_regpoly.h d_spline.c \
@@ -190,6 +197,12 @@ am__objects_5 =
 @XAW3D1_5E_FALSE@am__objects_7 = w_menuentry.$(OBJEXT) \
 @XAW3D1_5E_FALSE@	SmeCascade.$(OBJEXT) SimpleMenu.$(OBJEXT) \
 @XAW3D1_5E_FALSE@	SmeBSB.$(OBJEXT)
+
+#taskSendBack_addFiles
+#----------------------------------- Code Starts Here ----------------------------------
+#GOAL: Add the e_depthctrl OBJECXT in am__objects_8(don't include the file extension name)
+#----------------------------------- Code ends Here ------------------------------------
+
 am__objects_8 = d_arcbox.$(OBJEXT) d_arc.$(OBJEXT) d_box.$(OBJEXT) \
 	d_ellipse.$(OBJEXT) d_line.$(OBJEXT) d_picobj.$(OBJEXT) \
 	d_regpoly.$(OBJEXT) d_spline.$(OBJEXT) d_subspline.$(OBJEXT) \
@@ -230,6 +243,12 @@ am__objects_8 = d_arcbox.$(OBJEXT) d_arc.$(OBJEXT) d_box.$(OBJEXT) \
 	$(am__objects_5) $(am__objects_6) $(am__objects_7)
 am_libxfig_a_OBJECTS = $(am__objects_8)
 libxfig_a_OBJECTS = $(am_libxfig_a_OBJECTS)
+
+#taskSendBack_addFiles
+#----------------------------------- Code Starts Here ----------------------------------
+#GOAL: Add the depthctrl C source and header file to the am__xfig_SOURCES_DIST field.
+#----------------------------------- Code ends Here ------------------------------------
+
 am__xfig_SOURCES_DIST = d_arcbox.c d_arcbox.h d_arc.c d_arc.h d_box.c \
 	d_box.h d_ellipse.c d_ellipse.h d_line.c d_line.h d_picobj.c \
 	d_picobj.h d_regpoly.c d_regpoly.h d_spline.c d_spline.h \
@@ -274,6 +293,12 @@ am__xfig_SOURCES_DIST = d_arcbox.c d_arcbox.h d_arc.c d_arc.h d_box.c \
 	w_i18n.c w_i18n.h w_menuentry.c w_menuentry.h w_menuentryP.h \
 	SmeBSB.h SmeCascade.c SmeCascade.h SmeCascadeP.h SimpleMenu.c \
 	SmeBSB.c SmeBSBP.h
+
+#taskSendBack_addFiles
+#----------------------------------- Code Starts Here ----------------------------------
+# GOAL: Add the e_depthctrl OBJECXT in am_xfig_OBJECTS(don't include the file extension name)
+#----------------------------------- Code ends Here ------------------------------------
+
 am_xfig_OBJECTS = d_arcbox.$(OBJEXT) d_arc.$(OBJEXT) d_box.$(OBJEXT) \
 	d_ellipse.$(OBJEXT) d_line.$(OBJEXT) d_picobj.$(OBJEXT) \
 	d_regpoly.$(OBJEXT) d_spline.$(OBJEXT) d_subspline.$(OBJEXT) \
@@ -330,6 +355,8 @@ am__v_at_1 =
 DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)
 depcomp = $(SHELL) $(top_srcdir)/depcomp
 am__maybe_remake_depfiles = depfiles
+
+
 am__depfiles_remade = ../lib/$(DEPDIR)/isascii.Po \
 	../lib/$(DEPDIR)/strcasecmp.Po ../lib/$(DEPDIR)/strchr.Po \
 	../lib/$(DEPDIR)/strdup.Po ../lib/$(DEPDIR)/strncasecmp.Po \
@@ -346,6 +373,12 @@ am__depfiles_remade = ../lib/$(DEPDIR)/isascii.Po \
 	./$(DEPDIR)/e_chop.Po ./$(DEPDIR)/e_compound.Po \
 	./$(DEPDIR)/e_convert.Po ./$(DEPDIR)/e_copy.Po \
 	./$(DEPDIR)/e_delete.Po ./$(DEPDIR)/e_deletept.Po \
+	#taskSendBack_addFiles
+	#----------------------------------- Code Starts Here ----------------------------------
+	# Uncomment the next line
+	./$(DEPDIR)/e_depthctrl.Po \
+	#----------------------------------- Code ends Here ------------------------------------
+
 	./$(DEPDIR)/e_edit.Po ./$(DEPDIR)/e_flip.Po \
 	./$(DEPDIR)/e_glue.Po ./$(DEPDIR)/e_joinsplit.Po \
 	./$(DEPDIR)/e_measure.Po ./$(DEPDIR)/e_move.Po \
@@ -563,6 +596,12 @@ AM_LDFLAGS = $(XLDFLAGS)
 xfig_LDADD = $(LIBOBJS) $(XLIBS)
 # xmkmf, in addition, sets the flag -DNEWARROWPROTO
 DISTCLEANFILES = splash.xbm splash.xpm version.xbm
+
+#taskSendBack_addFiles
+#----------------------------------- Code Starts Here ----------------------------------
+#GOAL: Add the depthctrl C source and header file to the xfig_SOURCES field.
+#----------------------------------- Code ends Here ------------------------------------
+
 xfig_SOURCES = d_arcbox.c d_arcbox.h d_arc.c d_arc.h d_box.c d_box.h \
 	d_ellipse.c d_ellipse.h d_line.c d_line.h d_picobj.c \
 	d_picobj.h d_regpoly.c d_regpoly.h d_spline.c d_spline.h \
@@ -750,6 +789,13 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/e_copy.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/e_delete.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/e_deletept.Po@am__quote@ # am--include-marker
+
+#taskSendBack_addFiles
+#----------------------------------- Code Starts Here ----------------------------------
+# Uncomment the next line
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/e_depthctrl.Po@am__quote@ # am--include-marker 
+#----------------------------------- Code ends Here ------------------------------------
+
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/e_edit.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/e_flip.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/e_glue.Po@am__quote@ # am--include-marker
@@ -1035,6 +1081,11 @@ distclean: distclean-am
 	-rm -f ./$(DEPDIR)/e_copy.Po
 	-rm -f ./$(DEPDIR)/e_delete.Po
 	-rm -f ./$(DEPDIR)/e_deletept.Po
+	#taskSendBack_addFiles
+	#--------------------------------Code Starts Here----------------------
+	#Uncomment the next code
+	-rm -f ./$(DEPDIR)/e_depthctrl.Po
+	#--------------------------------Code Ends Here------------------------
 	-rm -f ./$(DEPDIR)/e_edit.Po
 	-rm -f ./$(DEPDIR)/e_flip.Po
 	-rm -f ./$(DEPDIR)/e_glue.Po
@@ -1202,6 +1253,11 @@ maintainer-clean: maintainer-clean-am
 	-rm -f ./$(DEPDIR)/e_copy.Po
 	-rm -f ./$(DEPDIR)/e_delete.Po
 	-rm -f ./$(DEPDIR)/e_deletept.Po
+	#taskSendBack_addFiles
+	#--------------------------------Code Starts Here----------------------
+	#Uncomment the next code
+	-rm -f ./$(DEPDIR)/e_depthctrl.Po
+	#--------------------------------Code Ends Here------------------------
 	-rm -f ./$(DEPDIR)/e_edit.Po
 	-rm -f ./$(DEPDIR)/e_flip.Po
 	-rm -f ./$(DEPDIR)/e_glue.Po
