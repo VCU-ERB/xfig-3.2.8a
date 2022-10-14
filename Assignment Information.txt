@@ -2,26 +2,26 @@
 -------------------------------- Instructions Start Here --------------------------------
 SEND TO BACK / BRING TO FRONT
 
-DETAILED INSTRUCTIONS: https://github.com/VCU-ERB/xfig-3.2.8a/issues/6
+DETAILED INSTRUCTIONS: https://github.com/VCU-ERB/xfig-3.2.8a/issues/5
 
-GOAL:
+GOAL: 
 This project  aims  to create a new shortcut  button for send-to-back and bring-to-front.
 These buttons will allow the user to change the depth of selected objects.  The user will
 be able to select an object and bring it to the top or bottom  layer for easier workflow.
-It is necessary to create icons and functions and link it. However, this time more than
-one function will be used. That way, it is better to add new files to manage the new
-behavior.This project can be separated into three phases:
+It is necessary to create icons and functions and link it.  However,  this time more than
+one function will be used.  That way,  it is better to add  new  files  to manage the new
+behavior. This project can be separated into three phases:
 
 PHASE ONE: #taskSendBack_newFiles
-  INFO: The files 'e_depthctrl.c' and 'e_depthctrl.h' are already created. Take a look
-    into the  header file to check what is happening there. You will need to create a
+  INFO: The files  'e_depthctrl.c' and  'e_depthctrl.h'  are already created. Take a look
+    into  the  header  file to check what is happening there.  You will need to  create a
     header file in the next task.
-  GOAL: Go to the file 'e_depthctrl.c' and follow the instructions to create the two new
+  GOAL: Go to the file 'e_depthctrl.c'  and follow the instructions to create the two new
     functions.
 
 PHASE TWO: #taskSendBack_addFiles
   GOAL: Since new files have been added, make necessary changes to the Makefiles and then
-    re-configure the script.
+    re-configure the script. 
   INFO: Click on the search icon on the left toolbar and search "#taskSendBack_addFiles".
     You should see 2 files with the hashtag. After you change them, re-configure the
     script. Use the configuring tutorial: 

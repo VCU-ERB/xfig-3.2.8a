@@ -91,7 +91,7 @@
 
 //#taskSendBack_icon
 //----------------------------------- Code Starts Here ----------------------------------
-// GOAL: Define a depthctrl mode with 63 for the mode number
+// GOAL: Define a depthctrl mode with 63 for the mode number.
 
 //----------------------------------- Code ends Here ------------------------------------
 

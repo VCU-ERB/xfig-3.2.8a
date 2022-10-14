@@ -5,12 +5,11 @@
 #define E_DEPTHCTRL_H
 
 //#taskSendBack_newFiles
-/**
- * 
- * You'll need this extended function later to connect the icon with the function
- * INFO: This file make the new functions available to use inside other files.
- * 
- */
+//----------------------------------- Information Starts Here ----------------------------------
+/* INFO: This file make the new functions available to use inside other files. You'll need this
+ *   extended function later to connect the icon with the function.                           */
+//----------------------------------- Information ends Here ------------------------------------
+
 extern int depthctrl_selected(void);
 
 void redisplay_object(F_line* p, int type);
