@@ -181,11 +181,11 @@ am__libxfig_a_SOURCES_DIST = d_arcbox.c d_arcbox.h d_arc.c d_arc.h \
 	w_i18n.c w_i18n.h w_menuentry.c w_menuentry.h w_menuentryP.h \
 	SmeBSB.h SmeCascade.c SmeCascade.h SmeCascadeP.h SimpleMenu.c \
 	SmeBSB.c SmeBSBP.h
-	// #taskQuickColoring_addFiles
-	//----------------------------------- Code Starts Here ----------------------------------
-	// GOAL: Add the objcolor C source and header file to the am__libxfig_a_SOURCES_DIST field.
+	#taskQuickColoring_addFiles
+	#----------------------------------- Code Starts Here ----------------------------------
+	# GOAL: Add the objcolor C source and header file to the am__libxfig_a_SOURCES_DIST field.
 
-	//----------------------------------- Code ends Here ------------------------------------
+	#----------------------------------- Code ends Here ------------------------------------
 	
 @HAVE_JPEG_TRUE@am__objects_1 = f_readjpg.$(OBJEXT)
 @HAVE_PNG_TRUE@am__objects_2 = f_readpng.$(OBJEXT) f_wrpng.$(OBJEXT)
@@ -280,11 +280,11 @@ am__xfig_SOURCES_DIST = d_arcbox.c d_arcbox.h d_arc.c d_arc.h d_box.c \
 	w_i18n.c w_i18n.h w_menuentry.c w_menuentry.h w_menuentryP.h \
 	SmeBSB.h SmeCascade.c SmeCascade.h SmeCascadeP.h SimpleMenu.c \
 	SmeBSB.c SmeBSBP.h
-	// #taskQuickColoring_addFiles
-	//----------------------------------- Code Starts Here ----------------------------------
-	// GOAL: Add the objcolor C source and header file to the am__xfig_SOURCES_DIST field.
+	#taskQuickColoring_addFiles
+	#----------------------------------- Code Starts Here ----------------------------------
+	# GOAL: Add the objcolor C source and header file to the am__xfig_SOURCES_DIST field.
 
-	//----------------------------------- Code ends Here ------------------------------------
+	#----------------------------------- Code ends Here ------------------------------------
 	
 am_xfig_OBJECTS = d_arcbox.$(OBJEXT) d_arc.$(OBJEXT) d_box.$(OBJEXT) \
 	d_ellipse.$(OBJEXT) d_line.$(OBJEXT) d_picobj.$(OBJEXT) \
@@ -324,11 +324,11 @@ am_xfig_OBJECTS = d_arcbox.$(OBJEXT) d_arc.$(OBJEXT) d_box.$(OBJEXT) \
 	w_util.$(OBJEXT) w_zoom.$(OBJEXT) $(am__objects_1) \
 	$(am__objects_2) $(am__objects_3) $(am__objects_4) \
 	$(am__objects_5) $(am__objects_6) $(am__objects_7)
-	// #taskQuickColoring_addFiles
-	//----------------------------------- Code Starts Here ----------------------------------
-	// GOAL: Add the objcolor object to the am_xfig_OBJECTS field.
+	#taskQuickColoring_addFiles
+	#----------------------------------- Code Starts Here ----------------------------------
+	# GOAL: Add the objcolor object to the am_xfig_OBJECTS field.
 
-	//----------------------------------- Code ends Here ------------------------------------
+	#----------------------------------- Code ends Here ------------------------------------
 	
 xfig_OBJECTS = $(am_xfig_OBJECTS)
 am__DEPENDENCIES_1 =
@@ -623,11 +623,11 @@ xfig_SOURCES = d_arcbox.c d_arcbox.h d_arc.c d_arc.h d_box.c d_box.h \
 	w_zoom.h splash.xbm version.xbm xfig_math.h $(am__append_1) \
 	$(am__append_2) $(am__append_3) $(am__append_4) \
 	$(am__append_5) $(am__append_6) $(am__append_7)
-	// #taskQuickColoring_addFiles
-	//----------------------------------- Code Starts Here ----------------------------------
-	// GOAL: Add the objcolor C source and header file to the xfig_SOURCES field.
+	#taskQuickColoring_addFiles
+	#----------------------------------- Code Starts Here ----------------------------------
+	# GOAL: Add the objcolor C source and header file to the xfig_SOURCES field.
 
-	//----------------------------------- Code ends Here ------------------------------------
+	#----------------------------------- Code ends Here ------------------------------------
 	
 EXTRA_DIST = u_draw_spline.c
 
