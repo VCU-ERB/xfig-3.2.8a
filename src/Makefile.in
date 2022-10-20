@@ -367,7 +367,8 @@ am__depfiles_remade = ../lib/$(DEPDIR)/isascii.Po \
 	./$(DEPDIR)/e_edit.Po ./$(DEPDIR)/e_flip.Po \
 	./$(DEPDIR)/e_glue.Po ./$(DEPDIR)/e_joinsplit.Po \
 	./$(DEPDIR)/e_measure.Po ./$(DEPDIR)/e_move.Po \
-	./$(DEPDIR)/e_movept.Po ./$(DEPDIR)/e_placelib.Po \
+	./$(DEPDIR)/e_movept.Po ./$(DEPDIR)/e_objcolor.Po \
+	./$(DEPDIR)/e_placelib.Po \
 	./$(DEPDIR)/e_rotate.Po ./$(DEPDIR)/e_scale.Po \
 	./$(DEPDIR)/e_tangent.Po ./$(DEPDIR)/e_update.Po \
 	./$(DEPDIR)/f_load.Po ./$(DEPDIR)/f_neuclrtab.Po \
@@ -781,6 +782,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/e_measure.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/e_move.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/e_movept.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/e_objcolor.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/e_placelib.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/e_rotate.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/e_scale.Po@am__quote@ # am--include-marker
@@ -1066,6 +1068,7 @@ distclean: distclean-am
 	-rm -f ./$(DEPDIR)/e_measure.Po
 	-rm -f ./$(DEPDIR)/e_move.Po
 	-rm -f ./$(DEPDIR)/e_movept.Po
+	-rm -f ./$(DEPDIR)/e_objcolor.Po
 	-rm -f ./$(DEPDIR)/e_placelib.Po
 	-rm -f ./$(DEPDIR)/e_rotate.Po
 	-rm -f ./$(DEPDIR)/e_scale.Po
@@ -1233,6 +1236,7 @@ maintainer-clean: maintainer-clean-am
 	-rm -f ./$(DEPDIR)/e_measure.Po
 	-rm -f ./$(DEPDIR)/e_move.Po
 	-rm -f ./$(DEPDIR)/e_movept.Po
+	-rm -f ./$(DEPDIR)/e_objcolor.Po
 	-rm -f ./$(DEPDIR)/e_placelib.Po
 	-rm -f ./$(DEPDIR)/e_rotate.Po
 	-rm -f ./$(DEPDIR)/e_scale.Po
