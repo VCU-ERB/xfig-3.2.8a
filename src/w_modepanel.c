@@ -123,6 +123,7 @@ static void stub_anglemeas_selected(void);
 static void stub_lenmeas_selected(void);
 static void stub_areameas_selected(void);
 static void stub_tangent_selected(void);
+
 // #taskQuickColoring_Icon
 //----------------------------------- Code Starts Here ----------------------------------
 // GOAL: Call the objcolor function and pass in void as the argument.

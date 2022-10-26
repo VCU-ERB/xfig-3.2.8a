@@ -133,6 +133,8 @@ extern icon_struct	tangent_ic;
 extern icon_struct	anglemeas_ic;
 extern icon_struct	lenmeas_ic;
 extern icon_struct	areameas_ic;
+
+
 // #taskQuickColoring_Icon
 //----------------------------------- Code Starts Here ----------------------------------
 /* INFO: The objcolor variable behaviors can only be accessed within the w-icons file.
