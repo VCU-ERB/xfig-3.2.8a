@@ -137,7 +137,8 @@ libxfig_a_AR = $(AR) $(ARFLAGS)
 LIBOBJDIR = ../lib/
 am__dirstamp = $(am__leading_dot)dirstamp
 libxfig_a_DEPENDENCIES = $(LIBOBJS)
-am__libxfig_a_SOURCES_DIST = d_arcbox.c d_arcbox.h d_arc.c d_arc.h \
+#free selection
+am__libxfig_a_SOURCES_DIST = e_ffst.c e_ffst.h d_arcbox.c d_arcbox.h d_arc.c d_arc.h \
 	d_box.c d_box.h d_ellipse.c d_ellipse.h d_line.c d_line.h \
 	d_picobj.c d_picobj.h d_regpoly.c d_regpoly.h d_spline.c \
 	d_spline.h d_subspline.c d_subspline.h d_text.c d_text.h \
@@ -190,7 +191,7 @@ am__objects_5 =
 @XAW3D1_5E_FALSE@am__objects_7 = w_menuentry.$(OBJEXT) \
 @XAW3D1_5E_FALSE@	SmeCascade.$(OBJEXT) SimpleMenu.$(OBJEXT) \
 @XAW3D1_5E_FALSE@	SmeBSB.$(OBJEXT)
-am__objects_8 = d_arcbox.$(OBJEXT) d_arc.$(OBJEXT) d_box.$(OBJEXT) \
+am__objects_8 = e_ffst.$(OBJEXT) d_arcbox.$(OBJEXT) d_arc.$(OBJEXT) d_box.$(OBJEXT) \
 	d_ellipse.$(OBJEXT) d_line.$(OBJEXT) d_picobj.$(OBJEXT) \
 	d_regpoly.$(OBJEXT) d_spline.$(OBJEXT) d_subspline.$(OBJEXT) \
 	d_text.$(OBJEXT) e_addpt.$(OBJEXT) e_align.$(OBJEXT) \
@@ -230,7 +231,7 @@ am__objects_8 = d_arcbox.$(OBJEXT) d_arc.$(OBJEXT) d_box.$(OBJEXT) \
 	$(am__objects_5) $(am__objects_6) $(am__objects_7)
 am_libxfig_a_OBJECTS = $(am__objects_8)
 libxfig_a_OBJECTS = $(am_libxfig_a_OBJECTS)
-am__xfig_SOURCES_DIST = d_arcbox.c d_arcbox.h d_arc.c d_arc.h d_box.c \
+am__xfig_SOURCES_DIST = e_ffst.c e_ffst.h d_arcbox.c d_arcbox.h d_arc.c d_arc.h d_box.c \
 	d_box.h d_ellipse.c d_ellipse.h d_line.c d_line.h d_picobj.c \
 	d_picobj.h d_regpoly.c d_regpoly.h d_spline.c d_spline.h \
 	d_subspline.c d_subspline.h d_text.c d_text.h dirstruct.h \
@@ -274,7 +275,7 @@ am__xfig_SOURCES_DIST = d_arcbox.c d_arcbox.h d_arc.c d_arc.h d_box.c \
 	w_i18n.c w_i18n.h w_menuentry.c w_menuentry.h w_menuentryP.h \
 	SmeBSB.h SmeCascade.c SmeCascade.h SmeCascadeP.h SimpleMenu.c \
 	SmeBSB.c SmeBSBP.h
-am_xfig_OBJECTS = d_arcbox.$(OBJEXT) d_arc.$(OBJEXT) d_box.$(OBJEXT) \
+am_xfig_OBJECTS = e_ffst.$(OBJEXT) d_arcbox.$(OBJEXT) d_arc.$(OBJEXT) d_box.$(OBJEXT) \
 	d_ellipse.$(OBJEXT) d_line.$(OBJEXT) d_picobj.$(OBJEXT) \
 	d_regpoly.$(OBJEXT) d_spline.$(OBJEXT) d_subspline.$(OBJEXT) \
 	d_text.$(OBJEXT) e_addpt.$(OBJEXT) e_align.$(OBJEXT) \
@@ -335,7 +336,7 @@ am__depfiles_remade = ../lib/$(DEPDIR)/isascii.Po \
 	../lib/$(DEPDIR)/strdup.Po ../lib/$(DEPDIR)/strncasecmp.Po \
 	../lib/$(DEPDIR)/strndup.Po ../lib/$(DEPDIR)/strrchr.Po \
 	../lib/$(DEPDIR)/strstr.Po ./$(DEPDIR)/SimpleMenu.Po \
-	./$(DEPDIR)/SmeBSB.Po ./$(DEPDIR)/SmeCascade.Po \
+	./$(DEPDIR)/e_ffst.Po ./$(DEPDIR)/SmeBSB.Po ./$(DEPDIR)/SmeCascade.Po \
 	./$(DEPDIR)/d_arc.Po ./$(DEPDIR)/d_arcbox.Po \
 	./$(DEPDIR)/d_box.Po ./$(DEPDIR)/d_ellipse.Po \
 	./$(DEPDIR)/d_line.Po ./$(DEPDIR)/d_picobj.Po \
@@ -563,7 +564,7 @@ AM_LDFLAGS = $(XLDFLAGS)
 xfig_LDADD = $(LIBOBJS) $(XLIBS)
 # xmkmf, in addition, sets the flag -DNEWARROWPROTO
 DISTCLEANFILES = splash.xbm splash.xpm version.xbm
-xfig_SOURCES = d_arcbox.c d_arcbox.h d_arc.c d_arc.h d_box.c d_box.h \
+xfig_SOURCES = e_ffst.c e_ffst.h d_arcbox.c d_arcbox.h d_arc.c d_arc.h d_box.c d_box.h \
 	d_ellipse.c d_ellipse.h d_line.c d_line.h d_picobj.c \
 	d_picobj.h d_regpoly.c d_regpoly.h d_spline.c d_spline.h \
 	d_subspline.c d_subspline.h d_text.c d_text.h dirstruct.h \
@@ -1012,6 +1013,7 @@ distclean: distclean-am
 	-rm -f ../lib/$(DEPDIR)/strndup.Po
 	-rm -f ../lib/$(DEPDIR)/strrchr.Po
 	-rm -f ../lib/$(DEPDIR)/strstr.Po
+	-rm -f ./$(DEPDIR)/e_ffst.Po
 	-rm -f ./$(DEPDIR)/SimpleMenu.Po
 	-rm -f ./$(DEPDIR)/SmeBSB.Po
 	-rm -f ./$(DEPDIR)/SmeCascade.Po
@@ -1179,6 +1181,7 @@ maintainer-clean: maintainer-clean-am
 	-rm -f ../lib/$(DEPDIR)/strndup.Po
 	-rm -f ../lib/$(DEPDIR)/strrchr.Po
 	-rm -f ../lib/$(DEPDIR)/strstr.Po
+	-rm -f ./$(DEPDIR)/e_ffst.Po
 	-rm -f ./$(DEPDIR)/SimpleMenu.Po
 	-rm -f ./$(DEPDIR)/SmeBSB.Po
 	-rm -f ./$(DEPDIR)/SmeCascade.Po

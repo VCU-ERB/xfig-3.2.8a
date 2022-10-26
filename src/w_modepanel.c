@@ -49,6 +49,10 @@
 #include "e_delete.h"
 #include "e_deletept.h"
 #include "e_edit.h"
+
+//free selection
+#include "e_ffst.h"
+
 #include "e_glue.h"
 #include "e_joinsplit.h"
 #include "e_measure.h"
@@ -119,6 +123,13 @@ static void	stub_lenmeas_selected(void);
 static void	stub_areameas_selected(void);
 static void	stub_tangent_selected(void);
 
+// #taskFreeSelection
+/*------------------------------------Code Starts Here------------------------*/
+// Call the function using the ffst keyword and pass in 'void' as the argument.
+// Use the code above as a reference.
+
+/*------------------------------------Code Ends Here--------------------------*/
+
 /**************	    local variables and routines   **************/
 
 DeclareStaticArgs(13);
@@ -144,6 +155,15 @@ static void     turn_on(mode_sw_info *msw);
    may popup a window.  Because the command button is set insensitive in those
    cases, the LeaveWindow event never happens on that button so the balloon popup
    would never be destroyed in that case.  */
+
+// #taskFreeSelection
+/*------------------------------------Code Starts Here------------------------*/
+// This is where you will give information about the tool.
+// When calling your function, use FFST, M_all and I_object. 
+// This are the definition the tool falls in.
+
+
+/*------------------------------------Code Ends Here--------------------------*/
 
 mode_sw_info mode_switches[] = {
 
@@ -273,6 +293,7 @@ mode_sw_info mode_switches[] = {
 	{&tangent_ic, F_TANGENT, tangent_selected, M_TANGENT_OBJECT, I_TANGENT,
 		"Add TANGENT/NORMAL to curve   (n)",
 		False, NULL, (Pixmap)0, (Pixmap)0},
+
 	{&anglemeas_ic, F_ANGLEMEAS, anglemeas_selected, M_ANGLEMEAS_OBJECT,
 		I_MIN2,
 		"MEASURE angle (specify three points or select object)   (Ctrl-g)",
@@ -350,6 +371,14 @@ static XtActionsRec mode_actions[] =
     {"ModeAddPoint", (XtActionProc) stub_point_adding_selected},
     {"ModeDeletePoint", (XtActionProc) stub_delete_point_selected},
     {"ModeMoveObject", (XtActionProc) stub_move_selected},
+
+	// #taskFreeSelection
+	/*------------------------------------Code Starts Here------------------------*/
+	// Here you will have to add the action of ffst when selected.
+	// Use the "ModeFFST" and the ffst keyword.
+	
+	/*------------------------------------Code Ends Here--------------------------*/
+	
     {"ModePopupLibrary", (XtActionProc) stub_popup_library},
     {"ModeMovePoint", (XtActionProc) stub_move_point_selected},
     {"ModeDeleteObject", (XtActionProc) stub_delete_selected},
@@ -969,6 +998,13 @@ stub_tangent_selected(void)
 {
 	change_mode(&tangent_ic);
 }
+
+// #taskFreeSelection
+/*------------------------------------Code Starts Here------------------------*/
+// GOAL: Call the function when the free selection tool is selected. Change the mode to the free selection tool.
+// Use the ffst keyword.
+
+/*------------------------------------Code Ends Here--------------------------*/
 
 static void
 stub_anglemeas_selected(void)

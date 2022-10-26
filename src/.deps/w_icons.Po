@@ -1,0 +1,7 @@
+w_icons.o: w_icons.c /usr/include/stdc-predef.h ../config.h w_icons.h \
+ version.xbm splash.xbm
+/usr/include/stdc-predef.h:
+../config.h:
+w_icons.h:
+version.xbm:
+splash.xbm:

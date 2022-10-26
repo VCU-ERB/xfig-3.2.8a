@@ -35,7 +35,8 @@ DISTCLEANFILES = splash.xbm splash.xpm version.xbm
 
 bin_PROGRAMS = xfig
 
-xfig_SOURCES = d_arcbox.c d_arcbox.h d_arc.c d_arc.h d_box.c d_box.h \
+#free selection
+xfig_SOURCES = e_ffst.c e_ffst.h d_arcbox.c d_arcbox.h d_arc.c d_arc.h d_box.c d_box.h \
 	d_ellipse.c d_ellipse.h d_line.c d_line.h d_picobj.c d_picobj.h \
 	d_regpoly.c d_regpoly.h d_spline.c d_spline.h d_subspline.c \
 	d_subspline.h d_text.c d_text.h dirstruct.h e_addpt.c e_addpt.h \
