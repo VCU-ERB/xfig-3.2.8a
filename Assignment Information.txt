@@ -13,10 +13,10 @@ separated into three phases:
 PHASE ONE: #taskQuickColoring_newFiles
   The file 'e_objcolor.c' is already created. Two functions are missing. 
   1) Go to the file 'e_objcolor.c' and follow the steps to create the new functions.
-  2) Create the header file 'e_objcolor.h'. There are two functions that need to be 
-     declared and extended (pass in void as the argument):
+  2) Create the header file 'e_objcolor.h'. Then declare and extend each function(one line for one function)
+   and pass in void as the argument:
     a) fix_fillstyle is a function that updates the fillstyle if the color changes and 
-       does not return anything. Pass in void casted to an object pointer as the argument.
+       does not return anything. Pass in a void casted object pointer named object.
     b) objcolor_selected is a function that changes an object's border/fill based on the
        color selected by the user and does not return anything.
 
