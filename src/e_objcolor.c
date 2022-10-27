@@ -117,8 +117,10 @@ void objcolor_selected(void)
  *      The default case should just return the function.
  *
  *   3) Reset the cursor.                                                               */
-
-
+ 
+/**
+ * Now continue to create the header file for objcolor 
+ */
 //----------------------------------- Code ends Here ------------------------------------
 
 // updates the ellipse's and related object's color and fillstyle
