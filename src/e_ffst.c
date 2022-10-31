@@ -131,10 +131,10 @@ break_comp(void)
  * }
  *
  * GOAL: Now, make the functions to tag the objects inside the global compound 'objects'
- *   that matches with the selected area. For each object, you need verifiry if the
+ *   that matches with the selected area. For each object, you need verify if the
  *   object is inside the area, mark tagged and then call the function 
  *   'toggle_[object_type]highlight' from the file 'u_markers.h'.
- * HINT: Think carefully. Analize what information you have about the position of each
+ * HINT: Think carefully. Analyze what information you have about the position of each
  *   object. You can do that. But if you are having trouble, let's work together. Go to
  *   the next hashtag.
  */
@@ -198,10 +198,10 @@ create_compoundobject(int x, int y)
 // #taskFreeSelection
 //------------------------------------- Code Starts Here --------------------------------
 /* HINT: If you do not know what objects are inside a compound, look into the function
- *   that creates a compond in the file 'object.h' and go back to the hashtag before to
+ *   that creates a compound in the file 'object.h' and go back to the hashtag before to
  *   finalize you work.      																						  	
  * GOAL: If you do not know anything. Let's work step by step. First, inside a compound
- *   there are a lot of objects lists. For instance, the ellipses are in the elipses 
+ *   there are a lot of objects lists. For instance, the ellipses are in the ellipses 
  *   list, the arcs in the arcs list. To select a ellipse:						
  *   1) look at each object in the linked list objects.ellipses;									
  *   2) verify if the object is in the active layer using 'active_layer'.							
@@ -214,7 +214,7 @@ create_compoundobject(int x, int y)
  * HINTS:																						
  *   a) arc or spline: use the fuction 'arc_bound' or 'spline_bound'. It receives the				
  *      object and four variables that will assume the box position of the object.				
- *   b) text: use 'text_bound'. This function receives the same argumets above plus 8 	
+ *   b) text: use 'text_bound'. This function receives the same arguments above plus 8 	
  *      variables that are not relevant here.																
  *   c) line: for each line, verify each point. For a line being tagged, all points of it 		
  *      need to be inside the selected area.  													
@@ -227,7 +227,7 @@ create_compoundobject(int x, int y)
 
 // #taskFreeSelection
 //----------------------------------- Code Starts Here ----------------------------------
-/* GOAL: The second part of your work is creating the coumpond with the tagged objects.
+/* GOAL: The second part of your work is creating the compound with the tagged objects.
  *   The main function is 'create_compoundobject' and its done in the code above. Read
  *   this function and create the function 'compose_compound1', that receives the new
  *   compound and put the selected objects. If it did not find anything, return 0, in
