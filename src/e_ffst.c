@@ -253,33 +253,83 @@ compose_compound1()
  *   'remove_compound_depth'.
  */
 
-//----------------------------------- Code ends Here ------------------------------------
-
-
-static void get_ellipse(F_ellipse **list)
+/**
+	Continue with filling the codes below
+*/
+static void
+sel_ellipse(int xmin, int ymin, int xmax, int ymax)
 {
-	F_ellipse *e, *ee, *ellipse;
-	for (e = objects.ellipses; e != NULL;)
-	{
-		if (!e->tagged)
-		{
-			ee = e;
-			e = e->next;
-			continue;
-		}
-		remove_depth(O_ELLIPSE, e->depth); 
-		if (*list == NULL)
-			*list = e;
-		else
-			ellipse->next = e;
-		ellipse = e;
-		if (e == objects.ellipses)
-			e = objects.ellipses = objects.ellipses->next;
-		else
-			e = ee->next = e->next;
-		ellipse->next = NULL;
-	}
+    
 }
+
+static void
+get_ellipse(F_ellipse **list)
+{
+    
+}
+
+static void
+sel_arc(int xmin, int ymin, int xmax, int ymax)
+{
+    
+}
+
+static void
+get_arc(F_arc **list)
+{
+    
+}
+
+static void
+sel_line(int xmin, int ymin, int xmax, int ymax)
+{
+    
+}
+
+static void
+get_line(F_line **list)
+{
+    
+}
+
+static void
+sel_spline(int xmin, int ymin, int xmax, int ymax)
+{
+    
+}
+
+static void
+get_spline(F_spline **list)
+{
+    
+}
+
+static void
+sel_text(int xmin, int ymin, int xmax, int ymax)
+{
+    
+}
+
+static void
+get_text(F_text **list)
+{
+    
+}
+
+static void
+sel_compound(int xmin, int ymin, int xmax, int ymax)
+{
+    
+}
+
+static void
+get_compound(F_compound **list)
+{
+    
+}
+
+//----------------------------------- Code ends Here ------------------------------------//
+
 
 
 /************************************** MOVE  CODE *************************************/
