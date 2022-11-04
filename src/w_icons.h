@@ -133,10 +133,11 @@ extern icon_struct tangent_ic;
 extern icon_struct anglemeas_ic;
 extern icon_struct lenmeas_ic;
 extern icon_struct areameas_ic;
-// #taskFreeSelection
-/*------------------------------------Code Starts Here------------------------*/
 
-/*------------------------------------Code Ends Here--------------------------*/
+// #taskFreeSelection
+//----------------------------------- Code Starts Here ----------------------------------
+
+//----------------------------------- Code ends Here ------------------------------------
 
 /* misc icons */
 

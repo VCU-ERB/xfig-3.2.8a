@@ -55,10 +55,10 @@
 
 	3) Declare the ffst icon structure.
     
-	4) Declare and initialize the variable 'ffst_ic' and link the *big* icons.
+	4) Declare and initialize the variable 'ffst_ic' and link the 'big' icons.
 	5) Assign ffst icon to the structure you initialized above.
 
-	6) Declare and initialize the variable 'ffst_ic' and link the *small* icons.
+	6) Declare and initialize the variable 'ffst_ic' and link the 'small' icons.
 	7) Assign ffst icon to the structure above initialized above.
 	
 /*********** icons for mode panel *****************/

@@ -124,11 +124,11 @@ static void	stub_areameas_selected(void);
 static void	stub_tangent_selected(void);
 
 // #taskFreeSelection
-/*------------------------------------Code Starts Here------------------------*/
-// Call the function using the ffst keyword and pass in 'void' as the argument.
-// Use the code above as a reference.
+//----------------------------------- Code Starts Here ----------------------------------
+/* Call the function using the ffst keyword and pass in  'void' as the argument.  Use the
+ *  code above as a reference.                                                         */
 
-/*------------------------------------Code Ends Here--------------------------*/
+//----------------------------------- Code ends Here ------------------------------------
 
 /**************	    local variables and routines   **************/
 
@@ -157,13 +157,11 @@ static void     turn_on(mode_sw_info *msw);
    would never be destroyed in that case.  */
 
 // #taskFreeSelection
-/*------------------------------------Code Starts Here------------------------*/
-// This is where you will give information about the tool.
-// When calling your function, use FFST, M_all and I_object. 
-// This are the definition the tool falls in.
+//----------------------------------- Code Starts Here ----------------------------------
+/* GOAL: Give information about the tool. When calling your function, use FFST, M_all and
+	I_object. This are the definition the tool falls in. */
 
-
-/*------------------------------------Code Ends Here--------------------------*/
+//----------------------------------- Code ends Here ------------------------------------
 
 mode_sw_info mode_switches[] = {
 
@@ -373,11 +371,10 @@ static XtActionsRec mode_actions[] =
     {"ModeMoveObject", (XtActionProc) stub_move_selected},
 
 	// #taskFreeSelection
-	/*------------------------------------Code Starts Here------------------------*/
-	// Here you will have to add the action of ffst when selected.
-	// Use the "ModeFFST" and the ffst keyword.
+	//----------------------------------- Code Starts Here ----------------------------------
+	// GOAL: Add the action of ffst when selected. Use the "ModeFFST" and the ffst keyword.
 	
-	/*------------------------------------Code Ends Here--------------------------*/
+	//----------------------------------- Code Starts Here ----------------------------------
 	
     {"ModePopupLibrary", (XtActionProc) stub_popup_library},
     {"ModeMovePoint", (XtActionProc) stub_move_point_selected},
@@ -1000,11 +997,11 @@ stub_tangent_selected(void)
 }
 
 // #taskFreeSelection
-/*------------------------------------Code Starts Here------------------------*/
-// GOAL: Call the function when the free selection tool is selected. Change the mode to the free selection tool.
-// Use the ffst keyword.
+//----------------------------------- Code Starts Here ----------------------------------
+/* GOAL:  Call the function when the free selection tool is selected.  Change the mode to
+ *  the free selection tool. Use the ffst keyword. 									   */
 
-/*------------------------------------Code Ends Here--------------------------*/
+//----------------------------------- Code ends Here ------------------------------------
 
 static void
 stub_anglemeas_selected(void)

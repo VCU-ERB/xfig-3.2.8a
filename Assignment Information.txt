@@ -4,11 +4,11 @@ TASK FREE SELECTION
 
 DETAILED INSTRUCTIONS: https://github.com/Da-vid21/xfig-3.2.8a/issues/5
 
-GOAL: This feature will make an icon available to select multiple objects using a 
-rectangular box and move them simultaneously across the xFig main field.Two files were
-added ("e_ffst.c" and "e_ffst.h") to implement the behavior of selecting multiple
-objects. Your job is creating the icon, completing the functions in the new files, and
-link the icon. Do not forget to include "e_ffst.h" into each file that will use it.
+GOAL:  This feature  will  make  an icon  available to  select  multiple  objects using a
+rectangular box and move them, simultaneously, across the xFig main field. Two files were
+added  ( "e_ffst.c"  and  "e_ffst.h" ) to implement the  behavior  of selecting  multiple
+objects. Create the icon, complete the functions in the new files, and link the icon.  Do
+not forget to include "e_ffst.h" into each file that will use it.
 
 STEPS:
 1. Open Visual Studio Code or your choice of IDE (open it from GitHub).

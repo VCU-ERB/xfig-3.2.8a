@@ -33,15 +33,17 @@
 
 // #taskFreeSelection
 //----------------------------------- Code Starts Here ----------------------------------
-/* INFO: This is the file that describes the free selection. The first function 
- *   'ffst_selected' is the one called when the your shortcut is clicked. The left mouse
+/* INFO:  This  is  the  file that  describes  the  free selection.  The  first  function 
+ *   'ffst_selected' is the one called when  your  shortcut  is  clicked.  The left mouse
  *   button is linked to the next function 'init_border_drawing'. That function describes
- *   the general behavior of selection. The left mouse button now is linked to the
- *   function 'create_selectArea'. Inside that function, a elastic box is defined. Then,
- *   a function is called to tag the objects inside this box and a function is called to
- *   create the compound that will move. We called this GLUE CODE. Your work stars here.
- * GOAL: Create the tag codes. You can try create your own code or go to the next hashtag
- *   and get a hint.
+ *   the general behavior of selection.  The left  mouse button is linked to the function
+ *   'create_selectArea'.  Inside  that  function,  an  elastic  box  is defined. Then, a 
+ *   function is  called  to tag the  objects inside this box and a function is called to
+ *   create  the compound with this selected objects that will move.  We called this GLUE
+ *   CODE. Your work stars here.
+ * GOAL:  PLEASE, read the code in 'create_selectArea'. The first  step is create the tag
+ *   codes ('tag_obj_in_region1'). You  can  try  create  your own code OR go to the next
+ *   hashtag and get a hint.
  */
 
 //----------------------------------- Code Ends Here ------------------------------------
@@ -120,10 +122,12 @@ break_comp(void)
 
 // #taskFreeSelection
 //-------------------------------------Code Starts Here----------------------------------
-/* GOAL: To tag all objects, create a different function to tag each type of object.
- *   Before that, create a general function 'tag_obj_in_region1' that call all the
- *   others. It receives the max and min point position of the selected region, and
- *   returns nothing. 
+/* INFO: To tag all objects, you will need: a different function to tag each type of 
+ *   object (a functions to tag ellipces, another to tag arcs, etc.) and a general 
+ *   function to call them. Let's start creanting the general one. 
+ * GOAL: Create the function 'tag_obj_in_region1' that call all the others. It receives
+ *   the max and min point position of the selected region (the four points of the 
+ *   retangle), and returns nothing.
  *
  * tag_obj_in_region1()
  * {
@@ -197,11 +201,11 @@ create_compoundobject(int x, int y)
 
 // #taskFreeSelection
 //------------------------------------- Code Starts Here --------------------------------
-/* HINT: If you do not know what objects are inside a compound, look into the function
- *   that creates a compound in the file 'object.h' and go back to the hashtag before to
+/* HINT: If you do not know what objects  are  inside a  compound, look into the function
+ *   that creates a compound in the file 'object.h'  and go back to the hashtag before to
  *   finalize you work.      																						  	
- * GOAL: If you do not know anything. Let's work step by step. First, inside a compound
- *   there are a lot of objects lists. For instance, the ellipses are in the ellipses 
+ * GOAL: If you do not know anything. Let's work step by step.  First,  inside a compound
+ *   there are a lot of objects lists.  For  instance,  the ellipses  are in the ellipses 
  *   list, the arcs in the arcs list. To select a ellipse:						
  *   1) look at each object in the linked list objects.ellipses;									
  *   2) verify if the object is in the active layer using 'active_layer'.							
@@ -252,81 +256,6 @@ compose_compound1()
  *   'remove_depth' from the file 'u_list.c'. For compounds, use the function
  *   'remove_compound_depth'.
  */
-
-/**
-	Continue with filling the codes below
-*/
-static void
-sel_ellipse(int xmin, int ymin, int xmax, int ymax)
-{
-    
-}
-
-static void
-get_ellipse(F_ellipse **list)
-{
-    
-}
-
-static void
-sel_arc(int xmin, int ymin, int xmax, int ymax)
-{
-    
-}
-
-static void
-get_arc(F_arc **list)
-{
-    
-}
-
-static void
-sel_line(int xmin, int ymin, int xmax, int ymax)
-{
-    
-}
-
-static void
-get_line(F_line **list)
-{
-    
-}
-
-static void
-sel_spline(int xmin, int ymin, int xmax, int ymax)
-{
-    
-}
-
-static void
-get_spline(F_spline **list)
-{
-    
-}
-
-static void
-sel_text(int xmin, int ymin, int xmax, int ymax)
-{
-    
-}
-
-static void
-get_text(F_text **list)
-{
-    
-}
-
-static void
-sel_compound(int xmin, int ymin, int xmax, int ymax)
-{
-    
-}
-
-static void
-get_compound(F_compound **list)
-{
-    
-}
 
 //----------------------------------- Code ends Here ------------------------------------//
 

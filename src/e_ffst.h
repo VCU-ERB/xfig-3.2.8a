@@ -16,8 +16,8 @@ static void create_compoundobject(int x, int y);
 void tag_obj_in_region1(int xmin, int ymin, int xmax, int ymax); 
 
 // #taskFreeSelection
-//------------------------------------- Code Starts Here---------------------------------
-// GOAL: Functions you created.
+//------------------------------------- INFO Starts Here---------------------------------
+// INFO: Functions you created.
 static void sel_line(int xmin, int ymin, int xmax, int ymax);
 static void get_line(F_line** list); 
 static void get_arc(F_arc** list); 
@@ -30,7 +30,7 @@ static void get_spline(F_spline** list);
 static void sel_spline(int xmin, int ymin, int xmax, int ymax); 
 static void get_text(F_text** list); 
 static void sel_text(int xmin, int ymin, int xmax, int ymax); 
-//----------------------------------- Code Ends Here ------------------------------------
+//----------------------------------- INFO Ends Here ------------------------------------
 
 //Move
 static void init_move(F_line* p, int type, int x, int y, int px, int py),  

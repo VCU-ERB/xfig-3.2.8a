@@ -54,12 +54,11 @@
 #define		F_PICOBJ		16
 #define		F_PLACE_LIB_OBJ		17
 // #taskFreeSelection
-/*------------------------------------Code Starts Here------------------------*/
-// GOAL: Define FFST behavior here to declare it as a tool in Xfig. Use 18 for the tool number.
-// Use the codes above as a reference.
+//----------------------------------- Code Starts Here ----------------------------------
+/* GOAL: Define FFST  behavior here to declare it as a tool in Xfig.  Use 18 for the tool 
+ *  number. Use the codes above as a reference.										   */
 
-// Continue to the next file.
-/*------------------------------------Code Ends Here--------------------------*/
+//----------------------------------- Code ends Here ------------------------------------
 #define	    FIRST_EDIT_MODE	    F_GLUE
 #define		F_GLUE			30
 #define		F_BREAK			31
